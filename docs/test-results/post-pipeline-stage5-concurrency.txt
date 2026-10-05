@@ -1,0 +1,43 @@
+# npm run test:concurrency
+# started 2026-10-05T16:37:14.455Z
+
+============================== RUN 1 of 1 (2026-10-05T16:37:14.456Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:concurrency
+> vitest run tests/concurrency --testTimeout=120000 --hookTimeout=120000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/concurrency/booking.test.ts > booking validation and access (deployed API) > rejects bad quantities, wrong roles and anonymous callers 6381ms
+stdout | tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets
+[scenario 1] 50 parallel requests, status counts {"201":5,"409":45}, latency p50=1021ms p95=1893ms max=1929ms, wall=1934ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets 5953ms
+stdout | tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable
+[scenario 2] 30 parallel requests, status counts {"201":2,"409":28}, latency p50=766ms p95=946ms max=978ms, wall=980ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable 5449ms
+stdout | tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued
+[scenario 3] 40 parallel requests, status counts {"201":2,"409":38}, latency p50=785ms p95=993ms max=1003ms, wall=1014ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued 3274ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  22:07:15
+   Duration  37.62s (transform 70ms, setup 0ms, collect 227ms, tests 37.19s, environment 0ms, prepare 67ms)
+
+(node:33568) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 1 exit code: 0
+
+# SUMMARY: 1/1 runs passed

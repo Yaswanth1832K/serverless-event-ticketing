@@ -1,0 +1,56 @@
+﻿# npm run test:analytics (post-pipeline regression)
+# started 2026-10-05T16:38:51.6783183Z
+
+> event-ticketing-platform@1.0.0 test:analytics
+> vitest run tests/integration/analytics.test.ts --testTimeout=180000 --hookTimeout=240000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+npm.cmd : (node:38448) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+At line:1 char:715
++ ... g utf8; $env:NO_COLOR='1'; $o = & npm run test:analytics 2>&1 | Out-S ...
++                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:38448) Wa...JavaScript (v3):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > an Attendee gets 403 on both endpoints (and sees no numbers) 1457ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > Staff get 403 as well 554ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > another organizer cannot read organizer A's event analytics (403) and sees none of its events on the dashboard 1023ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > anonymous gets 401, unknown and malformed event ids get 404 1984ms
+ ✓ tests/integration/analytics.test.ts > before any check-in > sold counters already match the real tickets, and checked-in is 0 1576ms
+stdout | tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds
+[stream lag] scan acknowledged -> counter visible in the analytics endpoint after 763ms
+
+ ✓ tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds 1459ms
+ ✓ tests/integration/analytics.test.ts > idempotency: a replayed stream batch does not count twice > delivering the same record twice, in two invocations, leaves every counter unchanged 2535ms
+stdout | tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20
+[20 check-ins] 20 simultaneous scans on one event took 1134ms, statuses {"200":20}
+
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20 13206ms
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > the dead-letter queue is still empty 1122ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > small event: 8 sold, 4 checked in (after more scans), counters equal the DynamoDB ticket items 1848ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > big event counters equal the ticket items too 1012ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > the organizer dashboard totals equal the sum of the organizer's real tickets 2085ms
+stdout | tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls
+[response times] GET /dashboard              sequential x20: n=20 min=313ms p50=758ms p95=883ms max=883ms avg=670ms
+[response times] GET /events/{id}/analytics  sequential x20: n=20 min=296ms p50=731ms p95=819ms max=819ms avg=654ms
+[response times] GET /dashboard              20 concurrent:  n=20 min=561ms p50=1931ms p95=2099ms max=2099ms avg=1616ms
+
+ ✓ tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls 28572ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  22:08:52
+   Duration  101.16s (transform 71ms, setup 0ms, collect 228ms, tests 100.74s, environment 0ms, prepare 64ms)
+
+
+# exit code: 0

@@ -1,0 +1,55 @@
+﻿# npx vitest run tests/integration/events.test.ts (post-pipeline regression)
+# started 2026-10-05T16:35:59.8994779Z
+
+ RUN  v2.1.9 <project>
+
+npx.cmd : (node:49992) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+At line:2 char:262
++ ... R='1'; $o = & npx vitest run tests/integration/events.test.ts --testT ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:49992) Wa...JavaScript (v3):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > rejects Staff and Admin at signup 1728ms
+ ✓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > puts Organizer and default signups in the right groups 4655ms
+ ✓ tests/integration/events.test.ts > authentication > public browsing works without a token 1433ms
+ ✓ tests/integration/events.test.ts > authentication > write routes reject missing or bad tokens with 401 2190ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > create -> 403 716ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > edit -> 403 and event is unchanged 1039ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > delete -> 403 and event still exists 674ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > image-url and my/events -> 403 1469ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > edit -> 403 319ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > delete -> 403 737ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > image upload url -> 403 728ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > A event is unchanged after all attempts 720ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > B's my/events does not list A's event, A's does 1333ms
+ ✓ tests/integration/events.test.ts > input validation > create with missing fields -> 400 744ms
+ ✓ tests/integration/events.test.ts > input validation > create with zero capacity -> 400 714ms
+ ✓ tests/integration/events.test.ts > input validation > create with negative price -> 400 775ms
+ ✓ tests/integration/events.test.ts > input validation > create with past date -> 400 725ms
+ ✓ tests/integration/events.test.ts > input validation > create with huge name -> 400 725ms
+ ✓ tests/integration/events.test.ts > input validation > create with string capacity -> 400 705ms
+ ✓ tests/integration/events.test.ts > input validation > create with not json -> 400 670ms
+ ✓ tests/integration/events.test.ts > input validation > forged organizerId and sold are ignored on create 1218ms
+ ✓ tests/integration/events.test.ts > input validation > malformed event id -> 404 691ms
+ ✓ tests/integration/events.test.ts > owner can update; public view hides organizerId > updates fields and keeps sold untouched 751ms
+ ✓ tests/integration/events.test.ts > owner can update; public view hides organizerId > public GET has no organizerId 702ms
+ ✓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > rejects disallowed content types and oversized declarations 3019ms
+ ✓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > issues a short-lived signed policy and S3 enforces it 15035ms
+ ✓ tests/integration/events.test.ts > delete > owner deletes an unsold event, then it is gone 716ms
+
+ Test Files  1 passed (1)
+      Tests  27 passed (27)
+   Start at  22:06:01
+   Duration  65.37s (transform 478ms, setup 0ms, collect 998ms, tests 64.02s, environment 0ms, prepare 176ms)
+
+
+# exit code: 0
