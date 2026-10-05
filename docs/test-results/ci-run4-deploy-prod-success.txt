@@ -1,0 +1,662 @@
+Deploy to prod (needs approval)	Set up job	﻿2026-10-05T16:28:28.9265413Z Current runner version: '2.337.0'
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9281147Z ##[group]Runner Image Provisioner
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9281664Z Hosted Compute Agent
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9282070Z Version: 20260901.588
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9282500Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9282939Z Build Date: 2026-09-01T19:56:44Z
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9283395Z Worker ID: {d2451459-8a3e-4165-a73d-420b09ba4ead}
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9283795Z Azure Region: centralus
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9284127Z ##[endgroup]
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9284985Z ##[group]Operating System
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9285334Z Ubuntu
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9285693Z 24.04.5
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9286004Z LTS
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9286307Z ##[endgroup]
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9286660Z ##[group]Runner Image
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9287061Z Image: ubuntu-24.04
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9287411Z Version: 20260927.320.1
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9288010Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9289225Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9289793Z ##[endgroup]
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9290536Z ##[group]GITHUB_TOKEN Permissions
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9291821Z Contents: read
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9292202Z Metadata: read
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9292534Z ##[endgroup]
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9293740Z Secret source: Actions
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9294321Z Cache mode: write
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:28.9294932Z Prepare workflow directory
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:29.0268937Z Prepare all required actions
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:29.0311146Z Getting action download info
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:29.3198904Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:29.5212882Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:29.8986226Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:30.2679678Z Download action repository 'aws-actions/setup-sam@v2' (SHA:f84ec7d548307efafe33230528756de3c5841a17)
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:30.8977598Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+Deploy to prod (needs approval)	Set up job	2026-10-05T16:28:31.6185225Z Complete job name: Deploy to prod (needs approval)
+Deploy to prod (needs approval)	Run actions/checkout@v4	﻿2026-10-05T16:28:31.6584196Z ##[group]Run actions/checkout@v4
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6584528Z with:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6584751Z   repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6586509Z   token: ***
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6586684Z   ssh-strict: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6586860Z   ssh-user: git
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6587056Z   persist-credentials: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6587263Z   clean: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6587453Z   sparse-checkout-cone-mode: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6587672Z   fetch-depth: 1
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6587852Z   fetch-tags: false
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6588033Z   show-progress: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6588218Z   lfs: false
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6588441Z   submodules: false
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6588626Z   set-safe-directory: true
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6588836Z   allow-unsafe-pr-checkout: false
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6589109Z env:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6589278Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6589463Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6589656Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.6589881Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7232051Z Syncing repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7233137Z ##[group]Getting Git version info
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7233496Z Working directory is '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7234050Z [command]/usr/bin/git version
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7310915Z git version 2.55.0
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7323837Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7334146Z Temporarily overriding HOME='/home/runner/work/_temp/d19ba766-046a-4502-8b67-f5d2afe199cf' before making global git config changes
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7335093Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7338832Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7416602Z Deleting the contents of '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7422617Z ##[group]Initializing the repository
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7426330Z [command]/usr/bin/git init /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7751776Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7760571Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7761406Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7762039Z hint: call:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7762554Z hint:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7763076Z hint: 	git config --global init.defaultBranch <name>
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7763500Z hint:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7763843Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7764365Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7764785Z hint:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7765051Z hint: 	git branch -m <name>
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7765355Z hint:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7765723Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7766394Z Initialized empty Git repository in /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/.git/
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.7767829Z [command]/usr/bin/git remote add origin https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8108738Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8164400Z ##[group]Disabling automatic garbage collection
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8165030Z [command]/usr/bin/git config --local gc.auto 0
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8166267Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8166687Z ##[group]Setting up auth
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8167161Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8172046Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8839719Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.8866050Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9042066Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9062533Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9241569Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9338928Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9339539Z ##[group]Fetching the repository
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:31.9344935Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ec6d735ed89f1d81b025733a897e7096591426a6:refs/remotes/origin/main
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6736733Z From https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6737167Z  * [new ref]         ec6d735ed89f1d81b025733a897e7096591426a6 -> origin/main
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6741628Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6741963Z ##[group]Determining the checkout info
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6749490Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6750297Z [command]/usr/bin/git sparse-checkout disable
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6798915Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6831736Z ##[group]Checking out the ref
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6835029Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6989331Z Switched to a new branch 'main'
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6993799Z branch 'main' set up to track 'origin/main'.
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.6998270Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.7033511Z [command]/usr/bin/git log -1 --format=%H
+Deploy to prod (needs approval)	Run actions/checkout@v4	2026-10-05T16:28:32.7055612Z ec6d735ed89f1d81b025733a897e7096591426a6
+Deploy to prod (needs approval)	Run actions/setup-node@v4	﻿2026-10-05T16:28:32.7228445Z ##[group]Run actions/setup-node@v4
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7228611Z with:
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7228717Z   node-version: 22
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7228826Z   cache: npm
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7228996Z   cache-dependency-path: package-lock.json
+Deploy to prod (needs approval)	Run actions/setup-node@v4	frontend/package-lock.json
+Deploy to prod (needs approval)	Run actions/setup-node@v4	
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7229215Z   always-auth: false
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7229332Z   check-latest: false
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231032Z   token: ***
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231135Z env:
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231239Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231354Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231471Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.7231615Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.8051667Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.8054225Z (node:2079) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.8054807Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:32.8055765Z ##[group]Environment details
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.0905955Z node: v22.23.3
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.0906156Z npm: 10.9.9
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.0906262Z yarn: 1.22.22
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.0906662Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.0933062Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.1626777Z /home/runner/.npm
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.3198050Z Cache hit for: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:33.3256975Z (node:2079) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.4771051Z Received 97821930 of 102016234 (95.9%), 93.3 MBs/sec
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.7915337Z Received 102016234 of 102016234 (100.0%), 73.9 MBs/sec
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.7915771Z Cache Size: ~97 MB (102016234 B)
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.7936862Z [command]/usr/bin/tar -xf /home/runner/work/_temp/4538bffc-216f-434c-beb7-46c34f229124/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.9329070Z Cache restored successfully
+Deploy to prod (needs approval)	Run actions/setup-node@v4	2026-10-05T16:28:34.9374780Z Cache restored from key: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to prod (needs approval)	Run actions/setup-python@v5	﻿2026-10-05T16:28:34.9519526Z ##[group]Run actions/setup-python@v5
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9519706Z with:
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9519818Z   python-version: 3.12
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9519946Z   check-latest: false
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9521763Z   token: ***
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9521887Z   update-environment: true
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522028Z   allow-prereleases: false
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522155Z   freethreaded: false
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522272Z env:
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522379Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522502Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522643Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:34.9522780Z ##[endgroup]
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:35.0295024Z ##[group]Installed versions
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:35.0352991Z (node:2127) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:35.0353725Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:35.0354239Z Successfully set up CPython (3.12.14)
+Deploy to prod (needs approval)	Run actions/setup-python@v5	2026-10-05T16:28:35.0354864Z ##[endgroup]
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	﻿2026-10-05T16:28:35.0516425Z ##[group]Run aws-actions/setup-sam@v2
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0516705Z with:
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0516874Z   use-installer: true
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0517060Z env:
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0517406Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0517599Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0517800Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0518071Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0518485Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0518850Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0519174Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0519505Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0519807Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.0519982Z ##[endgroup]
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:35.4696685Z Cache hit for: sam-cli-linux-ubuntu24-x86_64-1.166.2
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:36.6453269Z Received 80314447 of 88703055 (90.5%), 76.4 MBs/sec
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:36.7190021Z Received 88703055 of 88703055 (100.0%), 78.7 MBs/sec
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:36.7191004Z Cache Size: ~85 MB (88703055 B)
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:36.7217372Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f34d428b-f0e2-44bf-8aff-402379992e8c/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:37.0772723Z Cache restored successfully
+Deploy to prod (needs approval)	Run aws-actions/setup-sam@v2	2026-10-05T16:28:37.0809294Z Using cached AWS SAM CLI 1.166.2 from GitHub Actions cache
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:28:37.0986288Z ##[group]Run aws-actions/configure-aws-credentials@v4
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0986480Z with:
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0986639Z   role-to-assume: arn:aws:iam::380897727215:role/ticketing-ci-prod
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0986833Z   aws-region: us-east-1
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0986972Z   role-session-name: gha-prod-37340770993
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987130Z   audience: sts.amazonaws.com
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987276Z   output-env-credentials: true
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987407Z env:
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987513Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987631Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987760Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0987936Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0988163Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0988389Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0988594Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0988797Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0989029Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.0989205Z ##[endgroup]
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.3523725Z Assuming role with OIDC
+Deploy to prod (needs approval)	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:28:37.5134465Z Authenticated as assumedRoleId AROAVRL2GCLXVTVMJZWQB:gha-prod-37340770993
+Deploy to prod (needs approval)	Run npm ci	﻿2026-10-05T16:28:37.5779256Z ##[group]Run npm ci
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.5779448Z [36;1mnpm ci[0m
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086124Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086282Z env:
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086402Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086549Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086687Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6086878Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6087129Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6087367Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6087584Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6087800Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6088015Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6088204Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6088602Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6088794Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6091411Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:37.6091546Z ##[endgroup]
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3434838Z 
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3435794Z added 95 packages, and audited 96 packages in 3s
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3436372Z 
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3436546Z 13 packages are looking for funding
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3436843Z   run `npm fund` for details
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3554879Z 
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3555305Z 5 vulnerabilities (3 moderate, 1 high, 1 critical)
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3555552Z 
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3555764Z To address all issues (including breaking changes), run:
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3556085Z   npm audit fix --force
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3556223Z 
+Deploy to prod (needs approval)	Run npm ci	2026-10-05T16:28:40.3556335Z Run `npm audit` for details.
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	﻿2026-10-05T16:28:40.4065859Z ##[group]Run npm ci --prefix frontend
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4066156Z [36;1mnpm ci --prefix frontend[0m
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4123483Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4123632Z env:
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4123748Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4123879Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4124008Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4124201Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4124457Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4124687Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4124904Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4125113Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4125326Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4125516Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4125733Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4125935Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4128321Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:40.4128455Z ##[endgroup]
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.2371300Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9664167Z 
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9664839Z added 248 packages, and audited 249 packages in 1s
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9665029Z 
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9665168Z 36 packages are looking for funding
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9665449Z   run `npm fund` for details
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9850050Z 
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9850939Z 7 vulnerabilities (5 moderate, 1 high, 1 critical)
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9851207Z 
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9851427Z To address all issues (including breaking changes), run:
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9851760Z   npm audit fix --force
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9851898Z 
+Deploy to prod (needs approval)	Run npm ci --prefix frontend	2026-10-05T16:28:41.9852019Z Run `npm audit` for details.
+Deploy to prod (needs approval)	Build	﻿2026-10-05T16:28:42.0090710Z ##[group]Run npm run build
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0090899Z [36;1mnpm run build[0m
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0144596Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0144751Z env:
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0144874Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0145010Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0145146Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0145339Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0145585Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0145840Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0146068Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0146287Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0146507Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0146703Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0146944Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0147154Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0149530Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0149667Z ##[endgroup]
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0760990Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0761506Z > event-ticketing-platform@1.0.0 build
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0761733Z > sam build
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.0761810Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4964120Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4964918Z 	SAM CLI now collects telemetry to better understand customer needs.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4965142Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4965278Z 	You can OPT OUT and disable telemetry collection by setting the
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4965806Z 	environment variable SAM_CLI_TELEMETRY=0 in your shell.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4966078Z 	Thanks for your help!
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4966169Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4966442Z 	Learn More: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-telemetry.html
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.4966742Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.8059261Z Starting Build use cache
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9216237Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/auth-triggers runtime: nodejs22.x architecture: arm64 functions: AuthTriggersFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9226668Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/events runtime: nodejs22.x architecture: arm64 functions: EventsFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9239644Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/tickets runtime: nodejs22.x architecture: arm64 functions: TicketsFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9242153Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/health runtime: nodejs22.x architecture: arm64 functions: HealthFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9243739Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/stream-processor runtime: nodejs22.x architecture: arm64 functions: StreamProcessorFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9250286Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/booking runtime: nodejs22.x architecture: arm64 functions: BookingFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9251596Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/checkin runtime: nodejs22.x architecture: arm64 functions: CheckinFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:42.9263093Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/analytics runtime: nodejs22.x architecture: arm64 functions: AnalyticsFunction
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1019822Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1067899Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1079543Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1222281Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1311396Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1338920Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1382320Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1439494Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1471014Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1530896Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1581104Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1581863Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1609052Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1701250Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1794679Z package.json file not found. Bundling source without installing dependencies.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.1850911Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4773800Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4774904Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AuthTriggersFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4775210Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4775467Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function HealthFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4775702Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4775942Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function EventsFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4776371Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4776602Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function BookingFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4776829Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4777139Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function TicketsFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4777363Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4777593Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function CheckinFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4777827Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4778081Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function StreamProcessorFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4778324Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4778559Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AnalyticsFunction NODE_OPTIONS
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4778988Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4792804Z You are using source maps, note that this comes with a performance hit! Set Sourcemap to false and remove NODE_OPTIONS: --enable-source-maps to disable source maps.
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.4793286Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5014429Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5014688Z Build Succeeded
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5014854Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5015017Z Built Artifacts  : .aws-sam/build
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5015336Z Built Template   : .aws-sam/build/template.yaml
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5015523Z 
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5015626Z Commands you can use next
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5015844Z =========================
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5016121Z [*] Validate SAM template: sam validate
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5016406Z [*] Invoke Function: sam local invoke
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5016824Z [*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
+Deploy to prod (needs approval)	Build	2026-10-05T16:28:43.5017201Z [*] Deploy: sam deploy --guided
+Deploy to prod (needs approval)	Deploy the stack	﻿2026-10-05T16:28:43.8955891Z ##[group]Run sam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-platform/qr-signing-secret" "AlarmEmail=<alarm-email>"
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.8956993Z [36;1msam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-platform/qr-signing-secret" "AlarmEmail=<alarm-email>"[0m
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9008415Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9008562Z env:
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9008680Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9008810Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9008942Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9009129Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9009370Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9009627Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9009842Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9010204Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9010464Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9010653Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9010873Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9011061Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9013444Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:43.9013576Z ##[endgroup]
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:44.9059024Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:44.9059883Z 	Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:44.9060921Z 	Auto resolution of buckets can be turned off by setting resolve_s3=False
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:44.9061445Z 	To use a specific S3 bucket, set --s3-bucket=<bucket_name>
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:44.9072192Z 	Above settings can be stored in samconfig.toml
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.3483929Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.3484694Z 	File with same data already exists at afa492f27a5cb43e6381c4e35ab99e84, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.3915381Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.3915709Z 	File with same data already exists at c415719e0b920f2adc6911c271bcf6bf, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.5247183Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.5247575Z 	File with same data already exists at 940e709987483a54179838fa1db34d57, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.6394188Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.6394530Z 	File with same data already exists at e29fcf787267a7294744b44bd2ab0458, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.7714139Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.7714464Z 	File with same data already exists at a18a7d2d75a84f1b53b233addd5f9b20, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.9052924Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:45.9053233Z 	File with same data already exists at 114f291b6091daed44bf1202a3e61b3b, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.0214545Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.0214876Z 	File with same data already exists at 50a2a21b2f0785945395519160d45e5d, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.1347536Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.1347897Z 	File with same data already exists at dec8be75157a0a1b279eb431b26281c6, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2024425Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2024596Z 	Deploying with following values
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2024848Z 	===============================
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2025124Z 	Stack name                   : ticketing-platform
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2025482Z 	Region                       : us-east-1
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2025740Z 	Confirm changeset            : False
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2026036Z 	Disable rollback             : False
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2026472Z 	Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2026928Z 	Capabilities                 : ["CAPABILITY_IAM"]
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2027512Z 	Parameter overrides          : {"QrSecretParamName": "/ticketing-platform/qr-signing-secret", "AlarmEmail": "<alarm-email>"}
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2045459Z 	Signing Profiles             : {}
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2045640Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2045755Z Initiating deployment
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2046005Z =====================
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.2046136Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.9848700Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:46.9849185Z 	File with same data already exists at db4f37a0f1e8c15b334d9ead6a16f823.template, skipping upload
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:47.3583982Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:47.3583996Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:47.3584184Z Waiting for changeset to be created..
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:28:47.3584374Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.8244081Z CloudFormation stack changeset
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.8244573Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.8244949Z Operation                LogicalResourceId        ResourceType             Replacement            
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.8245328Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9538057Z * Modify                 AnalyticsFunction        AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9538635Z * Modify                 Api                      AWS::ApiGateway::RestA   False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9539079Z                                                   pi                                              
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9539582Z * Modify                 AuthTriggersFunction     AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9540283Z * Modify                 BookingFunction          AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9540817Z * Modify                 CheckinFunction          AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9541342Z * Modify                 EventsFunction           AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9541736Z * Modify                 HealthFunction           AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9542087Z * Modify                 StreamProcessorFunctio   AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9542389Z                          n                                                                        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9542859Z * Modify                 TicketsFunction          AWS::Lambda::Function    False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9543190Z * Modify                 UserPool                 AWS::Cognito::UserPool   False                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9543520Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9543696Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9543703Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9544041Z Changeset created successfully. arn:aws:cloudformation:us-east-1:380897727215:changeSet/samcli-deploy1791217726/39affaeb-486d-4754-9921-24dacc070e3a
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:07.9544341Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7539756Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7540271Z 2026-10-05 16:29:08 - Waiting for stack create/update to complete
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7540528Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7540708Z CloudFormation events from stack operations (refresh every 5.0 seconds)
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7541249Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7541813Z ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:08.7542200Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9672127Z UPDATE_IN_PROGRESS       AWS::CloudFormation::S   ticketing-platform       User Initiated         
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9672671Z                          tack                                                                     
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9673200Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    HealthFunction           -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9673800Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    StreamProcessorFunctio   -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9674273Z                                                   n                                               
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9675031Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    CheckinFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9675622Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    BookingFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9676200Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    AuthTriggersFunction     -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9676672Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    AnalyticsFunction        -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9677040Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    TicketsFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:13.9677402Z UPDATE_IN_PROGRESS       AWS::Lambda::Function    EventsFunction           -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3863410Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    AuthTriggersFunction     Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3864032Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3864625Z UPDATE_COMPLETE          AWS::Lambda::Function    AuthTriggersFunction     -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3865225Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    StreamProcessorFunctio   Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3865780Z CONFIGURATION_COMPLETE                            n                        check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3866330Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    TicketsFunction          Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3866872Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3867419Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    BookingFunction          Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3867959Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3868516Z UPDATE_COMPLETE          AWS::Lambda::Function    StreamProcessorFunctio   -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3868821Z                                                   n                                               
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3869329Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    HealthFunction           Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3869678Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3870019Z UPDATE_COMPLETE          AWS::Lambda::Function    TicketsFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3870489Z UPDATE_COMPLETE          AWS::Lambda::Function    BookingFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3870851Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    CheckinFunction          Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3871196Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3871581Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    EventsFunction           Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3871933Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3872285Z UPDATE_IN_PROGRESS -     AWS::Lambda::Function    AnalyticsFunction        Eventual consistency   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3872630Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3872972Z UPDATE_COMPLETE          AWS::Lambda::Function    HealthFunction           -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3873330Z UPDATE_COMPLETE          AWS::Lambda::Function    CheckinFunction          -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3873686Z UPDATE_COMPLETE          AWS::Lambda::Function    EventsFunction           -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:24.3874046Z UPDATE_COMPLETE          AWS::Lambda::Function    AnalyticsFunction        -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5930568Z UPDATE_COMPLETE_CLEANU   AWS::CloudFormation::S   ticketing-platform       -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5931545Z P_IN_PROGRESS            tack                                                                     
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5932116Z UPDATE_COMPLETE          AWS::CloudFormation::S   ticketing-platform       -                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5932597Z                          tack                                                                     
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5933077Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.5933264Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6925799Z CloudFormation outputs from deployed stack
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6926276Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6926768Z Outputs                                                                                         
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6927241Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6927778Z Key                 StreamProcessorFunctionName                                                 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6928279Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6928838Z Value               ticketing-platform-StreamProcessorFunction-eJ0V0sb6DM5w                     
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6929153Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6929399Z Key                 WebBucketName                                                               
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6929860Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6930487Z Value               ticketing-platform-webbucket-txmsfqlzmfsj                                   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6930782Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6931024Z Key                 ImagesBaseUrl                                                               
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6931485Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6932030Z Value               https://d1uyb69qzwmwla.cloudfront.net                                       
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6932483Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6932734Z Key                 WebDistributionId                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6933203Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6933674Z Value               E3SU1ILD9M7AD5                                                              
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6933914Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6934134Z Key                 WebUrl                                                                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6934576Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6935097Z Value               https://d1q6wyylth1fcb.cloudfront.net                                       
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6935380Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6935616Z Key                 StreamDlqUrl                                                                
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6936077Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6936591Z Value               https://sqs.us-east-1.amazonaws.com/380897727215/ticketing-platform-        
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6937160Z StreamDeadLetterQueue-0mOAyG5FEZ98                                                              
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6937384Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6937541Z Key                 UserPoolClientId                                                            
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6937832Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6938138Z Value               qq41a2q488820v4i6ao65po27                                                   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6938305Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6938446Z Key                 TableName                                                                   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6938813Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6939150Z Value               ticketing-platform-TicketingTable-L6X0CG4SF1R1                              
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6939341Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6939488Z Key                 ImagesBucketName                                                            
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6939777Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6940192Z Value               ticketing-platform-imagesbucket-ga7i4ijw3vt2                                
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6940381Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6940520Z Key                 ApiUrl                                                                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6940797Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6941142Z Value               https://no859w0om8.execute-api.us-east-1.amazonaws.com/prod                 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6941341Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6941486Z Key                 UserPoolId                                                                  
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6941773Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6942070Z Value               us-east-1_jmwWZv6Bb                                                         
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6942228Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6942363Z Key                 Region                                                                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6942636Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6942922Z Value               us-east-1                                                                   
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6943087Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6943232Z Key                 DashboardUrl                                                                
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6943519Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6943982Z Value               https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-         
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6944370Z east-1#dashboards:name=ticketing-platform-overview                                              
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6944563Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6944712Z Key                 AlarmTopicArn                                                               
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6945001Z Description         -                                                                           
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6945319Z Value               arn:aws:sns:us-east-1:380897727215:ticketing-platform-                      
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6945645Z AlarmTopic-3Lzw72WBYoWV                                                                         
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6945964Z -------------------------------------------------------------------------------------------------
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6946130Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6946133Z 
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6946284Z Successfully created/updated stack - ticketing-platform in us-east-1
+Deploy to prod (needs approval)	Deploy the stack	2026-10-05T16:29:29.6946440Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	﻿2026-10-05T16:29:30.0738498Z ##[group]Run npm run deploy:frontend
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0738822Z [36;1mnpm run deploy:frontend[0m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793121Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793281Z env:
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793402Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793537Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793673Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0793869Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0794118Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0794358Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0794580Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0794796Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0795015Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0795218Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0795454Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0795659Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0798037Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.0798173Z ##[endgroup]
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.1414594Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.1415037Z > event-ticketing-platform@1.0.0 deploy:frontend
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.1415304Z > node scripts/deploy-frontend.mjs
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:30.1415419Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:31.2900581Z 1/4 building the app…
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:31.3468596Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:31.3469048Z > ticketing-frontend@1.0.0 build
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:31.3469296Z > tsc --noEmit && vite build
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:31.3469397Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:33.2283874Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:33.2680997Z transforming...
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.0541443Z [32m✓[39m 167 modules transformed.
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1258057Z rendering chunks...
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1781768Z computing gzip size...
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1854588Z [2mdist/[22m[32mindex.html                                [39m[1m[2m  0.90 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1855420Z [2mdist/[22m[2massets/[22m[35mindex-DgRdH4z4.css                 [39m[1m[2m 10.79 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1856232Z [2mdist/[22m[2massets/[22m[36mqr-scanner.min-B_PV4o73.js         [39m[1m[2m 15.77 kB[22m[1m[22m[2m │ gzip:   5.61 kB[22m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1857067Z [2mdist/[22m[2massets/[22m[36mqr-scanner-worker.min-D85Z9gVD.js  [39m[1m[2m 43.95 kB[22m[1m[22m[2m │ gzip:  10.46 kB[22m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1857888Z [2mdist/[22m[2massets/[22m[36mindex-IcKGVXkz.js                  [39m[1m[2m339.11 kB[22m[1m[22m[2m │ gzip: 109.41 kB[22m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.1858388Z [32m✓ built in 4.94s[39m
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.2371662Z 2/4 writing config.json from the stack outputs…
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.2373102Z 3/4 uploading…
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.9941661Z Completed 15.4 KiB/400.0 KiB (95.3 KiB/s) with 4 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:38.9942791Z upload: frontend/dist/assets/qr-scanner.min-B_PV4o73.js to s3://ticketing-platform-webbucket-txmsfqlzmfsj/assets/qr-scanner.min-B_PV4o73.js
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.0150447Z Completed 15.4 KiB/400.0 KiB (95.3 KiB/s) with 3 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.0373558Z Completed 346.6 KiB/400.0 KiB (1.9 MiB/s) with 3 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.0374008Z Completed 357.1 KiB/400.0 KiB (1.7 MiB/s) with 3 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.0374485Z upload: frontend/dist/assets/index-DgRdH4z4.css to s3://ticketing-platform-webbucket-txmsfqlzmfsj/assets/index-DgRdH4z4.css
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.1294970Z Completed 357.1 KiB/400.0 KiB (1.7 MiB/s) with 2 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.1295416Z Completed 400.0 KiB/400.0 KiB (1.3 MiB/s) with 2 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.1295964Z upload: frontend/dist/assets/qr-scanner-worker.min-D85Z9gVD.js to s3://ticketing-platform-webbucket-txmsfqlzmfsj/assets/qr-scanner-worker.min-D85Z9gVD.js
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.2194649Z Completed 400.0 KiB/400.0 KiB (1.3 MiB/s) with 1 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.2195390Z upload: frontend/dist/assets/index-IcKGVXkz.js to s3://ticketing-platform-webbucket-txmsfqlzmfsj/assets/index-IcKGVXkz.js
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.7820936Z Completed 901 Bytes/901 Bytes (5.2 KiB/s) with 1 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:39.7823119Z upload: frontend/dist/index.html to s3://ticketing-platform-webbucket-txmsfqlzmfsj/index.html
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:40.3783330Z Completed 214 Bytes/214 Bytes (1.1 KiB/s) with 1 file(s) remaining
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:40.3784031Z upload: frontend/dist/config.json to s3://ticketing-platform-webbucket-txmsfqlzmfsj/config.json
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:40.4412276Z 4/4 clearing the CDN cache for index.html and config.json…
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:40.9998802Z InProgress
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:41.0573241Z 
+Deploy to prod (needs approval)	Publish the frontend (same script as local use)	2026-10-05T16:29:41.0573985Z Done. Open: https://d1q6wyylth1fcb.cloudfront.net
+Deploy to prod (needs approval)	Smoke test	﻿2026-10-05T16:29:41.0709419Z ##[group]Run URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0710296Z [36;1mURL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0710872Z [36;1mWEB=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='WebUrl'].OutputValue" --output text)[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0711208Z [36;1mfor i in 1 2 3 4 5 6 7 8 9 10; do[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0711423Z [36;1m  code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/health" || true)[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0711638Z [36;1m  [ "$code" = "200" ] && break[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0711826Z [36;1m  echo "health returned $code, retrying ($i/10)"; sleep 6[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0712011Z [36;1mdone[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0712183Z [36;1m[ "$code" = "200" ] || { echo "API health check failed ($code)"; exit 1; }[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0712438Z [36;1mweb=$(curl -s -o /dev/null -w '%{http_code}' "$WEB/")[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0712666Z [36;1m[ "$web" = "200" ] || { echo "website check failed ($web)"; exit 1; }[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0712894Z [36;1mecho "API /health and the website both answer 200"[0m
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0763677Z shell: /usr/bin/bash -e {0}
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0763822Z env:
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0763941Z   AWS_REGION: us-east-1
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0764073Z   NODE_VERSION: 22
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0764203Z   STACK_NAME: ticketing-platform
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0764391Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0764628Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0764860Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0765074Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0765287Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0765504Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0765833Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0766057Z   AWS_ACCESS_KEY_ID: ***
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0766245Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0768608Z   AWS_SESSION_TOKEN: ***
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:41.0768739Z ##[endgroup]
+Deploy to prod (needs approval)	Smoke test	2026-10-05T16:29:42.7206001Z API /health and the website both answer 200
+Deploy to prod (needs approval)	Post Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:29:42.7260756Z Post job cleanup.
+Deploy to prod (needs approval)	Post Run actions/setup-python@v5	﻿2026-10-05T16:29:42.7963656Z Post job cleanup.
+Deploy to prod (needs approval)	Post Run actions/setup-python@v5	2026-10-05T16:29:42.8662952Z (node:2684) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to prod (needs approval)	Post Run actions/setup-python@v5	2026-10-05T16:29:42.8663458Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to prod (needs approval)	Post Run actions/setup-node@v4	﻿2026-10-05T16:29:42.8788831Z Post job cleanup.
+Deploy to prod (needs approval)	Post Run actions/setup-node@v4	2026-10-05T16:29:42.9560335Z (node:2692) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to prod (needs approval)	Post Run actions/setup-node@v4	2026-10-05T16:29:42.9561194Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to prod (needs approval)	Post Run actions/setup-node@v4	2026-10-05T16:29:42.9562150Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1, not saving cache.
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	﻿2026-10-05T16:29:42.9673479Z Post job cleanup.
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0187938Z [command]/usr/bin/git version
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0216951Z git version 2.55.0
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0269838Z Temporarily overriding HOME='/home/runner/work/_temp/874eac2f-56a8-4912-89d3-73b315abb7df' before making global git config changes
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0270896Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0271856Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0300009Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0330842Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0516217Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0582203Z http.https://github.com/.extraheader
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0590809Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0626880Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0808425Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to prod (needs approval)	Post Run actions/checkout@v4	2026-10-05T16:29:43.0835478Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to prod (needs approval)	Complete job	﻿2026-10-05T16:29:43.1101845Z Cleaning up orphan processes
+Deploy to prod (needs approval)	Complete job	2026-10-05T16:29:43.1308135Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, aws-actions/configure-aws-credentials@v4, aws-actions/setup-sam@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

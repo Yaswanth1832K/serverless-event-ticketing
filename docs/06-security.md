@@ -71,7 +71,7 @@ Not protected: the CSP uses wildcards for the API Gateway, S3 and CloudFront hos
 - No AWS access key or password is in the repository, the frontend or the template. The frontend holds only Cognito public ids and the signed-in user's own token.
 - The demo accounts use the throw-away password in [demo-guide.md](demo-guide.md). That is deliberate demo data on this project's own pool and must not be reused.
 - Scripts that talk to AWS use the developer's own credentials. The load-test and e2e runners generate random passwords per run, keep them in memory, and delete the users afterwards.
-- CI uses OIDC role assumption with no stored keys. **This has never run** ([ci-cd-setup.md](ci-cd-setup.md), L40), and the deploy role is broad (L41).
+- CI uses OIDC role assumption with no stored keys. **It has run green once, by manual trigger** ([ci-cd-setup.md](ci-cd-setup.md), L40), and the deploy role is broad (L41).
 
 ## 9. Detection and response
 

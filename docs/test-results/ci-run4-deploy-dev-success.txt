@@ -1,0 +1,525 @@
+Deploy to dev	Set up job	﻿2026-10-05T16:26:45.2839240Z Current runner version: '2.337.0'
+Deploy to dev	Set up job	2026-10-05T16:26:45.2877273Z ##[group]Runner Image Provisioner
+Deploy to dev	Set up job	2026-10-05T16:26:45.2878724Z Hosted Compute Agent
+Deploy to dev	Set up job	2026-10-05T16:26:45.2879961Z Version: 20260901.588
+Deploy to dev	Set up job	2026-10-05T16:26:45.2881181Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Deploy to dev	Set up job	2026-10-05T16:26:45.2882491Z Build Date: 2026-09-01T19:56:44Z
+Deploy to dev	Set up job	2026-10-05T16:26:45.2884220Z Worker ID: {c154fd97-acba-4391-a003-34bd5c92bb32}
+Deploy to dev	Set up job	2026-10-05T16:26:45.2885697Z Azure Region: centralus
+Deploy to dev	Set up job	2026-10-05T16:26:45.2886874Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:26:45.2889322Z ##[group]Operating System
+Deploy to dev	Set up job	2026-10-05T16:26:45.2890390Z Ubuntu
+Deploy to dev	Set up job	2026-10-05T16:26:45.2891478Z 24.04.5
+Deploy to dev	Set up job	2026-10-05T16:26:45.2892382Z LTS
+Deploy to dev	Set up job	2026-10-05T16:26:45.2893556Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:26:45.2894753Z ##[group]Runner Image
+Deploy to dev	Set up job	2026-10-05T16:26:45.2895830Z Image: ubuntu-24.04
+Deploy to dev	Set up job	2026-10-05T16:26:45.2896936Z Version: 20260927.320.1
+Deploy to dev	Set up job	2026-10-05T16:26:45.2898944Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Deploy to dev	Set up job	2026-10-05T16:26:45.2902333Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Deploy to dev	Set up job	2026-10-05T16:26:45.2904270Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:26:45.2906183Z ##[group]GITHUB_TOKEN Permissions
+Deploy to dev	Set up job	2026-10-05T16:26:45.2909047Z Contents: read
+Deploy to dev	Set up job	2026-10-05T16:26:45.2910070Z Metadata: read
+Deploy to dev	Set up job	2026-10-05T16:26:45.2910941Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:26:45.2914397Z Secret source: Actions
+Deploy to dev	Set up job	2026-10-05T16:26:45.2916105Z Cache mode: write
+Deploy to dev	Set up job	2026-10-05T16:26:45.2917688Z Prepare workflow directory
+Deploy to dev	Set up job	2026-10-05T16:26:45.3564101Z Prepare all required actions
+Deploy to dev	Set up job	2026-10-05T16:26:45.3634475Z Getting action download info
+Deploy to dev	Set up job	2026-10-05T16:26:45.6773849Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Deploy to dev	Set up job	2026-10-05T16:26:45.7622906Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Deploy to dev	Set up job	2026-10-05T16:26:45.8546799Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Deploy to dev	Set up job	2026-10-05T16:26:45.9282902Z Download action repository 'aws-actions/setup-sam@v2' (SHA:f84ec7d548307efafe33230528756de3c5841a17)
+Deploy to dev	Set up job	2026-10-05T16:26:46.2703946Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+Deploy to dev	Set up job	2026-10-05T16:26:46.7400761Z Complete job name: Deploy to dev
+Deploy to dev	Run actions/checkout@v4	﻿2026-10-05T16:26:46.8193195Z ##[group]Run actions/checkout@v4
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8194481Z with:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8195093Z   repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8199351Z   token: ***
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8199833Z   ssh-strict: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8200302Z   ssh-user: git
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8200777Z   persist-credentials: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8201294Z   clean: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8201773Z   sparse-checkout-cone-mode: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8202338Z   fetch-depth: 1
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8202802Z   fetch-tags: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8203564Z   show-progress: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8204136Z   lfs: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8204601Z   submodules: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8205221Z   set-safe-directory: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8205771Z   allow-unsafe-pr-checkout: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8206632Z env:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8207095Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8207604Z   NODE_VERSION: 22
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8208097Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.8208666Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9257018Z Syncing repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9259535Z ##[group]Getting Git version info
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9260704Z Working directory is '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9262080Z [command]/usr/bin/git version
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9317835Z git version 2.55.0
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9344208Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9365092Z Temporarily overriding HOME='/home/runner/work/_temp/6cbcdd6b-e815-43e8-8d86-cee6c71b3cea' before making global git config changes
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9367872Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9376652Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9432862Z Deleting the contents of '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9457457Z ##[group]Initializing the repository
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9459326Z [command]/usr/bin/git init /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9560872Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9562910Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9564992Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9566328Z hint: call:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9567017Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9567909Z hint: 	git config --global init.defaultBranch <name>
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9569311Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9570413Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9572080Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9573669Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9574480Z hint: 	git branch -m <name>
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9575467Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9576637Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9578849Z Initialized empty Git repository in /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/.git/
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9581924Z [command]/usr/bin/git remote add origin https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9632326Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9634098Z ##[group]Disabling automatic garbage collection
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9637337Z [command]/usr/bin/git config --local gc.auto 0
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9765337Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9767027Z ##[group]Setting up auth
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9769713Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:46.9797793Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0102870Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0148292Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0395691Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0432960Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0670542Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0713044Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0715061Z ##[group]Fetching the repository
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.0723587Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ec6d735ed89f1d81b025733a897e7096591426a6:refs/remotes/origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6629519Z From https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6630659Z  * [new ref]         ec6d735ed89f1d81b025733a897e7096591426a6 -> origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6643045Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6644738Z ##[group]Determining the checkout info
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6646374Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6647503Z [command]/usr/bin/git sparse-checkout disable
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6710520Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6744801Z ##[group]Checking out the ref
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6750291Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6970213Z Switched to a new branch 'main'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.6974646Z branch 'main' set up to track 'origin/main'.
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.7024034Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.7027496Z [command]/usr/bin/git log -1 --format=%H
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:26:47.7056376Z ec6d735ed89f1d81b025733a897e7096591426a6
+Deploy to dev	Run actions/setup-node@v4	﻿2026-10-05T16:26:47.7341964Z ##[group]Run actions/setup-node@v4
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7342584Z with:
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7342990Z   node-version: 22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7343656Z   cache: npm
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7344287Z   cache-dependency-path: package-lock.json
+Deploy to dev	Run actions/setup-node@v4	frontend/package-lock.json
+Deploy to dev	Run actions/setup-node@v4	
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7345039Z   always-auth: false
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7345492Z   check-latest: false
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7349246Z   token: ***
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7349663Z env:
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7350060Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7350524Z   NODE_VERSION: 22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7350970Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.7351473Z ##[endgroup]
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.8831360Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.8836428Z (node:2311) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.8838765Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:47.8840794Z ##[group]Environment details
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.2657168Z node: v22.23.3
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.2658731Z npm: 10.9.9
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.2659941Z yarn: 1.22.22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.2662317Z ##[endgroup]
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.2684449Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.3773693Z /home/runner/.npm
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.5876676Z Cache hit for: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:48.5988731Z (node:2311) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:49.6786263Z Received 102016234 of 102016234 (100.0%), 100.4 MBs/sec
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:49.6787148Z Cache Size: ~97 MB (102016234 B)
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:49.6821432Z [command]/usr/bin/tar -xf /home/runner/work/_temp/f37788ec-2b9e-48cb-a645-e59ef8200190/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:49.8737973Z Cache restored successfully
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:26:49.8784808Z Cache restored from key: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to dev	Run actions/setup-python@v5	﻿2026-10-05T16:26:49.9024255Z ##[group]Run actions/setup-python@v5
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9024646Z with:
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9024888Z   python-version: 3.12
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9025152Z   check-latest: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9027791Z   token: ***
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9028045Z   update-environment: true
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9028325Z   allow-prereleases: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9028611Z   freethreaded: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9028850Z env:
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9029075Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9029350Z   NODE_VERSION: 22
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9029592Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:49.9029854Z ##[endgroup]
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:50.0437608Z ##[group]Installed versions
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:50.0546139Z Successfully set up CPython (3.12.14)
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:50.0547109Z (node:2360) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:50.0548301Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:26:50.0548957Z ##[endgroup]
+Deploy to dev	Run aws-actions/setup-sam@v2	﻿2026-10-05T16:26:50.0778178Z ##[group]Run aws-actions/setup-sam@v2
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0778761Z with:
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0779124Z   use-installer: true
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0779521Z env:
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0779867Z   AWS_REGION: us-east-1
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0780267Z   NODE_VERSION: 22
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0781032Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0781653Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0782468Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0783564Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0784310Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0785036Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0785765Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.0786368Z ##[endgroup]
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:50.5611761Z Cache hit for: sam-cli-linux-ubuntu24-x86_64-1.166.2
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:51.7224021Z Received 71925839 of 88703055 (81.1%), 68.6 MBs/sec
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:52.1814734Z Received 88703055 of 88703055 (100.0%), 57.9 MBs/sec
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:52.1816991Z Cache Size: ~85 MB (88703055 B)
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:52.1929617Z [command]/usr/bin/tar -xf /home/runner/work/_temp/bc69b752-8971-406d-abb2-59b7b597ff95/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:52.7403150Z Cache restored successfully
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:26:52.7445244Z Using cached AWS SAM CLI 1.166.2 from GitHub Actions cache
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:26:52.7665714Z ##[group]Run aws-actions/configure-aws-credentials@v4
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7666103Z with:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7666419Z   role-to-assume: arn:aws:iam::380897727215:role/ticketing-ci-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7666787Z   aws-region: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7667047Z   role-session-name: gha-dev-37340770993
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7667360Z   audience: sts.amazonaws.com
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7667633Z   output-env-credentials: true
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7667890Z env:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7668084Z   AWS_REGION: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7668310Z   NODE_VERSION: 22
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7668535Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7668847Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7669316Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7669758Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7670149Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7670542Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7670965Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:52.7671304Z ##[endgroup]
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:53.0811269Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:26:53.2226916Z Authenticated as assumedRoleId AROAVRL2GCLXXWLYCKMFE:gha-dev-37340770993
+Deploy to dev	Run npm ci	﻿2026-10-05T16:26:53.2740958Z ##[group]Run npm ci
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.2741299Z [36;1mnpm ci[0m
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.2999240Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.2999586Z env:
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.2999828Z   AWS_REGION: us-east-1
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3000091Z   NODE_VERSION: 22
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3000341Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3000716Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3001214Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3001705Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3002143Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3002581Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3003022Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3003689Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3004136Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3004504Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3009846Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Run npm ci	2026-10-05T16:26:53.3010097Z ##[endgroup]
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5256057Z 
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5257333Z added 95 packages, and audited 96 packages in 4s
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5265746Z 
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5266224Z 13 packages are looking for funding
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5267164Z   run `npm fund` for details
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5483900Z 
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5485393Z 5 vulnerabilities (3 moderate, 1 high, 1 critical)
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5486028Z 
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5486588Z To address all issues (including breaking changes), run:
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5487405Z   npm audit fix --force
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5487753Z 
+Deploy to dev	Run npm ci	2026-10-05T16:26:57.5488038Z Run `npm audit` for details.
+Deploy to dev	Run npm ci --prefix frontend	﻿2026-10-05T16:26:57.6124584Z ##[group]Run npm ci --prefix frontend
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6125015Z [36;1mnpm ci --prefix frontend[0m
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6188986Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6189306Z env:
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6189549Z   AWS_REGION: us-east-1
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6189822Z   NODE_VERSION: 22
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6190086Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6190442Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6190941Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6191450Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6191908Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6192341Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6192785Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6193177Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6193907Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6194350Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6199643Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:57.6199931Z ##[endgroup]
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:26:59.0275350Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.6807598Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.6808550Z added 248 packages, and audited 249 packages in 3s
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.6809173Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.6809710Z 36 packages are looking for funding
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.6810346Z   run `npm fund` for details
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7173116Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7174278Z 7 vulnerabilities (5 moderate, 1 high, 1 critical)
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7174613Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7174888Z To address all issues (including breaking changes), run:
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7175314Z   npm audit fix --force
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7175496Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:27:00.7175673Z Run `npm audit` for details.
+Deploy to dev	Build	﻿2026-10-05T16:27:00.7471418Z ##[group]Run npm run build
+Deploy to dev	Build	2026-10-05T16:27:00.7471784Z [36;1mnpm run build[0m
+Deploy to dev	Build	2026-10-05T16:27:00.7535335Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Build	2026-10-05T16:27:00.7535626Z env:
+Deploy to dev	Build	2026-10-05T16:27:00.7535847Z   AWS_REGION: us-east-1
+Deploy to dev	Build	2026-10-05T16:27:00.7536101Z   NODE_VERSION: 22
+Deploy to dev	Build	2026-10-05T16:27:00.7536339Z   STACK_NAME: ticketing-dev
+Deploy to dev	Build	2026-10-05T16:27:00.7536663Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:27:00.7537132Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Build	2026-10-05T16:27:00.7537582Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:27:00.7537989Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:27:00.7538428Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:27:00.7538847Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Build	2026-10-05T16:27:00.7539211Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Build	2026-10-05T16:27:00.7539861Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Build	2026-10-05T16:27:00.7540241Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Build	2026-10-05T16:27:00.7545817Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Build	2026-10-05T16:27:00.7546074Z ##[endgroup]
+Deploy to dev	Build	2026-10-05T16:27:00.8579966Z 
+Deploy to dev	Build	2026-10-05T16:27:00.8580725Z > event-ticketing-platform@1.0.0 build
+Deploy to dev	Build	2026-10-05T16:27:00.8581150Z > sam build
+Deploy to dev	Build	2026-10-05T16:27:00.8581301Z 
+Deploy to dev	Build	2026-10-05T16:27:01.6451823Z 
+Deploy to dev	Build	2026-10-05T16:27:01.6452902Z 	SAM CLI now collects telemetry to better understand customer needs.
+Deploy to dev	Build	2026-10-05T16:27:01.6453715Z 
+Deploy to dev	Build	2026-10-05T16:27:01.6454211Z 	You can OPT OUT and disable telemetry collection by setting the
+Deploy to dev	Build	2026-10-05T16:27:01.6454885Z 	environment variable SAM_CLI_TELEMETRY=0 in your shell.
+Deploy to dev	Build	2026-10-05T16:27:01.6455704Z 	Thanks for your help!
+Deploy to dev	Build	2026-10-05T16:27:01.6456403Z 
+Deploy to dev	Build	2026-10-05T16:27:01.6457585Z 	Learn More: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-telemetry.html
+Deploy to dev	Build	2026-10-05T16:27:01.6458859Z 
+Deploy to dev	Build	2026-10-05T16:27:02.0682170Z Starting Build use cache
+Deploy to dev	Build	2026-10-05T16:27:02.3259998Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/health runtime: nodejs22.x architecture: arm64 functions: HealthFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3275903Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/auth-triggers runtime: nodejs22.x architecture: arm64 functions: AuthTriggersFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3289828Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/events runtime: nodejs22.x architecture: arm64 functions: EventsFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3295856Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/tickets runtime: nodejs22.x architecture: arm64 functions: TicketsFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3321533Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/booking runtime: nodejs22.x architecture: arm64 functions: BookingFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3328709Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/checkin runtime: nodejs22.x architecture: arm64 functions: CheckinFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3368871Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/analytics runtime: nodejs22.x architecture: arm64 functions: AnalyticsFunction
+Deploy to dev	Build	2026-10-05T16:27:02.3390538Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/stream-processor runtime: nodejs22.x architecture: arm64 functions: StreamProcessorFunction
+Deploy to dev	Build	2026-10-05T16:27:02.6715073Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.6754332Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.6892845Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.7095427Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.7297141Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.7415507Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.7631058Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.7801894Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.7875120Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.7985161Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.8048743Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.8136482Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.8348537Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.8504903Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:02.9466257Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:27:02.9504394Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:27:03.3594125Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3595741Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AuthTriggersFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3596747Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3597339Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function HealthFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3597918Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3598510Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function EventsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3599055Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3599623Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function BookingFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3600429Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3601083Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function TicketsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3601620Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3602197Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function CheckinFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3602753Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3603711Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function StreamProcessorFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3604531Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3605371Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AnalyticsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:27:03.3606144Z 
+Deploy to dev	Build	2026-10-05T16:27:03.3607435Z You are using source maps, note that this comes with a performance hit! Set Sourcemap to false and remove NODE_OPTIONS: --enable-source-maps to disable source maps.
+Deploy to dev	Build	2026-10-05T16:27:03.3608696Z 
+Deploy to dev	Build	2026-10-05T16:27:03.4099537Z 
+Deploy to dev	Build	2026-10-05T16:27:03.4100252Z Build Succeeded
+Deploy to dev	Build	2026-10-05T16:27:03.4100571Z 
+Deploy to dev	Build	2026-10-05T16:27:03.4100862Z Built Artifacts  : .aws-sam/build
+Deploy to dev	Build	2026-10-05T16:27:03.4101496Z Built Template   : .aws-sam/build/template.yaml
+Deploy to dev	Build	2026-10-05T16:27:03.4101867Z 
+Deploy to dev	Build	2026-10-05T16:27:03.4102069Z Commands you can use next
+Deploy to dev	Build	2026-10-05T16:27:03.4102505Z =========================
+Deploy to dev	Build	2026-10-05T16:27:03.4103034Z [*] Validate SAM template: sam validate
+Deploy to dev	Build	2026-10-05T16:27:03.4103968Z [*] Invoke Function: sam local invoke
+Deploy to dev	Build	2026-10-05T16:27:03.4104808Z [*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
+Deploy to dev	Build	2026-10-05T16:27:03.4105569Z [*] Deploy: sam deploy --guided
+Deploy to dev	Deploy the stack	﻿2026-10-05T16:27:03.8701138Z ##[group]Run sam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-dev/qr-signing-secret" "AlarmEmail=<alarm-email>"
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8703681Z [36;1msam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-dev/qr-signing-secret" "AlarmEmail=<alarm-email>"[0m
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8767839Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8768152Z env:
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8768393Z   AWS_REGION: us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8768664Z   NODE_VERSION: 22
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8768927Z   STACK_NAME: ticketing-dev
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8769285Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8769774Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8770314Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8770755Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8771188Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8771661Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8772057Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8773701Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8774163Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8779651Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:27:03.8779934Z ##[endgroup]
+Deploy to dev	Deploy the stack	2026-10-05T16:27:05.5757808Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:05.5759014Z 	Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to dev	Deploy the stack	2026-10-05T16:27:05.5760444Z 	Auto resolution of buckets can be turned off by setting resolve_s3=False
+Deploy to dev	Deploy the stack	2026-10-05T16:27:05.5761835Z 	To use a specific S3 bucket, set --s3-bucket=<bucket_name>
+Deploy to dev	Deploy the stack	2026-10-05T16:27:05.5762846Z 	Above settings can be stored in samconfig.toml
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.2456926Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.2458237Z 	File with same data already exists at afa492f27a5cb43e6381c4e35ab99e84, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.2979773Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.2981103Z 	File with same data already exists at c415719e0b920f2adc6911c271bcf6bf, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.4866748Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.4868099Z 	File with same data already exists at 940e709987483a54179838fa1db34d57, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.6477625Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.6478955Z 	File with same data already exists at e29fcf787267a7294744b44bd2ab0458, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.8414589Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:06.8415719Z 	File with same data already exists at a18a7d2d75a84f1b53b233addd5f9b20, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.0315991Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.0316909Z 	File with same data already exists at 114f291b6091daed44bf1202a3e61b3b, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.1896634Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.1897527Z 	File with same data already exists at 50a2a21b2f0785945395519160d45e5d, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.3560242Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.3561157Z 	File with same data already exists at dec8be75157a0a1b279eb431b26281c6, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5059508Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5060311Z 	Deploying with following values
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5060957Z 	===============================
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5061595Z 	Stack name                   : ticketing-dev
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5062184Z 	Region                       : us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5062743Z 	Confirm changeset            : False
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5063582Z 	Disable rollback             : False
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5064541Z 	Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5065519Z 	Capabilities                 : ["CAPABILITY_IAM"]
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5066875Z 	Parameter overrides          : {"QrSecretParamName": "/ticketing-dev/qr-signing-secret", "AlarmEmail": "<alarm-email>"}
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5068180Z 	Signing Profiles             : {}
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5069145Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5069386Z Initiating deployment
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5069855Z =====================
+Deploy to dev	Deploy the stack	2026-10-05T16:27:07.5070127Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:08.4334680Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:08.4335774Z 	File with same data already exists at db4f37a0f1e8c15b334d9ead6a16f823.template, skipping upload
+Deploy to dev	Deploy the stack	2026-10-05T16:27:08.8673124Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:08.8673203Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:08.8674340Z Waiting for changeset to be created..
+Deploy to dev	Deploy the stack	2026-10-05T16:27:14.0222120Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:27:14.0222884Z No changes to deploy. Stack ticketing-dev is up to date
+Deploy to dev	Publish the frontend (same script as local use)	﻿2026-10-05T16:27:14.5167725Z ##[group]Run npm run deploy:frontend
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5168111Z [36;1mnpm run deploy:frontend[0m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5230132Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5230421Z env:
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5230649Z   AWS_REGION: us-east-1
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5230895Z   NODE_VERSION: 22
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5231142Z   STACK_NAME: ticketing-dev
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5231489Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5231950Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5232420Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5232833Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5233444Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5233876Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5234252Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5234652Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5235057Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5240266Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.5240522Z ##[endgroup]
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.6278708Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.6279415Z > event-ticketing-platform@1.0.0 deploy:frontend
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.6279952Z > node scripts/deploy-frontend.mjs
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:14.6280184Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:15.9832411Z 1/4 building the app…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:16.0783359Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:16.0784418Z > ticketing-frontend@1.0.0 build
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:16.0785085Z > tsc --noEmit && vite build
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:16.0785416Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:19.4060093Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:19.4840953Z transforming...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.4019742Z [32m✓[39m 167 modules transformed.
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.5247259Z rendering chunks...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6189393Z computing gzip size...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6302830Z [2mdist/[22m[32mindex.html                                [39m[1m[2m  0.90 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6304802Z [2mdist/[22m[2massets/[22m[35mindex-DgRdH4z4.css                 [39m[1m[2m 10.79 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6306303Z [2mdist/[22m[2massets/[22m[36mqr-scanner.min-B_PV4o73.js         [39m[1m[2m 15.77 kB[22m[1m[22m[2m │ gzip:   5.61 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6307455Z [2mdist/[22m[2massets/[22m[36mqr-scanner-worker.min-D85Z9gVD.js  [39m[1m[2m 43.95 kB[22m[1m[22m[2m │ gzip:  10.46 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6308581Z [2mdist/[22m[2massets/[22m[36mindex-IcKGVXkz.js                  [39m[1m[2m339.11 kB[22m[1m[22m[2m │ gzip: 109.41 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6309955Z [32m✓ built in 9.19s[39m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6927630Z 2/4 writing config.json from the stack outputs…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:28.6954446Z 3/4 uploading…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7009713Z Completed 331.2 KiB/400.0 KiB (4.4 MiB/s) with 4 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7010938Z Completed 341.7 KiB/400.0 KiB (1.6 MiB/s) with 4 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7012683Z upload: frontend/dist/assets/index-DgRdH4z4.css to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/index-DgRdH4z4.css
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7449145Z Completed 341.7 KiB/400.0 KiB (1.6 MiB/s) with 3 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7449995Z Completed 357.1 KiB/400.0 KiB (1.4 MiB/s) with 3 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7451083Z upload: frontend/dist/assets/qr-scanner.min-B_PV4o73.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/qr-scanner.min-B_PV4o73.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7592714Z Completed 357.1 KiB/400.0 KiB (1.4 MiB/s) with 2 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7594021Z Completed 400.0 KiB/400.0 KiB (1.4 MiB/s) with 2 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.7595896Z upload: frontend/dist/assets/qr-scanner-worker.min-D85Z9gVD.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/qr-scanner-worker.min-D85Z9gVD.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.8200165Z Completed 400.0 KiB/400.0 KiB (1.4 MiB/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:29.8201721Z upload: frontend/dist/assets/index-IcKGVXkz.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/index-IcKGVXkz.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:30.6814909Z Completed 901 Bytes/901 Bytes (4.8 KiB/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:30.6816223Z upload: frontend/dist/index.html to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/index.html
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:31.7552807Z Completed 215 Bytes/215 Bytes (540 Bytes/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:31.7554244Z upload: frontend/dist/config.json to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/config.json
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:31.8577872Z 4/4 clearing the CDN cache for index.html and config.json…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:32.6504087Z InProgress
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:32.7525498Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:27:32.7526399Z Done. Open: https://d1iw857zp4bogy.cloudfront.net
+Deploy to dev	Smoke test	﻿2026-10-05T16:27:32.7708710Z ##[group]Run URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7709853Z [36;1mURL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7710897Z [36;1mWEB=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='WebUrl'].OutputValue" --output text)[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7711575Z [36;1mfor i in 1 2 3 4 5 6 7 8 9 10; do[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7711980Z [36;1m  code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/health" || true)[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7712379Z [36;1m  [ "$code" = "200" ] && break[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7712740Z [36;1m  echo "health returned $code, retrying ($i/10)"; sleep 6[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7713102Z [36;1mdone[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7713942Z [36;1m[ "$code" = "200" ] || { echo "API health check failed ($code)"; exit 1; }[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7714450Z [36;1mweb=$(curl -s -o /dev/null -w '%{http_code}' "$WEB/")[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7714885Z [36;1m[ "$web" = "200" ] || { echo "website check failed ($web)"; exit 1; }[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7715322Z [36;1mecho "API /health and the website both answer 200"[0m
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7778500Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7778792Z env:
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7779015Z   AWS_REGION: us-east-1
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7779278Z   NODE_VERSION: 22
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7779523Z   STACK_NAME: ticketing-dev
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7779852Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7780331Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7780800Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7781209Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7781642Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7782073Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7782447Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7782841Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7783214Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7788861Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Smoke test	2026-10-05T16:27:32.7789133Z ##[endgroup]
+Deploy to dev	Smoke test	2026-10-05T16:27:35.0874415Z API /health and the website both answer 200
+Deploy to dev	Post Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:27:35.0968795Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-python@v5	﻿2026-10-05T16:27:35.2150544Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-python@v5	2026-10-05T16:27:35.3492709Z (node:2909) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Post Run actions/setup-python@v5	2026-10-05T16:27:35.3494925Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Post Run actions/setup-node@v4	﻿2026-10-05T16:27:35.3677126Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:27:35.4940693Z (node:2917) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:27:35.4941828Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:27:35.4945217Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1, not saving cache.
+Deploy to dev	Post Run actions/checkout@v4	﻿2026-10-05T16:27:35.5071577Z Post job cleanup.
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6055401Z [command]/usr/bin/git version
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6114518Z git version 2.55.0
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6147256Z Temporarily overriding HOME='/home/runner/work/_temp/d04786e7-fc28-4e38-bc69-d986e06a051f' before making global git config changes
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6149215Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6157453Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6205705Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6249571Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6562052Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6593905Z http.https://github.com/.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6606897Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6643909Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6932924Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:27:35.6977794Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to dev	Complete job	﻿2026-10-05T16:27:35.7398739Z Cleaning up orphan processes
+Deploy to dev	Complete job	2026-10-05T16:27:35.7715089Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, aws-actions/configure-aws-credentials@v4, aws-actions/setup-sam@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+

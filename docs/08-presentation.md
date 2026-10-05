@@ -8,7 +8,7 @@ Numbers are from `docs/test-results/` (see [07-final-report-outline.md](07-final
 |---|---|---|---|
 | 1 | Title | Name, team, one-line description | "A ticketing system that cannot oversell and admits each ticket once." |
 | 2 | Problem | Forms and spreadsheets: overselling, copied tickets, no live view | "The last five seats are where the bugs are." |
-| 3 | Objectives | O1 to O7 with a status mark each (see report outline section 2) | "Six are tested. One, the pipeline, is written but not yet run." |
+| 3 | Objectives | O1 to O7 with a status mark each (see report outline section 2) | "Six are tested. One, the pipeline, has run green once by manual trigger; the push trigger is not enabled." |
 | 4 | Architecture | Diagram 1 from [architecture-diagram.md](architecture-diagram.md) | Follow one request: browser, API Gateway, Lambda, DynamoDB. |
 | 5 | Data model | Diagram 2: one table, event and ticket in one partition | "One table, so one transaction can cover the event counter and its tickets." |
 | 6 | Overselling protection | The condition `sold <= capacity - n`, one transaction | "The database decides, not the page." Result: 50 buyers, 5 seats: 5 booked, 45 sold out, 3 runs. |
@@ -17,7 +17,7 @@ Numbers are from `docs/test-results/` (see [07-final-report-outline.md](07-final
 | 9 | Security | Roles from token groups, no Staff signup, ownership checks, signed QR, private buckets, headers | "The website only hides menus. The server enforces everything." Show the "not protected" list too. |
 | 10 | DevOps and monitoring | SAM, dashboard screenshot, four alarms, load test table | 2881 requests, 0 errors, p95 672 ms from a laptop. One 429 test: 1162 throttled, 0 5xx. |
 | 11 | What went wrong | The failures table (report section 8.6) | "We kept the failed runs. The open one is L25: the stream trigger can miss a record right after deploy." |
-| 12 | Limitations, future work, thanks | L16, L19, L20, L25, L36, L40; future work list | "Written, not verified" items stated plainly. Questions. |
+| 12 | Limitations, future work, thanks | L16, L19, L20, L25, L36, L40; future work list | Unproven items stated plainly. Questions. |
 
 **Screenshots you must still capture by hand** for slides 4 and 10: the CloudWatch dashboard and the stack in the AWS console.
 
@@ -85,7 +85,7 @@ Artillery from one laptop: 2881 requests over 136 s at about 21 requests/s on av
 Not for a real failure. We forced one alarm and CloudWatch ran its notification action. E-mail delivery was not verified because the subscription needed a confirmation click. A 429 does not trigger the 5xx alarm; a 503 would.
 
 **Q18. Is the CI/CD working?**
-It is written (lint, typecheck, tests, `sam validate`, automatic dev deploy, prod after approval, OIDC with no stored keys) and each step was run on a laptop, but **the workflow has never run on GitHub** and the AWS role has never been used. We would expect to fix a permission on the first run.
+Yes, once, started by hand: lint, typecheck, tests and `sam validate` on GitHub, then an automatic deploy to dev, then a deploy to prod that waited for a reviewer's approval, with OIDC and no stored keys. The first run failed because our trust policy had the wrong GitHub subject format, which we fixed. What we have **not** shown: that it triggers on push (that trigger is off for now), a failing deploy, or why one run's prod job stalled for 14 minutes before we cancelled it.
 
 **Q19. What did you get wrong along the way?**
 Several things, all documented: a doc formula that was not valid DynamoDB, metrics that did not appear because of the log format, tests that started before routes were live, a wrong plan for changing the stream trigger, UI bugs we only saw in screenshots, and an API rename that left the alarm watching an empty metric. The failed runs are kept in `docs/test-results/`.

@@ -222,8 +222,18 @@ All traffic goes through the real API with a dedicated organizer, 8 dedicated at
 - `npm run lint` (Biome): first run 20 errors, 137 warnings. Fixed: list keys built from an index (Scanner), an untyped variable, assignments inside expressions in a test, wording of image alt texts, and a11y markup on the chart. Intentional cases got a written `biome-ignore` reason (control-character regexes that exist to reject those characters, hook dependency lists that are deliberate). Now **0 errors, 33 warnings** (mostly `any` in tests). Formatting and the non-null-assertion rule are switched off (D27).
 - `npm run typecheck`: passes. `npm test`: **133/133**. Frontend `typecheck` passes and frontend tests **68/68**. `sam validate --lint`: valid.
 
+### CI/CD runs on GitHub (2026-10-05, manual trigger)
+
+| Run | Result | Log |
+|---|---|---|
+| #1 | verify passed; deploy-dev **failed** at the AWS login: the role trust policy used `repo:<owner>/<repo>:...` but this repository sends the immutable subject `repo:<owner>@<id>/<repo>@<id>:environment:dev`. Cause confirmed in CloudTrail. Trust policies fixed on both roles. | `ci-run1-FAILED-deploy-dev.txt` |
+| #2 | verify and deploy-dev passed (dev stack created from the template: `CREATE_COMPLETE`, about 8 minutes). The prod job then stayed `queued` with no approval request (empty `pending_deployments`, a deployment record with no status) for about 14 minutes, and the run was cancelled. **Cause not identified**; GitHub status showed no incident. | `ci-run2-deploy-dev-success.txt` |
+| #4 | **green**: verify, deploy-dev ("No changes to deploy", publish, smoke test), prod paused at the reviewer gate, then deployed after approval and passed its smoke test. | `ci-run4-verify-success.txt`, `ci-run4-deploy-dev-success.txt`, `ci-run4-deploy-prod-success.txt` |
+
+The prod deployment of run 4 updated 8 Lambda functions (code), the API body and the user pool's Lambda configuration, all in place, no replacement. The local preview had said "no changes" because the pipeline builds on Linux, so the bundles differ. Afterwards (read-only checks): stack `UPDATE_COMPLETE`, `/health` 200, site 200, 4 alarms OK, one Enabled stream mapping at `LATEST`, DLQ empty, 6 users and 3 groups intact, demo event 6 of 10 sold.
+
 ### Not verified
-- **The GitHub Actions workflow (`.github/workflows/ci-cd.yml`) has never run.** Written, not verified (L40). Its steps were run individually on this machine; the OIDC role, the policy in `ci/`, the environments and the approval gate have never been exercised. Setup: `docs/ci-cd-setup.md`.
+- **CI/CD, what the runs did not prove** (L40): the `push` and `pull_request` triggers (manual-only for now), failure and rollback paths, and the cause of the run-2 prod stall. The deploy role is broad (L41). Setup: `docs/ci-cd-setup.md`. The committed logs have the alarm e-mail address redacted.
 - E-mail delivery of alarms (L37).
 
 ## Final re-run on the final deployment (2026-10-05, after the Stage 9 redeploys)

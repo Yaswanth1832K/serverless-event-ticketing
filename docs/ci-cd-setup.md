@@ -1,8 +1,8 @@
 # CI/CD setup checklist
 
-**Status: written, not verified.** The workflow `.github/workflows/ci-cd.yml` has never run on GitHub, and the AWS role and policy below have never been used. Expect to fix a permission or a typo on the first run (limitation L40). Everything marked "run it" is a command you run yourself.
+**Status: run successfully once by manual trigger (2026-10-05).** Run 1 failed at the AWS login (trust policy subject format, see troubleshooting), run 2 was cancelled when its prod job stalled, and run 4 went green: verify, dev deploy, approved prod deploy and smoke tests. The `push` and `pull_request` triggers are not enabled yet and have not been tested (limitation L40). Everything marked "run it" is a command you run yourself.
 
-**Progress (2026-10-05):** steps 1 to 3 were done with the AWS CLI for repository `Yaswanth1832K/serverless-event-ticketing`: the OIDC provider, the roles `ticketing-ci-dev` and `ticketing-ci-prod` (inline policy `deploy`) and the SSM parameter `/ticketing-dev/qr-signing-secret` now exist. The roles have been **created but never assumed**: the pipeline has not run.
+**Progress (2026-10-05):** steps 1 to 3 were done with the AWS CLI for repository `Yaswanth1832K/serverless-event-ticketing`: the OIDC provider, the roles `ticketing-ci-dev` and `ticketing-ci-prod` (inline policy `deploy`) and the SSM parameter `/ticketing-dev/qr-signing-secret`. Steps 5 to 7 were done with `git` and `gh`. The roles were assumed by GitHub Actions in runs 2 and 4. Logs: `docs/test-results/ci-run1-FAILED-deploy-dev.txt`, `ci-run2-deploy-dev-success.txt`, `ci-run4-*.txt`.
 
 **Trigger (temporary):** the first commit has `workflow_dispatch` only, so nothing runs on push. Start it by hand (Actions tab, "ci-cd", Run workflow on `main`, or `gh workflow run ci-cd.yml --ref main`). A manual run on `main` runs `verify`, then `deploy-dev` automatically, then waits for approval before `deploy-prod`. Once a run has been seen to work, a second commit restores `pull_request` and `push` to `main`.
 

@@ -1,0 +1,1185 @@
+Deploy to dev	Set up job	﻿2026-10-05T16:03:54.9200836Z Current runner version: '2.337.0'
+Deploy to dev	Set up job	2026-10-05T16:03:54.9221690Z ##[group]Runner Image Provisioner
+Deploy to dev	Set up job	2026-10-05T16:03:54.9222424Z Hosted Compute Agent
+Deploy to dev	Set up job	2026-10-05T16:03:54.9223109Z Version: 20260901.588
+Deploy to dev	Set up job	2026-10-05T16:03:54.9223742Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Deploy to dev	Set up job	2026-10-05T16:03:54.9224333Z Build Date: 2026-09-01T19:56:44Z
+Deploy to dev	Set up job	2026-10-05T16:03:54.9224911Z Worker ID: {c1bef52a-00b2-4da4-9309-e683dd3c1c4a}
+Deploy to dev	Set up job	2026-10-05T16:03:54.9225499Z Azure Region: westus3
+Deploy to dev	Set up job	2026-10-05T16:03:54.9225973Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:03:54.9227216Z ##[group]Operating System
+Deploy to dev	Set up job	2026-10-05T16:03:54.9227765Z Ubuntu
+Deploy to dev	Set up job	2026-10-05T16:03:54.9228174Z 24.04.5
+Deploy to dev	Set up job	2026-10-05T16:03:54.9228673Z LTS
+Deploy to dev	Set up job	2026-10-05T16:03:54.9229101Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:03:54.9229656Z ##[group]Runner Image
+Deploy to dev	Set up job	2026-10-05T16:03:54.9230149Z Image: ubuntu-24.04
+Deploy to dev	Set up job	2026-10-05T16:03:54.9230591Z Version: 20260927.320.1
+Deploy to dev	Set up job	2026-10-05T16:03:54.9231502Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Deploy to dev	Set up job	2026-10-05T16:03:54.9233377Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Deploy to dev	Set up job	2026-10-05T16:03:54.9234157Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:03:54.9235051Z ##[group]GITHUB_TOKEN Permissions
+Deploy to dev	Set up job	2026-10-05T16:03:54.9236787Z Contents: read
+Deploy to dev	Set up job	2026-10-05T16:03:54.9237274Z Metadata: read
+Deploy to dev	Set up job	2026-10-05T16:03:54.9237814Z ##[endgroup]
+Deploy to dev	Set up job	2026-10-05T16:03:54.9239427Z Secret source: Actions
+Deploy to dev	Set up job	2026-10-05T16:03:54.9240280Z Cache mode: write
+Deploy to dev	Set up job	2026-10-05T16:03:54.9241053Z Prepare workflow directory
+Deploy to dev	Set up job	2026-10-05T16:03:55.0314851Z Prepare all required actions
+Deploy to dev	Set up job	2026-10-05T16:03:55.0352920Z Getting action download info
+Deploy to dev	Set up job	2026-10-05T16:03:55.3615033Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Deploy to dev	Set up job	2026-10-05T16:03:55.8763114Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Deploy to dev	Set up job	2026-10-05T16:03:56.4715603Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Deploy to dev	Set up job	2026-10-05T16:03:56.5735569Z Download action repository 'aws-actions/setup-sam@v2' (SHA:f84ec7d548307efafe33230528756de3c5841a17)
+Deploy to dev	Set up job	2026-10-05T16:03:57.1720957Z Download action repository 'aws-actions/configure-aws-credentials@v4' (SHA:7474bc4690e29a8392af63c5b98e7449536d5c3a)
+Deploy to dev	Set up job	2026-10-05T16:03:57.9397690Z Complete job name: Deploy to dev
+Deploy to dev	Run actions/checkout@v4	﻿2026-10-05T16:03:57.9909842Z ##[group]Run actions/checkout@v4
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9910346Z with:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9910569Z   repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9912853Z   token: ***
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913034Z   ssh-strict: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913205Z   ssh-user: git
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913378Z   persist-credentials: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913574Z   clean: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913758Z   sparse-checkout-cone-mode: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9913964Z   fetch-depth: 1
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9914149Z   fetch-tags: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9914319Z   show-progress: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9914529Z   lfs: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9914689Z   submodules: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9914887Z   set-safe-directory: true
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9915086Z   allow-unsafe-pr-checkout: false
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9915451Z env:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9915612Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9915790Z   NODE_VERSION: 22
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9915961Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:57.9916182Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0710459Z Syncing repository: Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0712292Z ##[group]Getting Git version info
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0713053Z Working directory is '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0713743Z [command]/usr/bin/git version
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0788803Z git version 2.55.0
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0805740Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0821095Z Temporarily overriding HOME='/home/runner/work/_temp/e242aac3-1e56-4784-b780-b9dcb99899a4' before making global git config changes
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0822800Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0825820Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0875525Z Deleting the contents of '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0878752Z ##[group]Initializing the repository
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0882824Z [command]/usr/bin/git init /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0985617Z hint: Using 'master' as the name for the initial branch. This default branch name
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0986526Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0987101Z hint: to use in all of your new repositories, which will suppress this warning,
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0987495Z hint: call:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0987688Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0987938Z hint: 	git config --global init.defaultBranch <name>
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0988287Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0988626Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0989079Z hint: 'development'. The just-created branch can be renamed via this command:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0989417Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0993306Z hint: 	git branch -m <name>
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0993914Z hint:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0994495Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.0995689Z Initialized empty Git repository in /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/.git/
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1004099Z [command]/usr/bin/git remote add origin https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1048009Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1048743Z ##[group]Disabling automatic garbage collection
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1052497Z [command]/usr/bin/git config --local gc.auto 0
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1156374Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1156931Z ##[group]Setting up auth
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1157849Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1159454Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1478858Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1511135Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1709664Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1742118Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1944571Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1982026Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1982917Z ##[group]Fetching the repository
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:58.1989925Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ec6d735ed89f1d81b025733a897e7096591426a6:refs/remotes/origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0806419Z From https://github.com/Yaswanth1832K/serverless-event-ticketing
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0806979Z  * [new ref]         ec6d735ed89f1d81b025733a897e7096591426a6 -> origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0809929Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0810309Z ##[group]Determining the checkout info
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0812255Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0817455Z [command]/usr/bin/git sparse-checkout disable
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0866953Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0928740Z ##[group]Checking out the ref
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.0931886Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.1109714Z Switched to a new branch 'main'
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.1115895Z branch 'main' set up to track 'origin/main'.
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.1120475Z ##[endgroup]
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.1157580Z [command]/usr/bin/git log -1 --format=%H
+Deploy to dev	Run actions/checkout@v4	2026-10-05T16:03:59.1180323Z ec6d735ed89f1d81b025733a897e7096591426a6
+Deploy to dev	Run actions/setup-node@v4	﻿2026-10-05T16:03:59.1390661Z ##[group]Run actions/setup-node@v4
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1390927Z with:
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1391090Z   node-version: 22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1391259Z   cache: npm
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1391510Z   cache-dependency-path: package-lock.json
+Deploy to dev	Run actions/setup-node@v4	frontend/package-lock.json
+Deploy to dev	Run actions/setup-node@v4	
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1391827Z   always-auth: false
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1392002Z   check-latest: false
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1394254Z   token: ***
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1394422Z env:
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1394596Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1394783Z   NODE_VERSION: 22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1394963Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.1395166Z ##[endgroup]
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.2536987Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.2540856Z (node:2076) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.2541626Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.2542927Z ##[group]Environment details
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.5914286Z node: v22.23.3
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.5914754Z npm: 10.9.9
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.5915001Z yarn: 1.22.22
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.5915673Z ##[endgroup]
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.5948835Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.6914544Z /home/runner/.npm
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.9108500Z Cache hit for: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:03:59.9183548Z (node:2076) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.1398173Z Received 33554432 of 102016234 (32.9%), 32.0 MBs/sec
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.6475581Z Received 102016234 of 102016234 (100.0%), 64.5 MBs/sec
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.6476234Z Cache Size: ~97 MB (102016234 B)
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.6525744Z [command]/usr/bin/tar -xf /home/runner/work/_temp/59b9cc1e-e117-4dda-80cb-797d122e7d74/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.8058370Z Cache restored successfully
+Deploy to dev	Run actions/setup-node@v4	2026-10-05T16:04:01.8106181Z Cache restored from key: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Deploy to dev	Run actions/setup-python@v5	﻿2026-10-05T16:04:01.8270974Z ##[group]Run actions/setup-python@v5
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8271216Z with:
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8271385Z   python-version: 3.12
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8271575Z   check-latest: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8273822Z   token: ***
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274018Z   update-environment: true
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274225Z   allow-prereleases: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274412Z   freethreaded: false
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274588Z env:
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274749Z   AWS_REGION: us-east-1
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8274938Z   NODE_VERSION: 22
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8275112Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.8275302Z ##[endgroup]
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.9327002Z ##[group]Installed versions
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.9401326Z (node:2124) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.9402388Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.9403291Z Successfully set up CPython (3.12.14)
+Deploy to dev	Run actions/setup-python@v5	2026-10-05T16:04:01.9403859Z ##[endgroup]
+Deploy to dev	Run aws-actions/setup-sam@v2	﻿2026-10-05T16:04:01.9561495Z ##[group]Run aws-actions/setup-sam@v2
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9561744Z with:
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9561908Z   use-installer: true
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9562105Z env:
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9562261Z   AWS_REGION: us-east-1
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9562791Z   NODE_VERSION: 22
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9562977Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9563232Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9563592Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9563940Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9564246Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9564548Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9564844Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:01.9565097Z ##[endgroup]
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:02.5625896Z Cache hit for: sam-cli-linux-ubuntu24-x86_64-1.166.2
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:03.7788525Z Received 33554432 of 88703055 (37.8%), 32.0 MBs/sec
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:04.2550515Z Received 88703055 of 88703055 (100.0%), 57.3 MBs/sec
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:04.2551506Z Cache Size: ~85 MB (88703055 B)
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:04.2587678Z [command]/usr/bin/tar -xf /home/runner/work/_temp/5b1fdf19-31a8-4f75-9487-dae634f22e60/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:04.6971090Z Cache restored successfully
+Deploy to dev	Run aws-actions/setup-sam@v2	2026-10-05T16:04:04.7007751Z Using cached AWS SAM CLI 1.166.2 from GitHub Actions cache
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:04:04.7194886Z ##[group]Run aws-actions/configure-aws-credentials@v4
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7195159Z with:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7195394Z   role-to-assume: arn:aws:iam::380897727215:role/ticketing-ci-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7195677Z   aws-region: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7195883Z   role-session-name: gha-dev-37337773420
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7196119Z   audience: sts.amazonaws.com
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7196343Z   output-env-credentials: true
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7196538Z env:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7196699Z   AWS_REGION: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7196880Z   NODE_VERSION: 22
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7197053Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7197320Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7197661Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7198012Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7198319Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7198613Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7198946Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:04.7199210Z ##[endgroup]
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:05.0189573Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T16:04:05.2113167Z Authenticated as assumedRoleId AROAVRL2GCLXXWLYCKMFE:gha-dev-37337773420
+Deploy to dev	Run npm ci	﻿2026-10-05T16:04:05.2821883Z ##[group]Run npm ci
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.2822172Z [36;1mnpm ci[0m
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3067944Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3068203Z env:
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3068391Z   AWS_REGION: us-east-1
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3068596Z   NODE_VERSION: 22
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3068817Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3069086Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3069448Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3069803Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3070130Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3070443Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3070768Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3071073Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3071422Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3071738Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3075681Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Run npm ci	2026-10-05T16:04:05.3075888Z ##[endgroup]
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5028701Z 
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5029738Z added 95 packages, and audited 96 packages in 3s
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5038076Z 
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5038611Z 13 packages are looking for funding
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5039034Z   run `npm fund` for details
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5219291Z 
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5220204Z 5 vulnerabilities (3 moderate, 1 high, 1 critical)
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5220704Z 
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5221094Z To address all issues (including breaking changes), run:
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5221570Z   npm audit fix --force
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5221772Z 
+Deploy to dev	Run npm ci	2026-10-05T16:04:08.5221941Z Run `npm audit` for details.
+Deploy to dev	Run npm ci --prefix frontend	﻿2026-10-05T16:04:08.5741055Z ##[group]Run npm ci --prefix frontend
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5741380Z [36;1mnpm ci --prefix frontend[0m
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5799302Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5799538Z env:
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5799723Z   AWS_REGION: us-east-1
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5799938Z   NODE_VERSION: 22
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5800134Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5800408Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5800783Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5801158Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5801480Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5801800Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5802119Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5802412Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5803126Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5803473Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5807158Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:08.5807360Z ##[endgroup]
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:09.6345776Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9365047Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9366054Z added 248 packages, and audited 249 packages in 2s
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9366567Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9366861Z 36 packages are looking for funding
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9367323Z   run `npm fund` for details
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9644845Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9645977Z 7 vulnerabilities (5 moderate, 1 high, 1 critical)
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9646331Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9646640Z To address all issues (including breaking changes), run:
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9647104Z   npm audit fix --force
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9647311Z 
+Deploy to dev	Run npm ci --prefix frontend	2026-10-05T16:04:10.9647481Z Run `npm audit` for details.
+Deploy to dev	Build	﻿2026-10-05T16:04:10.9894672Z ##[group]Run npm run build
+Deploy to dev	Build	2026-10-05T16:04:10.9895055Z [36;1mnpm run build[0m
+Deploy to dev	Build	2026-10-05T16:04:10.9953332Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Build	2026-10-05T16:04:10.9953570Z env:
+Deploy to dev	Build	2026-10-05T16:04:10.9953762Z   AWS_REGION: us-east-1
+Deploy to dev	Build	2026-10-05T16:04:10.9953979Z   NODE_VERSION: 22
+Deploy to dev	Build	2026-10-05T16:04:10.9954178Z   STACK_NAME: ticketing-dev
+Deploy to dev	Build	2026-10-05T16:04:10.9954457Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:04:10.9954831Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Build	2026-10-05T16:04:10.9955182Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:04:10.9955520Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:04:10.9955841Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Build	2026-10-05T16:04:10.9956157Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Build	2026-10-05T16:04:10.9956449Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Build	2026-10-05T16:04:10.9956825Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Build	2026-10-05T16:04:10.9957112Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Build	2026-10-05T16:04:10.9960807Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Build	2026-10-05T16:04:10.9961018Z ##[endgroup]
+Deploy to dev	Build	2026-10-05T16:04:11.0764423Z 
+Deploy to dev	Build	2026-10-05T16:04:11.0765154Z > event-ticketing-platform@1.0.0 build
+Deploy to dev	Build	2026-10-05T16:04:11.0765498Z > sam build
+Deploy to dev	Build	2026-10-05T16:04:11.0765611Z 
+Deploy to dev	Build	2026-10-05T16:04:11.6642127Z 
+Deploy to dev	Build	2026-10-05T16:04:11.6643049Z 	SAM CLI now collects telemetry to better understand customer needs.
+Deploy to dev	Build	2026-10-05T16:04:11.6643340Z 
+Deploy to dev	Build	2026-10-05T16:04:11.6643628Z 	You can OPT OUT and disable telemetry collection by setting the
+Deploy to dev	Build	2026-10-05T16:04:11.6644216Z 	environment variable SAM_CLI_TELEMETRY=0 in your shell.
+Deploy to dev	Build	2026-10-05T16:04:11.6645250Z 	Thanks for your help!
+Deploy to dev	Build	2026-10-05T16:04:11.6645508Z 
+Deploy to dev	Build	2026-10-05T16:04:11.6646328Z 	Learn More: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-telemetry.html
+Deploy to dev	Build	2026-10-05T16:04:11.6647260Z 
+Deploy to dev	Build	2026-10-05T16:04:11.9101665Z Starting Build use cache
+Deploy to dev	Build	2026-10-05T16:04:12.0781995Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/auth-triggers runtime: nodejs22.x architecture: arm64 functions: AuthTriggersFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0805484Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/booking runtime: nodejs22.x architecture: arm64 functions: BookingFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0824463Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/events runtime: nodejs22.x architecture: arm64 functions: EventsFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0827505Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/health runtime: nodejs22.x architecture: arm64 functions: HealthFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0829436Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/tickets runtime: nodejs22.x architecture: arm64 functions: TicketsFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0831450Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/checkin runtime: nodejs22.x architecture: arm64 functions: CheckinFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0840415Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/analytics runtime: nodejs22.x architecture: arm64 functions: AnalyticsFunction
+Deploy to dev	Build	2026-10-05T16:04:12.0845066Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/stream-processor runtime: nodejs22.x architecture: arm64 functions: StreamProcessorFunction
+Deploy to dev	Build	2026-10-05T16:04:12.2961761Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.2983340Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.3386765Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.3458236Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.3561823Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.3704100Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.3824225Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.3954374Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.4075561Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.4364118Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.4454485Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.4684116Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.4954293Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.5096703Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.5347901Z package.json file not found. Bundling source without installing dependencies.
+Deploy to dev	Build	2026-10-05T16:04:12.5526438Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Deploy to dev	Build	2026-10-05T16:04:12.8830633Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8831889Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AuthTriggersFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8832704Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8833368Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function HealthFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8833954Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8834500Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function EventsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8835447Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8836063Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function BookingFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8836662Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8837371Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function TicketsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8837947Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8838555Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function CheckinFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8839140Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8839811Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function StreamProcessorFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8840429Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8841049Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AnalyticsFunction NODE_OPTIONS
+Deploy to dev	Build	2026-10-05T16:04:12.8841632Z 
+Deploy to dev	Build	2026-10-05T16:04:12.8842811Z You are using source maps, note that this comes with a performance hit! Set Sourcemap to false and remove NODE_OPTIONS: --enable-source-maps to disable source maps.
+Deploy to dev	Build	2026-10-05T16:04:12.8843626Z 
+Deploy to dev	Build	2026-10-05T16:04:12.9179553Z 
+Deploy to dev	Build	2026-10-05T16:04:12.9179986Z Build Succeeded
+Deploy to dev	Build	2026-10-05T16:04:12.9180171Z 
+Deploy to dev	Build	2026-10-05T16:04:12.9180335Z Built Artifacts  : .aws-sam/build
+Deploy to dev	Build	2026-10-05T16:04:12.9180682Z Built Template   : .aws-sam/build/template.yaml
+Deploy to dev	Build	2026-10-05T16:04:12.9180873Z 
+Deploy to dev	Build	2026-10-05T16:04:12.9180979Z Commands you can use next
+Deploy to dev	Build	2026-10-05T16:04:12.9181209Z =========================
+Deploy to dev	Build	2026-10-05T16:04:12.9181493Z [*] Validate SAM template: sam validate
+Deploy to dev	Build	2026-10-05T16:04:12.9181783Z [*] Invoke Function: sam local invoke
+Deploy to dev	Build	2026-10-05T16:04:12.9182378Z [*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
+Deploy to dev	Build	2026-10-05T16:04:12.9183684Z [*] Deploy: sam deploy --guided
+Deploy to dev	Deploy the stack	﻿2026-10-05T16:04:13.2368432Z ##[group]Run sam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-dev/qr-signing-secret" "AlarmEmail=<alarm-email>"
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2371193Z [36;1msam deploy --stack-name "$STACK_NAME" --region "$AWS_REGION" --capabilities CAPABILITY_IAM --resolve-s3 --no-confirm-changeset --no-fail-on-empty-changeset --parameter-overrides "QrSecretParamName=/ticketing-dev/qr-signing-secret" "AlarmEmail=<alarm-email>"[0m
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2440811Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2441055Z env:
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2441253Z   AWS_REGION: us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2441462Z   NODE_VERSION: 22
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2441656Z   STACK_NAME: ticketing-dev
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2441940Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2442326Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2442918Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2443258Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2443586Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2443912Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2444208Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2444515Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2444807Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2448492Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Deploy the stack	2026-10-05T16:04:13.2448712Z ##[endgroup]
+Deploy to dev	Deploy the stack	2026-10-05T16:04:14.5949993Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:14.5951131Z 	Managed S3 bucket: aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to dev	Deploy the stack	2026-10-05T16:04:14.5951830Z 	Auto resolution of buckets can be turned off by setting resolve_s3=False
+Deploy to dev	Deploy the stack	2026-10-05T16:04:14.5952385Z 	To use a specific S3 bucket, set --s3-bucket=<bucket_name>
+Deploy to dev	Deploy the stack	2026-10-05T16:04:14.5963406Z 	Above settings can be stored in samconfig.toml
+Deploy to dev	Deploy the stack	2026-10-05T16:04:15.2451865Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:15.2452771Z 	Uploading to afa492f27a5cb43e6381c4e35ab99e84  562266 / 562266  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.0678577Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.0679211Z 	Uploading to c415719e0b920f2adc6911c271bcf6bf  4541 / 4541  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.3261964Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.3263128Z 	Uploading to 940e709987483a54179838fa1db34d57  766396 / 766396  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.8733508Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:16.8734252Z 	Uploading to e29fcf787267a7294744b44bd2ab0458  585255 / 585255  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:17.4168032Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:17.4168995Z 	Uploading to a18a7d2d75a84f1b53b233addd5f9b20  744935 / 744935  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:17.9279582Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:17.9280300Z 	Uploading to 114f291b6091daed44bf1202a3e61b3b  747342 / 747342  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:18.4310439Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:18.4311169Z 	Uploading to 50a2a21b2f0785945395519160d45e5d  582206 / 582206  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:18.9694160Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:18.9694985Z 	Uploading to dec8be75157a0a1b279eb431b26281c6  583927 / 583927  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3023077Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3023825Z 	Deploying with following values
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3024430Z 	===============================
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3024891Z 	Stack name                   : ticketing-dev
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3025335Z 	Region                       : us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3025732Z 	Confirm changeset            : False
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3026108Z 	Disable rollback             : False
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3026717Z 	Deployment s3 bucket         : aws-sam-cli-managed-default-samclisourcebucket-tnlwic4mcdrv
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3027377Z 	Capabilities                 : ["CAPABILITY_IAM"]
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3028214Z 	Parameter overrides          : {"QrSecretParamName": "/ticketing-dev/qr-signing-secret", "AlarmEmail": "<alarm-email>"}
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3028950Z 	Signing Profiles             : {}
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3029175Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3029336Z Initiating deployment
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3029933Z =====================
+Deploy to dev	Deploy the stack	2026-10-05T16:04:19.3030058Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.1354770Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.1355830Z 	Uploading to db4f37a0f1e8c15b334d9ead6a16f823.template  43709 / 43709  (100.00%)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.5078011Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.5078077Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.5078717Z Waiting for changeset to be created..
+Deploy to dev	Deploy the stack	2026-10-05T16:04:20.5078987Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:30.9526477Z CloudFormation stack changeset
+Deploy to dev	Deploy the stack	2026-10-05T16:04:30.9527032Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:04:30.9527607Z Operation                LogicalResourceId        ResourceType             Replacement            
+Deploy to dev	Deploy the stack	2026-10-05T16:04:30.9528155Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2177572Z + Add                    AlarmTopicPolicy         AWS::SNS::TopicPolicy    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2178558Z + Add                    AlarmTopic               AWS::SNS::Topic          N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2179488Z + Add                    AnalyticsFunctionDashb   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2180330Z                          oardPermissionprod       n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2181222Z + Add                    AnalyticsFunctionEvent   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2182038Z                          AnalyticsPermissionpro   n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2183216Z                          d                                                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2203597Z + Add                    AnalyticsFunctionRole    AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2213486Z + Add                    AnalyticsFunction        AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2214285Z + Add                    AnalyticsLogGroup        AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2214935Z + Add                    Api5xxAlarm              AWS::CloudWatch::Alarm   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2215697Z + Add                    ApiDeploymentb40dc408f   AWS::ApiGateway::Deplo   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2216734Z                          4                        yment                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2217236Z + Add                    ApiprodStage             AWS::ApiGateway::Stage   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2217756Z + Add                    Api                      AWS::ApiGateway::RestA   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2218157Z                                                   pi                                              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2218631Z + Add                    AttendeeGroup            AWS::Cognito::UserPool   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2219051Z                                                   Group                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2219526Z + Add                    AuthTriggersFunctionRo   AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2219951Z                          le                                                                       
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2220433Z + Add                    AuthTriggersFunction     AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2220961Z + Add                    AuthTriggersLogGroup     AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2221482Z + Add                    AuthTriggersPermission   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2221913Z                                                   n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2222388Z + Add                    BookingFunctionBookPer   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2223072Z                          missionprod              n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2223730Z + Add                    BookingFunctionRole      AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2224232Z + Add                    BookingFunction          AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2224721Z + Add                    BookingLogGroup          AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2225228Z + Add                    CheckinFunctionCheckin   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2225680Z                          Permissionprod           n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2226151Z + Add                    CheckinFunctionRole      AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2226643Z + Add                    CheckinFunction          AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2227115Z + Add                    CheckinLogGroup          AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2227604Z + Add                    DlqDepthAlarm            AWS::CloudWatch::Alarm   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2228091Z + Add                    DynamoThrottleAlarm      AWS::CloudWatch::Alarm   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2228613Z + Add                    EventsFunctionCreateEv   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2229060Z                          entPermissionprod        n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2229554Z + Add                    EventsFunctionDeleteEv   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2230005Z                          entPermissionprod        n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2230490Z + Add                    EventsFunctionGetEvent   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2230936Z                          Permissionprod           n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2231669Z + Add                    EventsFunctionImageUpl   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2232410Z                          oadUrlPermissionprod     n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2233506Z + Add                    EventsFunctionListEven   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2234239Z                          tsPermissionprod         n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2235056Z + Add                    EventsFunctionMyEvents   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2235776Z                          Permissionprod           n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2236549Z + Add                    EventsFunctionRole       AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2237100Z + Add                    EventsFunctionUpdateEv   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2237595Z                          entPermissionprod        n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2238076Z + Add                    EventsFunction           AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2238570Z + Add                    EventsLogGroup           AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2239072Z + Add                    HealthFunctionHealthPe   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2239520Z                          rmissionprod             n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2240004Z + Add                    HealthFunctionMePermis   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2240429Z                          sionprod                 n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2240900Z + Add                    HealthFunctionRole       AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2241579Z + Add                    HealthFunction           AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2242080Z + Add                    HealthLogGroup           AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2242772Z + Add                    ImagesBucketPolicy       AWS::S3::BucketPolicy    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2243277Z + Add                    ImagesBucket             AWS::S3::Bucket          N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2243765Z + Add                    ImagesDistribution       AWS::CloudFront::Distr   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2244187Z                                                   ibution                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2244657Z + Add                    ImagesOriginAccessCont   AWS::CloudFront::Origi   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2245171Z                          rol                      nAccessControl                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2245674Z + Add                    LambdaErrorsAlarm        AWS::CloudWatch::Alarm   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2246177Z + Add                    OrganizerGroup           AWS::Cognito::UserPool   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2246594Z                                                   Group                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2247050Z + Add                    OverviewDashboard        AWS::CloudWatch::Dashb   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2247471Z                                                   oard                                            
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2247918Z + Add                    StaffGroup               AWS::Cognito::UserPool   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2248328Z                                                   Group                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2248793Z + Add                    StreamDeadLetterQueue    AWS::SQS::Queue          N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2249320Z + Add                    StreamProcessorFunctio   AWS::Lambda::EventSour   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2249776Z                          nTicketStream            ceMapping                                       
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2250405Z + Add                    StreamProcessorFunctio   AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2250841Z                          n                                                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2251305Z + Add                    StreamProcessorLogGrou   AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2251729Z                          p                                                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2252649Z + Add                    StreamProcessorRole      AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2253408Z + Add                    TicketingTable           AWS::DynamoDB::Table     N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2254218Z + Add                    TicketsFunctionMyTicke   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2254841Z                          tsPermissionprod         n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2255335Z + Add                    TicketsFunctionRole      AWS::IAM::Role           N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2255845Z + Add                    TicketsFunctionTicketQ   AWS::Lambda::Permissio   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2256299Z                          rPermissionprod          n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2256774Z + Add                    TicketsFunction          AWS::Lambda::Function    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2257262Z + Add                    TicketsLogGroup          AWS::Logs::LogGroup      N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2257753Z + Add                    UserPoolClient           AWS::Cognito::UserPool   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2258324Z                                                   Client                                          
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2258767Z + Add                    UserPool                 AWS::Cognito::UserPool   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2259540Z + Add                    WebBucketPolicy          AWS::S3::BucketPolicy    N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2260328Z + Add                    WebBucket                AWS::S3::Bucket          N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2261076Z + Add                    WebDistribution          AWS::CloudFront::Distr   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2261723Z                                                   ibution                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2262472Z + Add                    WebHeadersPolicy         AWS::CloudFront::Respo   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2263347Z                                                   nseHeadersPolicy                                
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2264159Z + Add                    WebOriginAccessControl   AWS::CloudFront::Origi   N/A                    
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2264911Z                                                   nAccessControl                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2265662Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2266084Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2266093Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2266968Z Changeset created successfully. arn:aws:cloudformation:us-east-1:380897727215:changeSet/samcli-deploy1791216259/174f1cd5-4ec4-4cb5-80c6-5354c155f9f4
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.2267733Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6812246Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6813230Z 2026-10-05 16:04:31 - Waiting for stack create/update to complete
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6813509Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6813768Z CloudFormation events from stack operations (refresh every 5.0 seconds)
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6814284Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6814870Z ResourceStatus           ResourceType             LogicalResourceId        ResourceStatusReason   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:31.6815409Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8139055Z CREATE_IN_PROGRESS       AWS::CloudFormation::S   ticketing-dev            User Initiated         
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8139895Z                          tack                                                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8140692Z CREATE_IN_PROGRESS       AWS::DynamoDB::Table     TicketingTable           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8141529Z CREATE_IN_PROGRESS       AWS::IAM::Role           HealthFunctionRole       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8143605Z CREATE_IN_PROGRESS       AWS::SQS::Queue          StreamDeadLetterQueue    -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8144986Z CREATE_IN_PROGRESS       AWS::CloudFront::Origi   ImagesOriginAccessCont   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8146180Z                          nAccessControl           rol                                             
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8147349Z CREATE_IN_PROGRESS       AWS::CloudFront::Respo   WebHeadersPolicy         -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8148124Z                          nseHeadersPolicy                                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8148950Z CREATE_IN_PROGRESS       AWS::IAM::Role           AuthTriggersFunctionRo   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8149637Z                                                   le                                              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8150185Z CREATE_IN_PROGRESS       AWS::S3::Bucket          WebBucket                -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8150737Z CREATE_IN_PROGRESS       AWS::CloudFront::Origi   WebOriginAccessControl   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8151207Z                          nAccessControl                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8156270Z CREATE_IN_PROGRESS       AWS::SNS::Topic          AlarmTopic               -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8156827Z CREATE_IN_PROGRESS       AWS::CloudFront::Origi   ImagesOriginAccessCont   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8157312Z                          nAccessControl           rol                      Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8157798Z CREATE_IN_PROGRESS       AWS::IAM::Role           HealthFunctionRole       Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8158228Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8158725Z CREATE_IN_PROGRESS -     AWS::CloudFront::Origi   ImagesOriginAccessCont   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8159287Z CONFIGURATION_COMPLETE   nAccessControl           rol                      check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8159833Z CREATE_IN_PROGRESS       AWS::SQS::Queue          StreamDeadLetterQueue    Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8160273Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8160765Z CREATE_IN_PROGRESS       AWS::CloudFront::Respo   WebHeadersPolicy         Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8161242Z                          nseHeadersPolicy                                  Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8161744Z CREATE_IN_PROGRESS       AWS::DynamoDB::Table     TicketingTable           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8162177Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8162776Z CREATE_IN_PROGRESS -     AWS::CloudFront::Respo   WebHeadersPolicy         Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8163335Z CONFIGURATION_COMPLETE   nseHeadersPolicy                                  check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8163878Z CREATE_IN_PROGRESS       AWS::IAM::Role           AuthTriggersFunctionRo   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8164315Z                                                   le                       Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8164787Z CREATE_IN_PROGRESS       AWS::CloudFront::Origi   WebOriginAccessControl   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8165419Z                          nAccessControl                                    Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8165937Z CREATE_IN_PROGRESS -     AWS::CloudFront::Origi   WebOriginAccessControl   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8166488Z CONFIGURATION_COMPLETE   nAccessControl                                    check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8167019Z CREATE_IN_PROGRESS       AWS::S3::Bucket          WebBucket                Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:36.8167453Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9490737Z CREATE_COMPLETE          AWS::CloudFront::Origi   ImagesOriginAccessCont   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9491718Z                          nAccessControl           rol                                             
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9492790Z CREATE_COMPLETE          AWS::CloudFront::Respo   WebHeadersPolicy         -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9493538Z                          nseHeadersPolicy                                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9494304Z CREATE_COMPLETE          AWS::CloudFront::Origi   WebOriginAccessControl   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:41.9494986Z                          nAccessControl                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:04:47.0836244Z CREATE_IN_PROGRESS       AWS::SNS::Topic          AlarmTopic               Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:47.0837150Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4048028Z CREATE_IN_PROGRESS -     AWS::IAM::Role           AuthTriggersFunctionRo   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4050123Z CONFIGURATION_COMPLETE                            le                       check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4051103Z CREATE_IN_PROGRESS -     AWS::S3::Bucket          WebBucket                Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4051965Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4052974Z CREATE_COMPLETE          AWS::IAM::Role           AuthTriggersFunctionRo   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4053643Z                                                   le                                              
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4054106Z CREATE_COMPLETE          AWS::S3::Bucket          WebBucket                -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4054635Z CREATE_IN_PROGRESS -     AWS::IAM::Role           HealthFunctionRole       Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4055165Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4055683Z CREATE_COMPLETE          AWS::IAM::Role           HealthFunctionRole       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4056215Z CREATE_IN_PROGRESS       AWS::CloudFront::Distr   WebDistribution          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4056667Z                          ibution                                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4057178Z CREATE_IN_PROGRESS       AWS::CloudFront::Distr   WebDistribution          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:04:57.4057644Z                          ibution                                           Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:02.6052210Z CREATE_IN_PROGRESS -     AWS::DynamoDB::Table     TicketingTable           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:02.6053457Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:02.6054286Z CREATE_COMPLETE          AWS::DynamoDB::Table     TicketingTable           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7965139Z CREATE_IN_PROGRESS       AWS::IAM::Role           TicketsFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7966595Z CREATE_IN_PROGRESS       AWS::IAM::Role           CheckinFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7968475Z CREATE_IN_PROGRESS       AWS::IAM::Role           BookingFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7969361Z CREATE_IN_PROGRESS       AWS::IAM::Role           AnalyticsFunctionRole    -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7970240Z CREATE_IN_PROGRESS       AWS::IAM::Role           TicketsFunctionRole      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7970774Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7971282Z CREATE_IN_PROGRESS       AWS::IAM::Role           CheckinFunctionRole      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7971734Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7972234Z CREATE_IN_PROGRESS       AWS::IAM::Role           AnalyticsFunctionRole    Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7972828Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7973299Z CREATE_IN_PROGRESS       AWS::IAM::Role           BookingFunctionRole      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:07.7973749Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3706722Z CREATE_IN_PROGRESS -     AWS::IAM::Role           AnalyticsFunctionRole    Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3707705Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3708581Z CREATE_IN_PROGRESS -     AWS::SNS::Topic          AlarmTopic               Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3709410Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3710698Z CREATE_COMPLETE          AWS::IAM::Role           AnalyticsFunctionRole    -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3711563Z CREATE_IN_PROGRESS -     AWS::IAM::Role           CheckinFunctionRole      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3712404Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3713427Z CREATE_IN_PROGRESS -     AWS::IAM::Role           BookingFunctionRole      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3713971Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3714503Z CREATE_COMPLETE          AWS::SNS::Topic          AlarmTopic               -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3715019Z CREATE_COMPLETE          AWS::IAM::Role           CheckinFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3715540Z CREATE_IN_PROGRESS -     AWS::IAM::Role           TicketsFunctionRole      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3716062Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3716579Z CREATE_COMPLETE          AWS::IAM::Role           BookingFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3717137Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   Api5xxAlarm              -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3717659Z CREATE_COMPLETE          AWS::IAM::Role           TicketsFunctionRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3718179Z CREATE_IN_PROGRESS       AWS::SNS::TopicPolicy    AlarmTopicPolicy         -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3718728Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   DynamoThrottleAlarm      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3719273Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   Api5xxAlarm              Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3719714Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3720209Z CREATE_IN_PROGRESS       AWS::SNS::TopicPolicy    AlarmTopicPolicy         Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:23.3720659Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6159955Z CREATE_IN_PROGRESS -     AWS::SNS::TopicPolicy    AlarmTopicPolicy         Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6161217Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6162090Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   DynamoThrottleAlarm      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6162971Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6163699Z CREATE_COMPLETE          AWS::SNS::TopicPolicy    AlarmTopicPolicy         -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6164556Z CREATE_IN_PROGRESS -     AWS::CloudWatch::Alarm   Api5xxAlarm              Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6165376Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6165904Z CREATE_COMPLETE          AWS::CloudWatch::Alarm   Api5xxAlarm              -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6166450Z CREATE_IN_PROGRESS -     AWS::CloudWatch::Alarm   DynamoThrottleAlarm      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6166969Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:28.6167471Z CREATE_COMPLETE          AWS::CloudWatch::Alarm   DynamoThrottleAlarm      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3634045Z CREATE_IN_PROGRESS -     AWS::SQS::Queue          StreamDeadLetterQueue    Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3634944Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3635528Z CREATE_COMPLETE          AWS::SQS::Queue          StreamDeadLetterQueue    -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3636512Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   DlqDepthAlarm            -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3637061Z CREATE_IN_PROGRESS       AWS::IAM::Role           StreamProcessorRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3637617Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   DlqDepthAlarm            Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3638085Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3638582Z CREATE_IN_PROGRESS       AWS::IAM::Role           StreamProcessorRole      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:05:44.3639029Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:05:49.6185300Z CREATE_IN_PROGRESS -     AWS::CloudWatch::Alarm   DlqDepthAlarm            Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:05:49.6186273Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:05:49.6187165Z CREATE_COMPLETE          AWS::CloudWatch::Alarm   DlqDepthAlarm            -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:06:05.3749907Z CREATE_IN_PROGRESS -     AWS::IAM::Role           StreamProcessorRole      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:06:05.3750880Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:06:05.3751689Z CREATE_COMPLETE          AWS::IAM::Role           StreamProcessorRole      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1363821Z CREATE_IN_PROGRESS -     AWS::CloudFront::Distr   WebDistribution          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1365180Z CONFIGURATION_COMPLETE   ibution                                           check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1366538Z CREATE_COMPLETE          AWS::CloudFront::Distr   WebDistribution          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1367613Z                          ibution                                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1368571Z CREATE_IN_PROGRESS       AWS::S3::Bucket          ImagesBucket             -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1369555Z CREATE_IN_PROGRESS       AWS::Lambda::Function    HealthFunction           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1370933Z CREATE_IN_PROGRESS       AWS::Lambda::Function    StreamProcessorFunctio   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1371550Z                                                   n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1372041Z CREATE_IN_PROGRESS       AWS::Lambda::Function    BookingFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1372782Z CREATE_IN_PROGRESS       AWS::Lambda::Function    TicketsFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1373374Z CREATE_IN_PROGRESS       AWS::Lambda::Function    AnalyticsFunction        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1373916Z CREATE_IN_PROGRESS       AWS::Lambda::Function    AuthTriggersFunction     -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1374460Z CREATE_IN_PROGRESS       AWS::S3::BucketPolicy    WebBucketPolicy          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1374988Z CREATE_IN_PROGRESS       AWS::Lambda::Function    CheckinFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1375515Z CREATE_IN_PROGRESS       AWS::S3::Bucket          ImagesBucket             Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1375933Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1376400Z CREATE_IN_PROGRESS       AWS::S3::BucketPolicy    WebBucketPolicy          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:06.1376831Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4013552Z CREATE_IN_PROGRESS -     AWS::S3::BucketPolicy    WebBucketPolicy          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4014795Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4016388Z CREATE_IN_PROGRESS       AWS::Lambda::Function    HealthFunction           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4017110Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4017895Z CREATE_IN_PROGRESS       AWS::Lambda::Function    StreamProcessorFunctio   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4018571Z                                                   n                        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4019281Z CREATE_IN_PROGRESS       AWS::Lambda::Function    TicketsFunction          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4019928Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4020643Z CREATE_IN_PROGRESS       AWS::Lambda::Function    AuthTriggersFunction     Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4021291Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4021831Z CREATE_IN_PROGRESS       AWS::Lambda::Function    BookingFunction          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4022261Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4022942Z CREATE_COMPLETE          AWS::S3::BucketPolicy    WebBucketPolicy          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4023493Z CREATE_IN_PROGRESS       AWS::Lambda::Function    CheckinFunction          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4023921Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4024384Z CREATE_IN_PROGRESS       AWS::Lambda::Function    AnalyticsFunction        Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:11.4024808Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8308420Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    HealthFunction           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8309412Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8310281Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    TicketsFunction          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8311576Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8312363Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    BookingFunction          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8313525Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8314260Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    AnalyticsFunction        Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8314779Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8315284Z CREATE_COMPLETE          AWS::Lambda::Function    TicketsFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8315828Z CREATE_COMPLETE          AWS::Lambda::Function    HealthFunction           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8316368Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    AuthTriggersFunction     Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8316910Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8317436Z CREATE_COMPLETE          AWS::Lambda::Function    BookingFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8317964Z CREATE_COMPLETE          AWS::Lambda::Function    AnalyticsFunction        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8318493Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      TicketsLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8319010Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      HealthLogGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8319527Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      BookingLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8320414Z CREATE_COMPLETE          AWS::Lambda::Function    AuthTriggersFunction     -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8321237Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      AnalyticsLogGroup        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8321797Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    StreamProcessorFunctio   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8322317Z CONFIGURATION_COMPLETE                            n                        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8323014Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      TicketsLogGroup          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8323449Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8323918Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      HealthLogGroup           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8324339Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8324819Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    CheckinFunction          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8325336Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8325851Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      AuthTriggersLogGroup     -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8326371Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      BookingLogGroup          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8326809Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8327278Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AuthTriggersPermission   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8327708Z                          n                                                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8328164Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      AnalyticsLogGroup        Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8328586Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8329046Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   UserPool                 -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8329730Z CREATE_COMPLETE          AWS::Lambda::Function    StreamProcessorFunctio   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8330154Z                                                   n                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8330613Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      AuthTriggersLogGroup     Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8331036Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8331504Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AuthTriggersPermission   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8331934Z                          n                                                 Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8332407Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   AuthTriggersPermission   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8333013Z CONFIGURATION_COMPLETE   n                                                 check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8333533Z CREATE_COMPLETE          AWS::Lambda::Function    CheckinFunction          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8334063Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      StreamProcessorLogGrou   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8334487Z                                                   p                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8334952Z CREATE_IN_PROGRESS       AWS::Lambda::EventSour   StreamProcessorFunctio   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8335420Z                          ceMapping                nTicketStream                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8335947Z CREATE_COMPLETE          AWS::Lambda::Permissio   AuthTriggersPermission   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8336508Z                          n                                                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8336989Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      StreamProcessorLogGrou   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8337437Z                                                   p                        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8337889Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      CheckinLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8338415Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   UserPool                 Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8338840Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8339302Z CREATE_IN_PROGRESS -     AWS::Cognito::UserPool   UserPool                 Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8339801Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8340332Z CREATE_IN_PROGRESS       AWS::Lambda::EventSour   StreamProcessorFunctio   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:16.8340800Z                          ceMapping                nTicketStream            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0858109Z CREATE_IN_PROGRESS -     AWS::Lambda::EventSour   StreamProcessorFunctio   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0859186Z CONFIGURATION_COMPLETE   ceMapping                nTicketStream            check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0860107Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      CheckinLogGroup          Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0860830Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0861597Z CREATE_COMPLETE          AWS::Cognito::UserPool   UserPool                 -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0862482Z CREATE_COMPLETE          AWS::Lambda::EventSour   StreamProcessorFunctio   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0863437Z                          ceMapping                nTicketStream                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0864260Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   OrganizerGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0865429Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0866217Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   AttendeeGroup            -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0866922Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0867691Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   StaffGroup               -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0868386Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0869150Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   UserPoolClient           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0869650Z                          Client                                                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0870170Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   OrganizerGroup           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0870637Z                          Group                                             Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0871123Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   AttendeeGroup            Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0871564Z                          Group                                             Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0872048Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   StaffGroup               Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0872483Z                          Group                                             Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0873163Z CREATE_IN_PROGRESS       AWS::Cognito::UserPool   UserPoolClient           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0875585Z                          Client                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0876078Z CREATE_IN_PROGRESS -     AWS::Cognito::UserPool   UserPoolClient           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0876613Z CONFIGURATION_COMPLETE   Client                                            check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0877133Z CREATE_IN_PROGRESS -     AWS::S3::Bucket          ImagesBucket             Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0877640Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0878149Z CREATE_COMPLETE          AWS::Cognito::UserPool   UserPoolClient           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0878583Z                          Client                                                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0879036Z CREATE_COMPLETE          AWS::S3::Bucket          ImagesBucket             -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0879539Z CREATE_IN_PROGRESS       AWS::IAM::Role           EventsFunctionRole       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0880073Z CREATE_IN_PROGRESS       AWS::CloudFront::Distr   ImagesDistribution       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:22.0880536Z                          ibution                                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3445709Z CREATE_IN_PROGRESS       AWS::IAM::Role           EventsFunctionRole       Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3446910Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3448145Z CREATE_IN_PROGRESS       AWS::CloudFront::Distr   ImagesDistribution       Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3449059Z                          ibution                                           Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3449842Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      AnalyticsLogGroup        Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3450658Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3451423Z CREATE_COMPLETE          AWS::Logs::LogGroup      AnalyticsLogGroup        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3452993Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      HealthLogGroup           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3453797Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3454391Z CREATE_COMPLETE          AWS::Logs::LogGroup      HealthLogGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3454954Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      BookingLogGroup          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:27.3455487Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6001632Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      CheckinLogGroup          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6002874Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6003790Z CREATE_COMPLETE          AWS::Logs::LogGroup      BookingLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6004639Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      TicketsLogGroup          Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6005185Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6005723Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      AuthTriggersLogGroup     Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6006243Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6006768Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      StreamProcessorLogGrou   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6007303Z CONFIGURATION_COMPLETE                            p                        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6008215Z CREATE_COMPLETE          AWS::Logs::LogGroup      CheckinLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6008739Z CREATE_COMPLETE          AWS::Logs::LogGroup      TicketsLogGroup          -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6009257Z CREATE_COMPLETE          AWS::Logs::LogGroup      StreamProcessorLogGrou   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6009682Z                                                   p                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:08:32.6010161Z CREATE_COMPLETE          AWS::Logs::LogGroup      AuthTriggersLogGroup     -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1093958Z CREATE_IN_PROGRESS -     AWS::IAM::Role           EventsFunctionRole       Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1094994Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1095949Z CREATE_COMPLETE          AWS::IAM::Role           EventsFunctionRole       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1096706Z CREATE_IN_PROGRESS -     AWS::Cognito::UserPool   OrganizerGroup           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1097291Z CONFIGURATION_COMPLETE   Group                                             check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1097863Z CREATE_IN_PROGRESS -     AWS::Cognito::UserPool   StaffGroup               Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1098390Z CONFIGURATION_COMPLETE   Group                                             check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1098905Z CREATE_COMPLETE          AWS::Cognito::UserPool   OrganizerGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1099343Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1099843Z CREATE_COMPLETE          AWS::Cognito::UserPool   StaffGroup               -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1100274Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1100794Z CREATE_IN_PROGRESS -     AWS::Cognito::UserPool   AttendeeGroup            Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1101333Z CONFIGURATION_COMPLETE   Group                                             check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1102261Z CREATE_COMPLETE          AWS::Cognito::UserPool   AttendeeGroup            -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:08:43.1102980Z                          Group                                                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0595105Z CREATE_IN_PROGRESS -     AWS::CloudFront::Distr   ImagesDistribution       Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0596598Z CONFIGURATION_COMPLETE   ibution                                           check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0597934Z CREATE_COMPLETE          AWS::CloudFront::Distr   ImagesDistribution       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0598768Z                          ibution                                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0599586Z CREATE_IN_PROGRESS       AWS::S3::BucketPolicy    ImagesBucketPolicy       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0600441Z CREATE_IN_PROGRESS       AWS::Lambda::Function    EventsFunction           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0601283Z CREATE_IN_PROGRESS       AWS::S3::BucketPolicy    ImagesBucketPolicy       Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0601965Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0602955Z CREATE_IN_PROGRESS -     AWS::S3::BucketPolicy    ImagesBucketPolicy       Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0603529Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0604041Z CREATE_COMPLETE          AWS::S3::BucketPolicy    ImagesBucketPolicy       -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0604577Z CREATE_IN_PROGRESS       AWS::Lambda::Function    EventsFunction           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:05.0605465Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:10.3150801Z CREATE_IN_PROGRESS -     AWS::Lambda::Function    EventsFunction           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:10.3151787Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5723926Z CREATE_COMPLETE          AWS::Lambda::Function    EventsFunction           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5724870Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      EventsLogGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5725798Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   LambdaErrorsAlarm        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5726702Z CREATE_IN_PROGRESS       AWS::Logs::LogGroup      EventsLogGroup           Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5727451Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5728255Z CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   Api                      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5728713Z                          pi                                                                       
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5729244Z CREATE_IN_PROGRESS       AWS::CloudWatch::Alarm   LambdaErrorsAlarm        Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5729705Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5730175Z CREATE_IN_PROGRESS       AWS::ApiGateway::RestA   Api                      Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5730602Z                          pi                                                Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5731097Z CREATE_IN_PROGRESS -     AWS::ApiGateway::RestA   Api                      Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5731616Z CONFIGURATION_COMPLETE   pi                                                check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5732121Z CREATE_COMPLETE          AWS::ApiGateway::RestA   Api                      -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:15.5732708Z                          pi                                                                       
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8835189Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionDeleteEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8836465Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8837718Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionCreateEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8838821Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8840003Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   CheckinFunctionCheckin   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8841081Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8842288Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionMyEvents   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8843693Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8844568Z CREATE_IN_PROGRESS -     AWS::CloudWatch::Alarm   LambdaErrorsAlarm        Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8845441Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8846284Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AnalyticsFunctionDashb   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8847008Z                          n                        oardPermissionprod                              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8847826Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   TicketsFunctionTicketQ   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8848556Z                          n                        rPermissionprod                                 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8849769Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AnalyticsFunctionEvent   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8850500Z                          n                        AnalyticsPermissionpro                          
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8851104Z                                                   d                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8851877Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HealthFunctionHealthPe   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8852703Z                          n                        rmissionprod                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8853487Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionImageUpl   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8854222Z                          n                        oadUrlPermissionprod                            
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8855024Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionGetEvent   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8855748Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8856547Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionUpdateEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8857288Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8858089Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   TicketsFunctionMyTicke   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8858813Z                          n                        tsPermissionprod                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8859594Z CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ApiDeploymentb40dc408f   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8860316Z                          yment                    4                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8861146Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HealthFunctionMePermis   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8861884Z                          n                        sionprod                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8862764Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   BookingFunctionBookPer   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8863644Z                          n                        missionprod                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8864426Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionListEven   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8865146Z                          n                        tsPermissionprod                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8865941Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionDeleteEv   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8866673Z                          n                        entPermissionprod        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8867474Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   CheckinFunctionCheckin   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8868213Z                          n                        Permissionprod           Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8869018Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionDeleteEv   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8869908Z CONFIGURATION_COMPLETE   n                        entPermissionprod        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8870781Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionCreateEv   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8871529Z                          n                        entPermissionprod        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8872333Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   CheckinFunctionCheckin   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8873322Z CONFIGURATION_COMPLETE   n                        Permissionprod           check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8874210Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   TicketsFunctionTicketQ   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8875136Z                          n                        rPermissionprod          Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8875969Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionImageUpl   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8876719Z                          n                        oadUrlPermissionprod     Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8877529Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AnalyticsFunctionDashb   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8878265Z                          n                        oardPermissionprod       Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8879075Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionCreateEv   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8879957Z CONFIGURATION_COMPLETE   n                        entPermissionprod        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8880838Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HealthFunctionHealthPe   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8881575Z                          n                        rmissionprod             Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8882385Z CREATE_COMPLETE          AWS::CloudWatch::Alarm   LambdaErrorsAlarm        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8883414Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionImageUpl   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8883980Z CONFIGURATION_COMPLETE   n                        oadUrlPermissionprod     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8884526Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   TicketsFunctionTicketQ   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8885057Z CONFIGURATION_COMPLETE   n                        rPermissionprod          check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8885586Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionGetEvent   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8886036Z                          n                        Permissionprod           Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8886534Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   AnalyticsFunctionDashb   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8887066Z CONFIGURATION_COMPLETE   n                        oardPermissionprod       check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8887725Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   HealthFunctionHealthPe   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8888252Z CONFIGURATION_COMPLETE   n                        rmissionprod             check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8888780Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   AnalyticsFunctionEvent   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8889245Z                          n                        AnalyticsPermissionpro   Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8889622Z                                                   d                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8890116Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   TicketsFunctionMyTicke   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8890580Z                          n                        tsPermissionprod         Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8891074Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionMyEvents   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8891525Z                          n                        Permissionprod           Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8892014Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionGetEvent   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8892673Z CONFIGURATION_COMPLETE   n                        Permissionprod           check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8893213Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionUpdateEv   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8893663Z                          n                        entPermissionprod        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8894150Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   AnalyticsFunctionEvent   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8894803Z CONFIGURATION_COMPLETE   n                        AnalyticsPermissionpro   check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8895218Z                                                   d                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8895710Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   TicketsFunctionMyTicke   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8896235Z CONFIGURATION_COMPLETE   n                        tsPermissionprod         check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8896766Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   BookingFunctionBookPer   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8897231Z                          n                        missionprod              Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8897722Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionUpdateEv   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8898260Z CONFIGURATION_COMPLETE   n                        entPermissionprod        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8898794Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   EventsFunctionListEven   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8899244Z                          n                        tsPermissionprod         Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8899734Z CREATE_IN_PROGRESS       AWS::Lambda::Permissio   HealthFunctionMePermis   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8900179Z                          n                        sionprod                 Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8900647Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionDeleteEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8901090Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8901576Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   BookingFunctionBookPer   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8902104Z CONFIGURATION_COMPLETE   n                        missionprod              check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8902715Z CREATE_COMPLETE          AWS::Lambda::Permissio   CheckinFunctionCheckin   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8903155Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8903774Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionListEven   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8904305Z CONFIGURATION_COMPLETE   n                        tsPermissionprod         check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8904832Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   HealthFunctionMePermis   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8905350Z CONFIGURATION_COMPLETE   n                        sionprod                 check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8905853Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionCreateEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8906286Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8906761Z CREATE_COMPLETE          AWS::Lambda::Permissio   TicketsFunctionTicketQ   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8907192Z                          n                        rPermissionprod                                 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8907662Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionImageUpl   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8908098Z                          n                        oadUrlPermissionprod                            
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8908581Z CREATE_COMPLETE          AWS::Lambda::Permissio   AnalyticsFunctionDashb   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8909022Z                          n                        oardPermissionprod                              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8909509Z CREATE_IN_PROGRESS       AWS::ApiGateway::Deplo   ApiDeploymentb40dc408f   Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8909952Z                          yment                    4                        Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8910548Z CREATE_COMPLETE          AWS::Lambda::Permissio   HealthFunctionHealthPe   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8910983Z                          n                        rmissionprod                                    
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8911463Z CREATE_COMPLETE          AWS::Lambda::Permissio   AnalyticsFunctionEvent   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8911901Z                          n                        AnalyticsPermissionpro                          
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8912262Z                                                   d                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8912856Z CREATE_IN_PROGRESS -     AWS::ApiGateway::Deplo   ApiDeploymentb40dc408f   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8913400Z CONFIGURATION_COMPLETE   yment                    4                        check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8913937Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionGetEvent   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8914385Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8914851Z CREATE_COMPLETE          AWS::Lambda::Permissio   TicketsFunctionMyTicke   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8915295Z                          n                        tsPermissionprod                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8915765Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionUpdateEv   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8916198Z                          n                        entPermissionprod                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8916664Z CREATE_COMPLETE          AWS::Lambda::Permissio   BookingFunctionBookPer   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8917092Z                          n                        missionprod                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8917558Z CREATE_COMPLETE          AWS::Lambda::Permissio   HealthFunctionMePermis   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8917989Z                          n                        sionprod                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8918454Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionListEven   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8919003Z                          n                        tsPermissionprod                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8919501Z CREATE_COMPLETE          AWS::ApiGateway::Deplo   ApiDeploymentb40dc408f   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8919930Z                          yment                    4                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8920399Z CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ApiprodStage             -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8920927Z CREATE_IN_PROGRESS       AWS::CloudWatch::Dashb   OverviewDashboard        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8921354Z                          oard                                                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8921823Z CREATE_IN_PROGRESS       AWS::ApiGateway::Stage   ApiprodStage             Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8922247Z                                                                            Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8922803Z CREATE_IN_PROGRESS       AWS::CloudWatch::Dashb   OverviewDashboard        Resource creation      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:20.8923244Z                          oard                                              Initiated              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1967719Z CREATE_IN_PROGRESS -     AWS::Lambda::Permissio   EventsFunctionMyEvents   Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1968424Z CONFIGURATION_COMPLETE   n                        Permissionprod           check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1969018Z CREATE_IN_PROGRESS -     AWS::Logs::LogGroup      EventsLogGroup           Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1969553Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1970513Z CREATE_COMPLETE          AWS::Lambda::Permissio   EventsFunctionMyEvents   -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1973408Z                          n                        Permissionprod                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1974251Z CREATE_IN_PROGRESS -     AWS::ApiGateway::Stage   ApiprodStage             Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1975113Z CONFIGURATION_COMPLETE                                                     check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1975951Z CREATE_COMPLETE          AWS::Logs::LogGroup      EventsLogGroup           -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1976819Z CREATE_COMPLETE          AWS::ApiGateway::Stage   ApiprodStage             -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1977373Z CREATE_IN_PROGRESS -     AWS::CloudWatch::Dashb   OverviewDashboard        Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1977903Z CONFIGURATION_COMPLETE   oard                                              check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1978461Z CREATE_IN_PROGRESS -     AWS::CloudFormation::S   ticketing-dev            Eventual consistency   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1978998Z CONFIGURATION_COMPLETE   tack                                              check initiated        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1979527Z CREATE_COMPLETE          AWS::CloudWatch::Dashb   OverviewDashboard        -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1979972Z                          oard                                                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1980449Z CREATE_COMPLETE          AWS::CloudFormation::S   ticketing-dev            -                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1980914Z                          tack                                                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1981364Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.1981614Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3476014Z CloudFormation outputs from deployed stack
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3476844Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3477951Z Outputs                                                                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3479611Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3480828Z Key                 StreamProcessorFunctionName                                                 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3481978Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3483458Z Value               ticketing-dev-StreamProcessorFunction-fs4ghMWEc0N9                          
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3484179Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3484740Z Key                 WebBucketName                                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3485801Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3486919Z Value               ticketing-dev-webbucket-9kwmp7i9t3lc                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3487353Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3487745Z Key                 ImagesBaseUrl                                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3488455Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3489241Z Value               https://dssnxi2aatalf.cloudfront.net                                        
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3489679Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3490062Z Key                 WebDistributionId                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3490774Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3491273Z Value               E2VEJNG2IF2S45                                                              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3491519Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3491936Z Key                 WebUrl                                                                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3492368Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3493029Z Value               https://d1iw857zp4bogy.cloudfront.net                                       
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3493321Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3493554Z Key                 StreamDlqUrl                                                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3494013Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3494519Z Value               https://sqs.us-east-1.amazonaws.com/380897727215/ticketing-dev-             
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3495075Z StreamDeadLetterQueue-1E10CWotWWzk                                                              
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3495346Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3495585Z Key                 UserPoolClientId                                                            
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3496044Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3496530Z Value               4ab0vu3m9v3el6ra3ufmesrqts                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3496791Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3497009Z Key                 TableName                                                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3497436Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3497923Z Value               ticketing-dev-TicketingTable-7BMV9I45AFPD                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3498198Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3498430Z Key                 ImagesBucketName                                                            
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3498870Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3499358Z Value               ticketing-dev-imagesbucket-ls37ej2gtgb8                                     
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3499632Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3499843Z Key                 ApiUrl                                                                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3500380Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3500874Z Value               https://mf6xn04wwd.execute-api.us-east-1.amazonaws.com/prod                 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3501151Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3501372Z Key                 UserPoolId                                                                  
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3501797Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3502243Z Value               us-east-1_l09LUCeMO                                                         
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3502476Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3502839Z Key                 Region                                                                      
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3503322Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3503755Z Value               us-east-1                                                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3503975Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3504211Z Key                 DashboardUrl                                                                
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3504643Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3505132Z Value               https://us-east-1.console.aws.amazon.com/cloudwatch/home?region=us-         
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3505692Z east-1#dashboards:name=ticketing-dev-overview                                                   
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3505967Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3506196Z Key                 AlarmTopicArn                                                               
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3506634Z Description         -                                                                           
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3507273Z Value               arn:aws:sns:us-east-1:380897727215:ticketing-dev-AlarmTopic-IvzKOc95NjzU    
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3507782Z -------------------------------------------------------------------------------------------------
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3508042Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3508048Z 
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3508318Z Successfully created/updated stack - ticketing-dev in us-east-1
+Deploy to dev	Deploy the stack	2026-10-05T16:11:26.3508620Z 
+Deploy to dev	Publish the frontend (same script as local use)	﻿2026-10-05T16:11:26.7159077Z ##[group]Run npm run deploy:frontend
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7159379Z [36;1mnpm run deploy:frontend[0m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7216651Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7216894Z env:
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7217076Z   AWS_REGION: us-east-1
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7217279Z   NODE_VERSION: 22
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7217466Z   STACK_NAME: ticketing-dev
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7217737Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7218104Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7218460Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7218779Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7219110Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7219435Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7219723Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7220030Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7220347Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7224214Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.7224424Z ##[endgroup]
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.8017394Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.8018097Z > event-ticketing-platform@1.0.0 deploy:frontend
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.8018608Z > node scripts/deploy-frontend.mjs
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:26.8018780Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:30.2018263Z 1/4 building the app…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:30.2758833Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:30.2759558Z > ticketing-frontend@1.0.0 build
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:30.2760078Z > tsc --noEmit && vite build
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:30.2760307Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:32.9084869Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:32.9641182Z transforming...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:39.8313972Z [32m✓[39m 167 modules transformed.
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:39.9240911Z rendering chunks...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:39.9945597Z computing gzip size...
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0039842Z [2mdist/[22m[32mindex.html                                [39m[1m[2m  0.90 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0041228Z [2mdist/[22m[2massets/[22m[35mindex-DgRdH4z4.css                 [39m[1m[2m 10.79 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0042746Z [2mdist/[22m[2massets/[22m[36mqr-scanner.min-B_PV4o73.js         [39m[1m[2m 15.77 kB[22m[1m[22m[2m │ gzip:   5.61 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0044134Z [2mdist/[22m[2massets/[22m[36mqr-scanner-worker.min-D85Z9gVD.js  [39m[1m[2m 43.95 kB[22m[1m[22m[2m │ gzip:  10.46 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0045437Z [2mdist/[22m[2massets/[22m[36mindex-IcKGVXkz.js                  [39m[1m[2m339.11 kB[22m[1m[22m[2m │ gzip: 109.41 kB[22m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0046189Z [32m✓ built in 7.08s[39m
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0556152Z 2/4 writing config.json from the stack outputs…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:40.0557401Z 3/4 uploading…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.0691687Z Completed 331.2 KiB/400.0 KiB (1.3 MiB/s) with 4 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.0692517Z Completed 374.1 KiB/400.0 KiB (1.3 MiB/s) with 4 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.0693773Z upload: frontend/dist/assets/qr-scanner-worker.min-D85Z9gVD.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/qr-scanner-worker.min-D85Z9gVD.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1066441Z Completed 374.1 KiB/400.0 KiB (1.3 MiB/s) with 3 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1067915Z Completed 384.6 KiB/400.0 KiB (1.2 MiB/s) with 3 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1068821Z upload: frontend/dist/assets/index-DgRdH4z4.css to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/index-DgRdH4z4.css
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1433493Z Completed 384.6 KiB/400.0 KiB (1.2 MiB/s) with 2 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1434204Z Completed 400.0 KiB/400.0 KiB (1.1 MiB/s) with 2 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.1434944Z upload: frontend/dist/assets/qr-scanner.min-B_PV4o73.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/qr-scanner.min-B_PV4o73.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.4089818Z Completed 400.0 KiB/400.0 KiB (1.1 MiB/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:41.4091004Z upload: frontend/dist/assets/index-IcKGVXkz.js to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/assets/index-IcKGVXkz.js
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:42.2042345Z Completed 901 Bytes/901 Bytes (3.3 KiB/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:42.2043421Z upload: frontend/dist/index.html to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/index.html
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.0051812Z Completed 215 Bytes/215 Bytes (765 Bytes/s) with 1 file(s) remaining
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.0052939Z upload: frontend/dist/config.json to s3://ticketing-dev-webbucket-9kwmp7i9t3lc/config.json
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.0867263Z 4/4 clearing the CDN cache for index.html and config.json…
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.8150877Z InProgress
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.8869344Z 
+Deploy to dev	Publish the frontend (same script as local use)	2026-10-05T16:11:43.8870002Z Done. Open: https://d1iw857zp4bogy.cloudfront.net
+Deploy to dev	Smoke test	﻿2026-10-05T16:11:43.9027906Z ##[group]Run URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9028801Z [36;1mURL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9029565Z [36;1mWEB=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='WebUrl'].OutputValue" --output text)[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9030067Z [36;1mfor i in 1 2 3 4 5 6 7 8 9 10; do[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9030390Z [36;1m  code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/health" || true)[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9030706Z [36;1m  [ "$code" = "200" ] && break[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9030993Z [36;1m  echo "health returned $code, retrying ($i/10)"; sleep 6[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9031274Z [36;1mdone[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9031692Z [36;1m[ "$code" = "200" ] || { echo "API health check failed ($code)"; exit 1; }[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9032088Z [36;1mweb=$(curl -s -o /dev/null -w '%{http_code}' "$WEB/")[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9032458Z [36;1m[ "$web" = "200" ] || { echo "website check failed ($web)"; exit 1; }[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9033102Z [36;1mecho "API /health and the website both answer 200"[0m
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9090086Z shell: /usr/bin/bash -e {0}
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9090319Z env:
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9090507Z   AWS_REGION: us-east-1
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9090723Z   NODE_VERSION: 22
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9090930Z   STACK_NAME: ticketing-dev
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9091222Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9091596Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9091958Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9092287Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9092795Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9093123Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9093411Z   AWS_DEFAULT_REGION: us-east-1
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9105570Z   AWS_ACCESS_KEY_ID: ***
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9105889Z   AWS_SECRET_ACCESS_KEY: ***
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9110075Z   AWS_SESSION_TOKEN: ***
+Deploy to dev	Smoke test	2026-10-05T16:11:43.9110295Z ##[endgroup]
+Deploy to dev	Smoke test	2026-10-05T16:11:46.3342059Z API /health and the website both answer 200
+Deploy to dev	Post Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T16:11:46.3415944Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-python@v5	﻿2026-10-05T16:11:46.4357511Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-python@v5	2026-10-05T16:11:46.5340124Z (node:2858) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Post Run actions/setup-python@v5	2026-10-05T16:11:46.5340848Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Post Run actions/setup-node@v4	﻿2026-10-05T16:11:46.5483992Z Post job cleanup.
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:11:46.6496635Z (node:2866) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:11:46.6497410Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Deploy to dev	Post Run actions/setup-node@v4	2026-10-05T16:11:46.6499291Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1, not saving cache.
+Deploy to dev	Post Run actions/checkout@v4	﻿2026-10-05T16:11:46.6640505Z Post job cleanup.
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7355108Z [command]/usr/bin/git version
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7394667Z git version 2.55.0
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7427238Z Temporarily overriding HOME='/home/runner/work/_temp/bb366cbf-2eb9-417a-ae11-21ff073a348c' before making global git config changes
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7428273Z Adding repository directory to the temporary git global config as a safe directory
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7431870Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7478733Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7494517Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7710759Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7736069Z http.https://github.com/.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7746548Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.7777000Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.8001354Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Deploy to dev	Post Run actions/checkout@v4	2026-10-05T16:11:46.8040063Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Deploy to dev	Complete job	﻿2026-10-05T16:11:46.8373803Z Cleaning up orphan processes
+Deploy to dev	Complete job	2026-10-05T16:11:46.8625652Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, aws-actions/configure-aws-credentials@v4, aws-actions/setup-sam@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+
