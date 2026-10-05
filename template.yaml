@@ -1,0 +1,963 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Serverless Event Ticketing & QR Check-in Platform
+
+Parameters:
+  QrSecretParamName:
+    Type: String
+    Default: /ticketing-platform/qr-signing-secret
+    Description: SSM SecureString holding the QR HMAC key. Created once with the AWS CLI (see README), never by this template.
+  AlarmEmail:
+    Type: String
+    Default: ''
+    Description: Address that receives alarm notifications. Left empty, the alarms still exist but nobody is e-mailed. Passed at deploy time, never stored in the repo.
+
+Conditions:
+  HasAlarmEmail: !Not [!Equals [!Ref AlarmEmail, '']]
+
+Globals:
+  Function:
+    Runtime: nodejs22.x
+    Architectures: [arm64]
+    MemorySize: 256
+    Timeout: 10
+    LoggingConfig:
+      LogFormat: JSON
+    Environment:
+      Variables:
+        TABLE_NAME: !Ref TicketingTable
+        ALLOWED_ORIGINS: !Sub https://${WebDistribution.DomainName}
+        LOG_LEVEL: info
+
+Resources:
+  # ---------------------------------------------------------------- Database (Module A)
+  TicketingTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - { AttributeName: PK, AttributeType: S }
+        - { AttributeName: SK, AttributeType: S }
+        - { AttributeName: GSI1PK, AttributeType: S }
+        - { AttributeName: GSI1SK, AttributeType: S }
+        - { AttributeName: GSI2PK, AttributeType: S }
+        - { AttributeName: GSI2SK, AttributeType: S }
+      KeySchema:
+        - { AttributeName: PK, KeyType: HASH }
+        - { AttributeName: SK, KeyType: RANGE }
+      GlobalSecondaryIndexes:
+        - IndexName: GSI1
+          KeySchema:
+            - { AttributeName: GSI1PK, KeyType: HASH }
+            - { AttributeName: GSI1SK, KeyType: RANGE }
+          Projection: { ProjectionType: ALL }
+        - IndexName: GSI2
+          KeySchema:
+            - { AttributeName: GSI2PK, KeyType: HASH }
+            - { AttributeName: GSI2SK, KeyType: RANGE }
+          Projection: { ProjectionType: ALL }
+      StreamSpecification:
+        StreamViewType: NEW_AND_OLD_IMAGES
+      TimeToLiveSpecification:
+        AttributeName: ttl
+        Enabled: true
+      SSESpecification:
+        SSEEnabled: true
+
+  # ---------------------------------------------------------------- Auth (Module B)
+  UserPool:
+    Type: AWS::Cognito::UserPool
+    Properties:
+      UserPoolName: !Sub ${AWS::StackName}-users
+      UsernameAttributes: [email]
+      # No AutoVerifiedAttributes: demo skips email verification (see docs/decisions.md)
+      Policies:
+        PasswordPolicy:
+          MinimumLength: 8
+          RequireLowercase: true
+          RequireUppercase: true
+          RequireNumbers: true
+          RequireSymbols: false
+      Schema:
+        - Name: email
+          AttributeDataType: String
+          Required: true
+          Mutable: true
+        - Name: role
+          AttributeDataType: String
+          Mutable: true
+          StringAttributeConstraints: { MinLength: '0', MaxLength: '20' }
+      LambdaConfig:
+        PreSignUp: !GetAtt AuthTriggersFunction.Arn
+        PostConfirmation: !GetAtt AuthTriggersFunction.Arn
+
+  UserPoolClient:
+    Type: AWS::Cognito::UserPoolClient
+    Properties:
+      UserPoolId: !Ref UserPool
+      ClientName: !Sub ${AWS::StackName}-web
+      GenerateSecret: false
+      PreventUserExistenceErrors: ENABLED
+      # USER_PASSWORD_AUTH is enabled so scripts and tests can log in without SRP.
+      ExplicitAuthFlows:
+        - ALLOW_USER_SRP_AUTH
+        - ALLOW_USER_PASSWORD_AUTH
+        - ALLOW_REFRESH_TOKEN_AUTH
+      ReadAttributes: [email, custom:role]
+      WriteAttributes: [email, custom:role]
+
+  OrganizerGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: Organizer
+      UserPoolId: !Ref UserPool
+  AttendeeGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: Attendee
+      UserPoolId: !Ref UserPool
+  StaffGroup:
+    Type: AWS::Cognito::UserPoolGroup
+    Properties:
+      GroupName: Staff
+      UserPoolId: !Ref UserPool
+
+  AuthTriggersFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/auth-triggers/
+      Handler: index.handler
+      # The pool ARN is wildcarded because referencing the pool here would create a circular
+      # dependency (the pool references this function). Limited to this account and region.
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: cognito-idp:AdminAddUserToGroup
+              Resource: !Sub arn:${AWS::Partition}:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/*
+
+  AuthTriggersPermission:
+    Type: AWS::Lambda::Permission
+    Properties:
+      FunctionName: !Ref AuthTriggersFunction
+      Action: lambda:InvokeFunction
+      Principal: cognito-idp.amazonaws.com
+      SourceArn: !Sub arn:${AWS::Partition}:cognito-idp:${AWS::Region}:${AWS::AccountId}:userpool/*
+
+  AuthTriggersLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${AuthTriggersFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- API
+  Api:
+    Type: AWS::Serverless::Api
+    Properties:
+      # No explicit Name: SAM names the API after the stack, and that name is the ApiName metric dimension that
+      # the dashboard and the 5xx alarm use. (Renaming it did NOT change the metric dimension; see D24.)
+      StageName: prod
+      Auth:
+        DefaultAuthorizer: CognitoAuthorizer
+        AddDefaultAuthorizerToCorsPreflight: false
+        Authorizers:
+          CognitoAuthorizer:
+            UserPoolArn: !GetAtt UserPool.Arn
+            Identity:
+              Header: Authorization
+      Cors:
+        AllowOrigin: !Sub "'https://${WebDistribution.DomainName}'"
+        AllowHeaders: "'Content-Type,Authorization'"
+        AllowMethods: "'GET,POST,PUT,DELETE,OPTIONS'"
+      MethodSettings:
+        - ResourcePath: /*
+          HttpMethod: '*'
+          ThrottlingBurstLimit: 100
+          ThrottlingRateLimit: 50
+      GatewayResponses:
+        DEFAULT_4XX:
+          ResponseParameters:
+            Headers:
+              Access-Control-Allow-Origin: !Sub "'https://${WebDistribution.DomainName}'"
+        DEFAULT_5XX:
+          ResponseParameters:
+            Headers:
+              Access-Control-Allow-Origin: !Sub "'https://${WebDistribution.DomainName}'"
+
+  # Skeleton function proving the API, authorizer and logging work. Replaced by real functions in later stages.
+  HealthFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/health/
+      Handler: index.handler
+      Events:
+        Health:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /health
+            Method: GET
+            Auth:
+              Authorizer: NONE
+        Me:
+          Type: Api
+          Properties:
+            RestApiId: !Ref Api
+            Path: /me
+            Method: GET
+
+  HealthLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${HealthFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- Event images (Module A/B)
+  # Private bucket. Browsers upload with a short-lived pre-signed POST and read through CloudFront only.
+  ImagesBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+      CorsConfiguration:
+        CorsRules:
+          - AllowedOrigins: [!Sub 'https://${WebDistribution.DomainName}']
+            AllowedMethods: [POST]
+            AllowedHeaders: ['*']
+            MaxAge: 3000
+
+  ImagesBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref ImagesBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowCloudFrontRead
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub ${ImagesBucket.Arn}/*
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${ImagesDistribution}
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource:
+              - !GetAtt ImagesBucket.Arn
+              - !Sub ${ImagesBucket.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+
+  ImagesOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub ${AWS::StackName}-images-oac
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  ImagesDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: !Sub ${AWS::StackName} event images
+        PriceClass: PriceClass_100
+        HttpVersion: http2
+        Origins:
+          - Id: images
+            DomainName: !GetAtt ImagesBucket.RegionalDomainName
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+            OriginAccessControlId: !GetAtt ImagesOriginAccessControl.Id
+        DefaultCacheBehavior:
+          TargetOriginId: images
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: [GET, HEAD]
+          Compress: true
+          # Managed policy: CachingOptimized
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+
+  # ---------------------------------------------------------------- Events API (Module A + B)
+  EventsFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/events/
+      Handler: index.handler
+      Environment:
+        Variables:
+          IMAGE_BUCKET: !Ref ImagesBucket
+          IMAGE_BASE_URL: !Sub https://${ImagesDistribution.DomainName}
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+                - dynamodb:DeleteItem
+                - dynamodb:Query
+              Resource:
+                - !GetAtt TicketingTable.Arn
+                - !Sub ${TicketingTable.Arn}/index/*
+            # Needed to sign the pre-signed POST. Limited to the events/ prefix.
+            - Effect: Allow
+              Action: s3:PutObject
+              Resource: !Sub ${ImagesBucket.Arn}/events/*
+      Events:
+        ListEvents:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /events, Method: GET, Auth: { Authorizer: NONE } }
+        GetEvent:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}', Method: GET, Auth: { Authorizer: NONE } }
+        MyEvents:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /my/events, Method: GET }
+        CreateEvent:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /events, Method: POST }
+        UpdateEvent:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}', Method: PUT }
+        DeleteEvent:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}', Method: DELETE }
+        ImageUploadUrl:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}/image-url', Method: POST }
+
+  EventsLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${EventsFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- Booking (Module A)
+  BookingFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/booking/
+      Handler: index.handler
+      Timeout: 25
+      # A transaction is authorised through its underlying item actions. No Query or Delete needed.
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:PutItem
+                - dynamodb:UpdateItem
+              Resource: !GetAtt TicketingTable.Arn
+      Events:
+        Book:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}/book', Method: POST }
+
+  BookingLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${BookingFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- My Tickets (Module A)
+  TicketsFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/tickets/
+      Handler: index.handler
+      Environment:
+        Variables:
+          QR_SECRET_PARAM: !Ref QrSecretParamName
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: dynamodb:Query
+              Resource: !Sub ${TicketingTable.Arn}/index/GSI1
+            - Effect: Allow
+              Action: dynamodb:GetItem
+              Resource: !GetAtt TicketingTable.Arn
+            # Read access to exactly one parameter: the QR signing key.
+            - Effect: Allow
+              Action: ssm:GetParameter
+              Resource: !Sub arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${QrSecretParamName}
+      Events:
+        MyTickets:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /my/tickets, Method: GET }
+        TicketQr:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}/tickets/{ticketId}/qr', Method: GET }
+
+  TicketsLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${TicketsFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- QR check-in (Module B)
+  CheckinFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/checkin/
+      Handler: index.handler
+      Environment:
+        Variables:
+          QR_SECRET_PARAM: !Ref QrSecretParamName
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action:
+                - dynamodb:GetItem
+                - dynamodb:UpdateItem
+              Resource: !GetAtt TicketingTable.Arn
+            - Effect: Allow
+              Action: ssm:GetParameter
+              Resource: !Sub arn:${AWS::Partition}:ssm:${AWS::Region}:${AWS::AccountId}:parameter${QrSecretParamName}
+      Events:
+        Checkin:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /checkin, Method: POST }
+
+  CheckinLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${CheckinFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- Analytics (Module A)
+  # Failed stream batches land here after the retries are used up, so nothing is silently lost.
+  StreamDeadLetterQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      MessageRetentionPeriod: 1209600
+      SqsManagedSseEnabled: true
+
+  # Own role (instead of the SAM-generated one) so stream access is limited to THIS table's stream.
+  # dynamodb:ListStreams cannot be restricted by resource, so it is the single wildcard here.
+  StreamProcessorRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: { Service: lambda.amazonaws.com }
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+        - PolicyName: stream-processor
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: [dynamodb:DescribeStream, dynamodb:GetRecords, dynamodb:GetShardIterator]
+                Resource: !GetAtt TicketingTable.StreamArn
+              - Effect: Allow
+                Action: dynamodb:ListStreams
+                Resource: '*'
+              # A transaction is authorised through its item actions: Put (marker) and Update (counters).
+              - Effect: Allow
+                Action: [dynamodb:PutItem, dynamodb:UpdateItem]
+                Resource: !GetAtt TicketingTable.Arn
+              - Effect: Allow
+                Action: sqs:SendMessage
+                Resource: !GetAtt StreamDeadLetterQueue.Arn
+
+  StreamProcessorFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/stream-processor/
+      Handler: index.handler
+      Role: !GetAtt StreamProcessorRole.Arn
+      Timeout: 30
+      Events:
+        TicketStream:
+          Type: DynamoDB
+          Properties:
+            Stream: !GetAtt TicketingTable.StreamArn
+            # LATEST: see docs/limitations.md L25 (a TRIM_HORIZON switch cannot be done by a plain replacement)
+            StartingPosition: LATEST
+            BatchSize: 25
+            MaximumBatchingWindowInSeconds: 1
+            MaximumRetryAttempts: 5
+            BisectBatchOnFunctionError: true
+            FunctionResponseTypes: [ReportBatchItemFailures]
+            # Only "ticket went BOOKED -> CHECKED_IN" wakes the Lambda. Bookings, event edits and the
+            # counter writes themselves never do, so there is no feedback loop and no wasted invocations.
+            FilterCriteria:
+              Filters:
+                - Pattern: '{"eventName":["MODIFY"],"dynamodb":{"OldImage":{"status":{"S":["BOOKED"]}},"NewImage":{"status":{"S":["CHECKED_IN"]},"entity":{"S":["TICKET"]}}}}'
+            DestinationConfig:
+              OnFailure:
+                Type: SQS
+                Destination: !GetAtt StreamDeadLetterQueue.Arn
+
+  StreamProcessorLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${StreamProcessorFunction}
+      RetentionInDays: 7
+
+  AnalyticsFunction:
+    Type: AWS::Serverless::Function
+    Metadata:
+      BuildMethod: esbuild
+      BuildProperties:
+        Target: es2022
+        Sourcemap: true
+        EntryPoints: [index.ts]
+    Properties:
+      CodeUri: backend/functions/analytics/
+      Handler: index.handler
+      Policies:
+        - Version: '2012-10-17'
+          Statement:
+            - Effect: Allow
+              Action: [dynamodb:GetItem, dynamodb:Query]
+              Resource: !GetAtt TicketingTable.Arn
+            - Effect: Allow
+              Action: dynamodb:Query
+              Resource: !Sub ${TicketingTable.Arn}/index/GSI1
+      Events:
+        Dashboard:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: /dashboard, Method: GET }
+        EventAnalytics:
+          Type: Api
+          Properties: { RestApiId: !Ref Api, Path: '/events/{id}/analytics', Method: GET }
+
+  AnalyticsLogGroup:
+    Type: AWS::Logs::LogGroup
+    Properties:
+      LogGroupName: !Sub /aws/lambda/${AnalyticsFunction}
+      RetentionInDays: 7
+
+  # ---------------------------------------------------------------- Website hosting (Module D)
+  # The single-page app lives in a PRIVATE bucket and is served only through CloudFront (HTTPS).
+  WebBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: true
+        BlockPublicPolicy: true
+        IgnorePublicAcls: true
+        RestrictPublicBuckets: true
+      OwnershipControls:
+        Rules:
+          - ObjectOwnership: BucketOwnerEnforced
+      BucketEncryption:
+        ServerSideEncryptionConfiguration:
+          - ServerSideEncryptionByDefault:
+              SSEAlgorithm: AES256
+
+  WebBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebBucket
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowCloudFrontRead
+            Effect: Allow
+            Principal:
+              Service: cloudfront.amazonaws.com
+            Action: s3:GetObject
+            Resource: !Sub ${WebBucket.Arn}/*
+            Condition:
+              StringEquals:
+                AWS:SourceArn: !Sub arn:${AWS::Partition}:cloudfront::${AWS::AccountId}:distribution/${WebDistribution}
+          - Sid: DenyInsecureTransport
+            Effect: Deny
+            Principal: '*'
+            Action: s3:*
+            Resource:
+              - !GetAtt WebBucket.Arn
+              - !Sub ${WebBucket.Arn}/*
+            Condition:
+              Bool:
+                aws:SecureTransport: 'false'
+
+  WebOriginAccessControl:
+    Type: AWS::CloudFront::OriginAccessControl
+    Properties:
+      OriginAccessControlConfig:
+        Name: !Sub ${AWS::StackName}-web-oac
+        OriginAccessControlOriginType: s3
+        SigningBehavior: always
+        SigningProtocol: sigv4
+
+  # Security headers on every page. The CSP lists what the app talks to. The API Gateway, Cognito and
+  # image-CDN hosts are wildcards because naming this stack's own resources here would make the
+  # template circular (the API and the images bucket both refer to this distribution for CORS).
+  WebHeadersPolicy:
+    Type: AWS::CloudFront::ResponseHeadersPolicy
+    Properties:
+      ResponseHeadersPolicyConfig:
+        Name: !Sub ${AWS::StackName}-web-headers
+        SecurityHeadersConfig:
+          ContentSecurityPolicy:
+            Override: true
+            ContentSecurityPolicy: !Sub >-
+              default-src 'self';
+              script-src 'self';
+              style-src 'self' 'unsafe-inline';
+              img-src 'self' data: blob: https://*.cloudfront.net;
+              connect-src 'self' https://*.execute-api.${AWS::Region}.amazonaws.com https://cognito-idp.${AWS::Region}.amazonaws.com https://*.s3.${AWS::Region}.amazonaws.com;
+              worker-src 'self' blob:;
+              object-src 'none';
+              base-uri 'self';
+              form-action 'self';
+              frame-ancestors 'none'
+          ContentTypeOptions:
+            Override: true
+          FrameOptions:
+            FrameOption: DENY
+            Override: true
+          ReferrerPolicy:
+            ReferrerPolicy: strict-origin-when-cross-origin
+            Override: true
+          StrictTransportSecurity:
+            AccessControlMaxAgeSec: 31536000
+            IncludeSubdomains: true
+            Override: true
+        CustomHeadersConfig:
+          Items:
+            - Header: Permissions-Policy
+              Value: camera=(self), microphone=(), geolocation=()
+              Override: true
+
+  WebDistribution:
+    Type: AWS::CloudFront::Distribution
+    Properties:
+      DistributionConfig:
+        Enabled: true
+        Comment: !Sub ${AWS::StackName} website
+        PriceClass: PriceClass_100
+        HttpVersion: http2
+        DefaultRootObject: index.html
+        Origins:
+          - Id: web
+            DomainName: !GetAtt WebBucket.RegionalDomainName
+            S3OriginConfig:
+              OriginAccessIdentity: ''
+            OriginAccessControlId: !GetAtt WebOriginAccessControl.Id
+        DefaultCacheBehavior:
+          TargetOriginId: web
+          ViewerProtocolPolicy: redirect-to-https
+          AllowedMethods: [GET, HEAD]
+          Compress: true
+          # Managed policy: CachingOptimized
+          CachePolicyId: 658327ea-f89d-4fab-a63d-7e88639e58f6
+          ResponseHeadersPolicyId: !Ref WebHeadersPolicy
+        # Single-page app: a deep link such as /my-tickets is not a file in the bucket, so S3 answers
+        # 403 (private bucket). Serve index.html instead and let the router handle the path.
+        CustomErrorResponses:
+          - ErrorCode: 403
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+            ErrorCachingMinTTL: 0
+          - ErrorCode: 404
+            ResponseCode: 200
+            ResponsePagePath: /index.html
+            ErrorCachingMinTTL: 0
+
+  # ---------------------------------------------------------------- Monitoring (Module C)
+  # Alarms publish here. The e-mail subscription must be confirmed once by clicking the link AWS sends.
+  AlarmTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: Ticketing platform alarms
+      Subscription: !If
+        - HasAlarmEmail
+        - [{ Protocol: email, Endpoint: !Ref AlarmEmail }]
+        - !Ref AWS::NoValue
+
+  AlarmTopicPolicy:
+    Type: AWS::SNS::TopicPolicy
+    Properties:
+      Topics: [!Ref AlarmTopic]
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: AllowCloudWatchAlarms
+            Effect: Allow
+            Principal: { Service: cloudwatch.amazonaws.com }
+            Action: sns:Publish
+            Resource: !Ref AlarmTopic
+            Condition:
+              StringEquals: { 'aws:SourceAccount': !Ref AWS::AccountId }
+
+  # Any Lambda error in the stack. Metric math adds up the Errors of all eight functions.
+  LambdaErrorsAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-lambda-errors
+      AlarmDescription: At least one Lambda invocation failed in 5 minutes. Look at the function logs (the dashboard shows which function).
+      Metrics:
+        - Id: total
+          Label: Lambda errors (all functions)
+          Expression: e1+e2+e3+e4+e5+e6+e7+e8
+          ReturnData: true
+        - { Id: e1, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref AuthTriggersFunction }] } } }
+        - { Id: e2, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref HealthFunction }] } } }
+        - { Id: e3, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref EventsFunction }] } } }
+        - { Id: e4, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref BookingFunction }] } } }
+        - { Id: e5, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref TicketsFunction }] } } }
+        - { Id: e6, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref CheckinFunction }] } } }
+        - { Id: e7, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref StreamProcessorFunction }] } } }
+        - { Id: e8, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/Lambda, MetricName: Errors, Dimensions: [{ Name: FunctionName, Value: !Ref AnalyticsFunction }] } } }
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 1
+      EvaluationPeriods: 1
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref AlarmTopic]
+
+  # Server-side failures reaching callers. Client mistakes (4xx, including sold-out 409) are NOT counted.
+  Api5xxAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-api-5xx
+      AlarmDescription: The API returned at least one 5xx response in 5 minutes (includes the booking 503 BUSY answer).
+      Namespace: AWS/ApiGateway
+      MetricName: 5XXError
+      Dimensions:
+        - { Name: ApiName, Value: !Ref AWS::StackName }
+        - { Name: Stage, Value: prod }
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref AlarmTopic]
+
+  # A message here means the analytics stream processor gave up on a batch (counters may be behind).
+  DlqDepthAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-stream-dlq-not-empty
+      AlarmDescription: The stream dead-letter queue has a message. A check-in batch could not be counted. See docs/limitations.md and the stream processor logs.
+      Namespace: AWS/SQS
+      MetricName: ApproximateNumberOfMessagesVisible
+      Dimensions:
+        - { Name: QueueName, Value: !GetAtt StreamDeadLetterQueue.QueueName }
+      Statistic: Maximum
+      Period: 60
+      EvaluationPeriods: 1
+      Threshold: 0
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref AlarmTopic]
+
+  # On-demand tables can still throttle on a sudden spike or a hot key. The booking path would turn that into 503s.
+  DynamoThrottleAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub ${AWS::StackName}-dynamodb-throttles
+      AlarmDescription: DynamoDB throttled at least one read or write on the ticketing table in 5 minutes.
+      Metrics:
+        - Id: total
+          Label: Throttle events (reads + writes)
+          Expression: r+w
+          ReturnData: true
+        - { Id: r, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/DynamoDB, MetricName: ReadThrottleEvents, Dimensions: [{ Name: TableName, Value: !Ref TicketingTable }] } } }
+        - { Id: w, ReturnData: false, MetricStat: { Stat: Sum, Period: 300, Metric: { Namespace: AWS/DynamoDB, MetricName: WriteThrottleEvents, Dimensions: [{ Name: TableName, Value: !Ref TicketingTable }] } } }
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Threshold: 1
+      EvaluationPeriods: 1
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref AlarmTopic]
+
+  OverviewDashboard:
+    Type: AWS::CloudWatch::Dashboard
+    Properties:
+      DashboardName: !Sub ${AWS::StackName}-overview
+      DashboardBody: !Sub |
+        {
+          "widgets": [
+            { "type": "text", "x": 0, "y": 0, "width": 24, "height": 1,
+              "properties": { "markdown": "## API  ·  Lambda  ·  DynamoDB  ·  Stream  ·  Business metrics (`TicketingPlatform` namespace)" } },
+
+            { "type": "metric", "x": 0, "y": 1, "width": 8, "height": 6, "properties": {
+                "title": "API requests per minute", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [ [ "AWS/ApiGateway", "Count", "ApiName", "${AWS::StackName}", "Stage", "prod", { "label": "requests" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 8, "y": 1, "width": 8, "height": 6, "properties": {
+                "title": "API latency (ms)", "region": "${AWS::Region}", "view": "timeSeries", "period": 60,
+                "metrics": [
+                  [ "AWS/ApiGateway", "Latency", "ApiName", "${AWS::StackName}", "Stage", "prod", { "stat": "p50", "label": "p50" } ],
+                  [ "...", { "stat": "p95", "label": "p95" } ],
+                  [ "...", { "stat": "p99", "label": "p99" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 16, "y": 1, "width": 8, "height": 6, "properties": {
+                "title": "API errors: 5xx (server) and 4xx (client)", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "AWS/ApiGateway", "5XXError", "ApiName", "${AWS::StackName}", "Stage", "prod", { "label": "5xx" } ],
+                  [ ".", "4XXError", ".", ".", ".", ".", { "label": "4xx" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+
+            { "type": "metric", "x": 0, "y": 7, "width": 8, "height": 6, "properties": {
+                "title": "Lambda errors", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "AWS/Lambda", "Errors", "FunctionName", "${AuthTriggersFunction}", { "label": "auth-triggers" } ],
+                  [ "...", "${HealthFunction}", { "label": "health" } ],
+                  [ "...", "${EventsFunction}", { "label": "events" } ],
+                  [ "...", "${BookingFunction}", { "label": "booking" } ],
+                  [ "...", "${TicketsFunction}", { "label": "tickets" } ],
+                  [ "...", "${CheckinFunction}", { "label": "checkin" } ],
+                  [ "...", "${StreamProcessorFunction}", { "label": "stream-processor" } ],
+                  [ "...", "${AnalyticsFunction}", { "label": "analytics" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 8, "y": 7, "width": 8, "height": 6, "properties": {
+                "title": "Lambda duration p95 (ms)", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "p95",
+                "metrics": [
+                  [ "AWS/Lambda", "Duration", "FunctionName", "${EventsFunction}", { "label": "events" } ],
+                  [ "...", "${BookingFunction}", { "label": "booking" } ],
+                  [ "...", "${TicketsFunction}", { "label": "tickets" } ],
+                  [ "...", "${CheckinFunction}", { "label": "checkin" } ],
+                  [ "...", "${StreamProcessorFunction}", { "label": "stream-processor" } ],
+                  [ "...", "${AnalyticsFunction}", { "label": "analytics" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 16, "y": 7, "width": 8, "height": 6, "properties": {
+                "title": "Lambda throttles", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "AWS/Lambda", "Throttles", "FunctionName", "${EventsFunction}", { "label": "events" } ],
+                  [ "...", "${BookingFunction}", { "label": "booking" } ],
+                  [ "...", "${TicketsFunction}", { "label": "tickets" } ],
+                  [ "...", "${CheckinFunction}", { "label": "checkin" } ],
+                  [ "...", "${StreamProcessorFunction}", { "label": "stream-processor" } ],
+                  [ "...", "${AnalyticsFunction}", { "label": "analytics" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+
+            { "type": "metric", "x": 0, "y": 13, "width": 8, "height": 6, "properties": {
+                "title": "DynamoDB throttle events", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "AWS/DynamoDB", "ReadThrottleEvents", "TableName", "${TicketingTable}", { "label": "read throttles" } ],
+                  [ ".", "WriteThrottleEvents", ".", ".", { "label": "write throttles" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 8, "y": 13, "width": 8, "height": 6, "properties": {
+                "title": "DynamoDB transaction conflicts (booking retries)", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [ [ "AWS/DynamoDB", "TransactionConflict", "TableName", "${TicketingTable}", { "label": "conflicts" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 16, "y": 13, "width": 8, "height": 6, "properties": {
+                "title": "Stream: dead-letter queue depth and processing delay", "region": "${AWS::Region}", "view": "timeSeries", "period": 60,
+                "metrics": [
+                  [ "AWS/SQS", "ApproximateNumberOfMessagesVisible", "QueueName", "${StreamDeadLetterQueue.QueueName}", { "stat": "Maximum", "label": "DLQ messages" } ],
+                  [ "AWS/Lambda", "IteratorAge", "FunctionName", "${StreamProcessorFunction}", { "stat": "Maximum", "label": "stream age (ms)", "yAxis": "right" } ] ],
+                "yAxis": { "left": { "min": 0 }, "right": { "min": 0 } } } },
+
+            { "type": "metric", "x": 0, "y": 19, "width": 12, "height": 6, "properties": {
+                "title": "Bookings: success, sold-out rejections, conflict retries", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "TicketingPlatform", "BookingSuccess", { "label": "booked" } ],
+                  [ ".", "BookingRejectedSoldOut", { "label": "rejected: sold out" } ],
+                  [ ".", "BookingConflictRetry", { "label": "conflict retries" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+            { "type": "metric", "x": 12, "y": 19, "width": 12, "height": 6, "properties": {
+                "title": "Check-in: admitted, rejected, counted by the stream", "region": "${AWS::Region}", "view": "timeSeries", "period": 60, "stat": "Sum",
+                "metrics": [
+                  [ "TicketingPlatform", "CheckInSuccess", { "label": "admitted" } ],
+                  [ ".", "CheckInRejected", { "label": "rejected" } ],
+                  [ ".", "CheckInCounted", { "label": "counted in analytics" } ],
+                  [ ".", "StreamDuplicateSkipped", { "label": "duplicate stream records skipped" } ] ],
+                "yAxis": { "left": { "min": 0 } } } },
+
+            { "type": "alarm", "x": 0, "y": 25, "width": 24, "height": 3, "properties": {
+                "title": "Alarm status",
+                "alarms": [ "${LambdaErrorsAlarm.Arn}", "${Api5xxAlarm.Arn}", "${DlqDepthAlarm.Arn}", "${DynamoThrottleAlarm.Arn}" ] } }
+          ]
+        }
+
+Outputs:
+  DashboardUrl:
+    Value: !Sub https://${AWS::Region}.console.aws.amazon.com/cloudwatch/home?region=${AWS::Region}#dashboards:name=${AWS::StackName}-overview
+  AlarmTopicArn:
+    Value: !Ref AlarmTopic
+  WebUrl:
+    Value: !Sub https://${WebDistribution.DomainName}
+  WebBucketName:
+    Value: !Ref WebBucket
+  WebDistributionId:
+    Value: !Ref WebDistribution
+  StreamProcessorFunctionName:
+    Value: !Ref StreamProcessorFunction
+  StreamDlqUrl:
+    Value: !Ref StreamDeadLetterQueue
+  ImagesBaseUrl:
+    Value: !Sub https://${ImagesDistribution.DomainName}
+  ImagesBucketName:
+    Value: !Ref ImagesBucket
+  ApiUrl:
+    Value: !Sub https://${Api}.execute-api.${AWS::Region}.amazonaws.com/prod
+  UserPoolId:
+    Value: !Ref UserPool
+  UserPoolClientId:
+    Value: !Ref UserPoolClient
+  TableName:
+    Value: !Ref TicketingTable
+  Region:
+    Value: !Ref AWS::Region

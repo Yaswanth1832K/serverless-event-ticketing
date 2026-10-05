@@ -1,0 +1,126 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "CloudFormationOwnStacksAndSamManagedStack",
+      "Effect": "Allow",
+      "Action": [
+        "cloudformation:CreateChangeSet", "cloudformation:ExecuteChangeSet", "cloudformation:DeleteChangeSet",
+        "cloudformation:DescribeChangeSet", "cloudformation:DescribeStacks", "cloudformation:DescribeStackEvents",
+        "cloudformation:DescribeStackResource", "cloudformation:DescribeStackResources",
+        "cloudformation:GetTemplate", "cloudformation:ListStackResources",
+        "cloudformation:UpdateStack", "cloudformation:CreateStack", "cloudformation:RollbackStack"
+      ],
+      "Resource": [
+        "arn:aws:cloudformation:us-east-1:<ACCOUNT_ID>:stack/<STACK_NAME>/*",
+        "arn:aws:cloudformation:us-east-1:<ACCOUNT_ID>:stack/aws-sam-cli-managed-default/*"
+      ]
+    },
+    {
+      "Sid": "CloudFormationSamTransform",
+      "Effect": "Allow",
+      "Action": "cloudformation:CreateChangeSet",
+      "Resource": "arn:aws:cloudformation:us-east-1:aws:transform/Serverless-2016-10-31"
+    },
+    {
+      "Sid": "CloudFormationNoResourceLevel",
+      "Effect": "Allow",
+      "Action": ["cloudformation:ValidateTemplate", "cloudformation:GetTemplateSummary", "cloudformation:ListStacks"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SamArtifactBucket",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:PutObject", "s3:GetBucketLocation", "s3:ListBucket", "s3:GetBucketPolicy", "s3:GetEncryptionConfiguration", "s3:GetBucketVersioning"],
+      "Resource": [
+        "arn:aws:s3:::aws-sam-cli-managed-default-samclisourcebucket-*",
+        "arn:aws:s3:::aws-sam-cli-managed-default-samclisourcebucket-*/*"
+      ]
+    },
+    {
+      "Sid": "StackBucketsWebsiteAndImages",
+      "Effect": "Allow",
+      "Action": "s3:*",
+      "Resource": ["arn:aws:s3:::<STACK_NAME>-*", "arn:aws:s3:::<STACK_NAME>-*/*"]
+    },
+    {
+      "Sid": "IamRolesOfTheStack",
+      "Effect": "Allow",
+      "Action": [
+        "iam:CreateRole", "iam:DeleteRole", "iam:GetRole", "iam:UpdateRole", "iam:PassRole", "iam:TagRole", "iam:UntagRole",
+        "iam:AttachRolePolicy", "iam:DetachRolePolicy", "iam:PutRolePolicy", "iam:DeleteRolePolicy", "iam:GetRolePolicy",
+        "iam:ListRolePolicies", "iam:ListAttachedRolePolicies", "iam:UpdateAssumeRolePolicy"
+      ],
+      "Resource": "arn:aws:iam::<ACCOUNT_ID>:role/<STACK_NAME>-*"
+    },
+    {
+      "Sid": "LambdaFunctionsOfTheStack",
+      "Effect": "Allow",
+      "Action": "lambda:*",
+      "Resource": "arn:aws:lambda:us-east-1:<ACCOUNT_ID>:function:<STACK_NAME>-*"
+    },
+    {
+      "Sid": "LambdaEventSourceMappingsHaveNoUsefulResourceName",
+      "Effect": "Allow",
+      "Action": [
+        "lambda:CreateEventSourceMapping", "lambda:UpdateEventSourceMapping", "lambda:DeleteEventSourceMapping",
+        "lambda:GetEventSourceMapping", "lambda:ListEventSourceMappings"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Sid": "ApiGateway",
+      "Effect": "Allow",
+      "Action": ["apigateway:GET", "apigateway:POST", "apigateway:PUT", "apigateway:PATCH", "apigateway:DELETE", "apigateway:TagResource", "apigateway:UntagResource"],
+      "Resource": "arn:aws:apigateway:us-east-1::/*"
+    },
+    {
+      "Sid": "DynamoDbTablesOfTheStack",
+      "Effect": "Allow",
+      "Action": "dynamodb:*",
+      "Resource": "arn:aws:dynamodb:us-east-1:<ACCOUNT_ID>:table/<STACK_NAME>-*"
+    },
+    {
+      "Sid": "Cognito",
+      "Effect": "Allow",
+      "Action": "cognito-idp:*",
+      "Resource": "*"
+    },
+    {
+      "Sid": "CloudFrontAndSqs",
+      "Effect": "Allow",
+      "Action": ["cloudfront:*", "sqs:*"],
+      "Resource": "*"
+    },
+    {
+      "Sid": "SnsTopicsOfTheStack",
+      "Effect": "Allow",
+      "Action": "sns:*",
+      "Resource": "arn:aws:sns:us-east-1:<ACCOUNT_ID>:<STACK_NAME>-*"
+    },
+    {
+      "Sid": "LogGroupsOfTheStack",
+      "Effect": "Allow",
+      "Action": ["logs:CreateLogGroup", "logs:DeleteLogGroup", "logs:PutRetentionPolicy", "logs:DeleteRetentionPolicy", "logs:TagResource", "logs:UntagResource", "logs:ListTagsForResource"],
+      "Resource": "arn:aws:logs:us-east-1:<ACCOUNT_ID>:log-group:/aws/lambda/<STACK_NAME>-*"
+    },
+    {
+      "Sid": "LogGroupsDescribe",
+      "Effect": "Allow",
+      "Action": "logs:DescribeLogGroups",
+      "Resource": "*"
+    },
+    {
+      "Sid": "AlarmsAndDashboardsOfTheStack",
+      "Effect": "Allow",
+      "Action": ["cloudwatch:PutMetricAlarm", "cloudwatch:DeleteAlarms", "cloudwatch:DescribeAlarms", "cloudwatch:TagResource", "cloudwatch:UntagResource", "cloudwatch:ListTagsForResource"],
+      "Resource": "arn:aws:cloudwatch:us-east-1:<ACCOUNT_ID>:alarm:<STACK_NAME>-*"
+    },
+    {
+      "Sid": "Dashboards",
+      "Effect": "Allow",
+      "Action": ["cloudwatch:PutDashboard", "cloudwatch:DeleteDashboards", "cloudwatch:GetDashboard"],
+      "Resource": "arn:aws:cloudwatch::<ACCOUNT_ID>:dashboard/<STACK_NAME>-*"
+    }
+  ]
+}

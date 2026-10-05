@@ -1,0 +1,121 @@
+# npm run test:concurrency
+# started 2026-10-05T07:02:05.946Z
+
+============================== RUN 1 of 3 (2026-10-05T07:02:05.947Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:concurrency
+> vitest run tests/concurrency --testTimeout=120000 --hookTimeout=120000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/concurrency/booking.test.ts > booking validation and access (deployed API) > rejects bad quantities, wrong roles and anonymous callers 6387ms
+stdout | tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets
+[scenario 1] 50 parallel requests, status counts {"201":5,"409":45}, latency p50=1754ms p95=1928ms max=1939ms, wall=1950ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets 6118ms
+stdout | tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable
+[scenario 2] 30 parallel requests, status counts {"201":2,"409":28}, latency p50=714ms p95=1255ms max=1313ms, wall=1320ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable 6037ms
+stdout | tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued
+[scenario 3] 40 parallel requests, status counts {"201":4,"409":36}, latency p50=912ms p95=1462ms max=1467ms, wall=1474ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued 3919ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  12:32:06
+   Duration  55.24s (transform 75ms, setup 0ms, collect 187ms, tests 54.82s, environment 0ms, prepare 79ms)
+
+(node:30556) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 1 exit code: 0
+
+============================== RUN 2 of 3 (2026-10-05T07:03:01.952Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:concurrency
+> vitest run tests/concurrency --testTimeout=120000 --hookTimeout=120000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/concurrency/booking.test.ts > booking validation and access (deployed API) > rejects bad quantities, wrong roles and anonymous callers 6863ms
+stdout | tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets
+[scenario 1] 50 parallel requests, status counts {"201":5,"409":45}, latency p50=963ms p95=1166ms max=1585ms, wall=1587ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets 4526ms
+stdout | tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable
+[scenario 2] 30 parallel requests, status counts {"201":2,"409":28}, latency p50=436ms p95=742ms max=796ms, wall=798ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable 4171ms
+stdout | tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued
+[scenario 3] 40 parallel requests, status counts {"201":3,"409":37}, latency p50=708ms p95=874ms max=900ms, wall=905ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued 3195ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  12:33:02
+   Duration  32.80s (transform 72ms, setup 0ms, collect 187ms, tests 32.40s, environment 0ms, prepare 73ms)
+
+(node:33088) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 2 exit code: 0
+
+============================== RUN 3 of 3 (2026-10-05T07:03:35.503Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:concurrency
+> vitest run tests/concurrency --testTimeout=120000 --hookTimeout=120000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/concurrency/booking.test.ts > booking validation and access (deployed API) > rejects bad quantities, wrong roles and anonymous callers 5978ms
+stdout | tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets
+[scenario 1] 50 parallel requests, status counts {"201":5,"409":45}, latency p50=932ms p95=1011ms max=1088ms, wall=1096ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 1: capacity 5, 50 parallel requests for 1 ticket each > exactly 5 succeed, 45 get 409 SOLD_OUT, sold = 5, no duplicate tickets 4823ms
+stdout | tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable
+[scenario 2] 30 parallel requests, status counts {"201":2,"409":28}, latency p50=397ms p95=715ms max=746ms, wall=746ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 2: capacity 5, 30 parallel requests for 2 tickets each > exactly 2 bookings fit (4 tickets), sold never exceeds 5, the last seat is still bookable 5421ms
+stdout | tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued
+[scenario 3] 40 parallel requests, status counts {"201":4,"409":36}, latency p50=834ms p95=891ms max=893ms, wall=898ms
+
+ ✓ tests/concurrency/booking.test.ts > scenario 3: capacity 5, 40 parallel requests with mixed quantities (1, 2, 3) > sold never exceeds capacity and equals the tickets actually issued 2667ms
+
+ Test Files  1 passed (1)
+      Tests  4 passed (4)
+   Start at  12:33:36
+   Duration  31.52s (transform 72ms, setup 0ms, collect 182ms, tests 31.12s, environment 0ms, prepare 81ms)
+
+(node:49948) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 3 exit code: 0
+
+# SUMMARY: 3/3 runs passed

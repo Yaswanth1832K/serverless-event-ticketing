@@ -1,0 +1,45 @@
+
+ RUN  v2.1.9 <project>
+
+(node:51732) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > rejects Staff and Admin at signup 708ms
+ ✓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > puts Organizer and default signups in the right groups 3645ms
+ ✓ tests/integration/events.test.ts > authentication > public browsing works without a token 1018ms
+ ✓ tests/integration/events.test.ts > authentication > write routes reject missing or bad tokens with 401 1695ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > create -> 403 707ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > edit -> 403 and event is unchanged 998ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > delete -> 403 and event still exists 1320ms
+ ✓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > image-url and my/events -> 403 951ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > edit -> 403 720ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > delete -> 403 659ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > image upload url -> 403 687ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > A event is unchanged after all attempts 663ms
+ ✓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > B's my/events does not list A's event, A's does 1001ms
+ ✓ tests/integration/events.test.ts > input validation > create with missing fields -> 400 777ms
+ ✓ tests/integration/events.test.ts > input validation > create with zero capacity -> 400 307ms
+ ✓ tests/integration/events.test.ts > input validation > create with negative price -> 400 725ms
+ ✓ tests/integration/events.test.ts > input validation > create with past date -> 400 317ms
+ ✓ tests/integration/events.test.ts > input validation > create with huge name -> 400 673ms
+ ✓ tests/integration/events.test.ts > input validation > create with string capacity -> 400 655ms
+ ✓ tests/integration/events.test.ts > input validation > create with not json -> 400 648ms
+ ✓ tests/integration/events.test.ts > input validation > forged organizerId and sold are ignored on create 1353ms
+ ✓ tests/integration/events.test.ts > input validation > malformed event id -> 404 754ms
+ ✓ tests/integration/events.test.ts > owner can update; public view hides organizerId > updates fields and keeps sold untouched 814ms
+ ✓ tests/integration/events.test.ts > owner can update; public view hides organizerId > public GET has no organizerId 663ms
+ ✓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > rejects disallowed content types and oversized declarations 2990ms
+ ✓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > issues a short-lived signed policy and S3 enforces it 9387ms
+ ✓ tests/integration/events.test.ts > delete > owner deletes an unsold event, then it is gone 716ms
+
+ Test Files  1 passed (1)
+      Tests  27 passed (27)
+   Start at  12:17:15
+   Duration  43.33s (transform 79ms, setup 0ms, collect 153ms, tests 42.95s, environment 0ms, prepare 81ms)
+

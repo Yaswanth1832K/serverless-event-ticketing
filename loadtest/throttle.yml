@@ -1,0 +1,26 @@
+# Throttle test: pushes ONE public endpoint (GET /events) well above the API Gateway limit on purpose.
+#
+# Why this exists: the mixed spike test (spike.yml) spread its traffic over six endpoints and never reached the
+# limit, because the stage limit in template.yaml (MethodSettings, 50 requests/second, burst 100) applies PER METHOD,
+# not to the API as a whole. Concentrating the traffic on one method is the way to go over it.
+#
+#   npm run loadtest:throttle
+#
+# Expected: API Gateway answers HTTP 429 for the excess, Lambda and DynamoDB see only the requests that got through,
+# there are no 5xx answers, and the page recovers when the traffic drops.
+config:
+  target: "{{ $processEnvironment.API_URL }}"
+  http:
+    timeout: 20
+  phases:
+    - { name: warm-up, duration: 5, arrivalRate: 5 }
+    - { name: over-the-limit, duration: 20, arrivalRate: 120 }
+    - { name: recovery, duration: 15, arrivalRate: 5 }
+  plugins:
+    metrics-by-endpoint:
+      useOnlyRequestNames: true
+
+scenarios:
+  - name: list events (public)
+    flow:
+      - get: { url: /events, name: "GET /events" }

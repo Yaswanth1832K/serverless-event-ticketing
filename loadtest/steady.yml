@@ -1,0 +1,51 @@
+# Steady-load test: a realistic mix of browsing, "my tickets", booking and the organizer dashboard.
+#
+#   npm run loadtest            (runs scripts/run-loadtest.mjs steady, which prepares users and events first)
+#
+# 15 new virtual users per second at the top is about 30 HTTP requests per second spread over six methods, far
+# under the API Gateway limit of 50 requests per second PER METHOD (template.yaml, Api > MethodSettings).
+# throttle.yml goes over that limit on purpose.
+config:
+  target: "{{ $processEnvironment.API_URL }}"
+  processor: ./processor.cjs
+  http:
+    timeout: 20
+  phases:
+    - { name: warm-up, duration: 15, arrivalRate: 3 }
+    - { name: ramp, duration: 30, arrivalRate: 3, rampTo: 15 }
+    - { name: sustained, duration: 90, arrivalRate: 15 }
+  plugins:
+    metrics-by-endpoint:
+      useOnlyRequestNames: true
+
+scenarios:
+  - name: browse events (public, no sign-in)
+    weight: 6
+    beforeScenario: pickEvent
+    flow:
+      - get: { url: /events, name: "GET /events" }
+      - get: { url: "/events/{{ eventId }}", name: "GET /events/{id}" }
+
+  - name: attendee checks their tickets
+    weight: 3
+    beforeScenario: pickAttendee
+    flow:
+      - get: { url: /my/tickets, name: "GET /my/tickets", headers: { Authorization: "{{ token }}" } }
+
+  - name: attendee books one ticket
+    weight: 2
+    beforeScenario: pickAttendee
+    flow:
+      - post:
+          url: "/events/{{ eventId }}/book"
+          name: "POST /events/{id}/book"
+          headers: { Authorization: "{{ token }}" }
+          json: { quantity: 1 }
+      - get: { url: /my/tickets, name: "GET /my/tickets", headers: { Authorization: "{{ token }}" } }
+
+  - name: organizer opens the dashboard
+    weight: 1
+    beforeScenario: pickOrganizer
+    flow:
+      - get: { url: /dashboard, name: "GET /dashboard", headers: { Authorization: "{{ token }}" } }
+      - get: { url: "/events/{{ eventId }}/analytics", name: "GET /events/{id}/analytics", headers: { Authorization: "{{ token }}" } }

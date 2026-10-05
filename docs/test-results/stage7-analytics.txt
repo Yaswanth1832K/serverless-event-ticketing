@@ -1,0 +1,46 @@
+
+> event-ticketing-platform@1.0.0 test:analytics
+> vitest run tests/integration/analytics.test.ts --testTimeout=180000 --hookTimeout=240000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+(node:76444) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > an Attendee gets 403 on both endpoints (and sees no numbers) 2052ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > Staff get 403 as well 1489ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > another organizer cannot read organizer A's event analytics (403) and sees none of its events on the dashboard 1101ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > anonymous gets 401, unknown and malformed event ids get 404 1978ms
+ ✓ tests/integration/analytics.test.ts > before any check-in > sold counters already match the real tickets, and checked-in is 0 1641ms
+stdout | tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds
+[stream lag] scan acknowledged -> counter visible in the analytics endpoint after 316ms
+
+ ✓ tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds 1156ms
+ ✓ tests/integration/analytics.test.ts > idempotency: a replayed stream batch does not count twice > delivering the same record twice, in two invocations, leaves every counter unchanged 2225ms
+stdout | tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20
+[20 check-ins] 20 simultaneous scans on one event took 1799ms, statuses {"200":20}
+
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20 14081ms
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > the dead-letter queue is still empty 1061ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > small event: 8 sold, 4 checked in (after more scans), counters equal the DynamoDB ticket items 2870ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > big event counters equal the ticket items too 1021ms
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > the organizer dashboard totals equal the sum of the organizer's real tickets 1755ms
+stdout | tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls
+[response times] GET /dashboard              sequential x20: n=20 min=274ms p50=691ms p95=990ms max=990ms avg=653ms
+[response times] GET /events/{id}/analytics  sequential x20: n=20 min=252ms p50=658ms p95=735ms max=735ms avg=585ms
+[response times] GET /dashboard              20 concurrent:  n=20 min=310ms p50=784ms p95=1690ms max=1690ms avg=895ms
+
+ ✓ tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls 26459ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  13:34:46
+   Duration  106.17s (transform 86ms, setup 0ms, collect 258ms, tests 105.68s, environment 0ms, prepare 74ms)
+

@@ -1,0 +1,15 @@
+# playwright against https://d1q6wyylth1fcb.cloudfront.net
+# 2026-10-05T12:57:26.956Z
+
+
+Running 5 tests using 1 worker
+
+  ok 1 [desktop] › e2e\smoke.spec.ts:7:3 › site basics (no sign-in needed) › is served over HTTPS with security headers, and the settings file is public and secret-free (1.8s)
+  ok 2 [desktop] › e2e\smoke.spec.ts:30:3 › site basics (no sign-in needed) › a deep link works, and a protected page sends visitors to sign in (4.3s)
+  ok 3 [desktop] › e2e\smoke.spec.ts:38:1 › the full journey: organizer creates, attendee books, QR is scanned, numbers update (40.4s)
+  ok 4 [phone] › e2e\phone.spec.ts:7:3 › on a phone (Pixel 7 size) › public pages fit the screen, the menu works and buttons are easy to tap (9.5s)
+  ok 5 [phone] › e2e\phone.spec.ts:34:3 › on a phone (Pixel 7 size) › signed-in pages also fit, and the ticket QR is usable on a phone (10.8s)
+
+  5 passed (1.2m)
+
+# exit code: 0

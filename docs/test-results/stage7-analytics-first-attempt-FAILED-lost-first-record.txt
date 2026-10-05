@@ -1,0 +1,135 @@
+
+> event-ticketing-platform@1.0.0 test:analytics
+> vitest run tests/integration/analytics.test.ts --testTimeout=180000 --hookTimeout=240000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+(node:10200) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > an Attendee gets 403 on both endpoints (and sees no numbers) 1970ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > Staff get 403 as well 1296ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > another organizer cannot read organizer A's event analytics (403) and sees none of its events on the dashboard 1770ms
+ ✓ tests/integration/analytics.test.ts > access control: analytics are private to the owning organizer > anonymous gets 401, unknown and malformed event ids get 404 2824ms
+ ✓ tests/integration/analytics.test.ts > before any check-in > sold counters already match the real tickets, and checked-in is 0 1680ms
+stdout | tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds
+[stream lag] scan acknowledged -> counter visible in the analytics endpoint after 60655ms
+
+ × tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds 62055ms
+   → expected +0 to be 1 // Object.is equality
+ × tests/integration/analytics.test.ts > idempotency: a replayed stream batch does not count twice > delivering the same record twice, in two invocations, leaves every counter unchanged 807ms
+   → expected +0 to be 1 // Object.is equality
+stdout | tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20
+[20 check-ins] 20 simultaneous scans on one event took 2242ms, statuses {"200":20}
+
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > give a checked-in count of exactly 20, and it stays 20 15357ms
+ ✓ tests/integration/analytics.test.ts > 20 check-ins on one event > the dead-letter queue is still empty 1400ms
+ × tests/integration/analytics.test.ts > counters match the real tickets > small event: 8 sold, 4 checked in (after more scans), counters equal the DynamoDB ticket items 41811ms
+   → expected 3 to be 4 // Object.is equality
+ ✓ tests/integration/analytics.test.ts > counters match the real tickets > big event counters equal the ticket items too 628ms
+ × tests/integration/analytics.test.ts > counters match the real tickets > the organizer dashboard totals equal the sum of the organizer's real tickets 41993ms
+   → expected { totalEvents: 2, …(4) } to deeply equal { totalEvents: 2, …(4) }
+stdout | tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls
+[response times] GET /dashboard              sequential x20: n=20 min=345ms p50=532ms p95=625ms max=625ms avg=505ms
+[response times] GET /events/{id}/analytics  sequential x20: n=20 min=338ms p50=744ms p95=985ms max=985ms avg=725ms
+[response times] GET /dashboard              20 concurrent:  n=20 min=528ms p50=1893ms p95=2069ms max=2069ms avg=1554ms
+
+ ✓ tests/integration/analytics.test.ts > dashboard endpoint response times > measures sequential and concurrent calls 26695ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 4 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/analytics.test.ts > one check-in: near-real-time delay > the counter reflects a scan within a few seconds
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/integration/analytics.test.ts:133:25
+    131|     const lag = Date.now() - t0;
+    132|     console.log(`[stream lag] scan acknowledged -> counter visible in …
+    133|     expect(a.checkedIn).toBe(1);
+       |                         ^
+    134|     expect(bucketSum(a)).toBe(1);
+    135|   }, 90_000);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/4]⎯
+
+ FAIL  tests/integration/analytics.test.ts > idempotency: a replayed stream batch does not count twice > delivering the same record twice, in two invocations, leaves every counter unchanged
+AssertionError: expected +0 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 0
+
+ ❯ tests/integration/analytics.test.ts:142:30
+    140|     const t = smallTickets[0]!; // already checked in and counted above
+    141|     const before = (await analytics(small)).body;
+    142|     expect(before.checkedIn).toBe(1);
+       |                              ^
+    143| 
+    144|     const s = (v: string) => ({ S: v });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/4]⎯
+
+ FAIL  tests/integration/analytics.test.ts > counters match the real tickets > small event: 8 sold, 4 checked in (after more scans), counters equal the DynamoDB ticket items
+AssertionError: expected 3 to be 4 // Object.is equality
+
+- Expected
++ Received
+
+- 4
++ 3
+
+ ❯ tests/integration/analytics.test.ts:205:30
+    203|     expect(db).toEqual({ total: 8, checkedIn: 4, booked: 4 });
+    204|     expect(a.body.sold).toBe(db.total);
+    205|     expect(a.body.checkedIn).toBe(db.checkedIn);
+       |                              ^
+    206|     expect(a.body.remaining).toBe(12 - db.total);
+    207|     expect(a.body.attendancePct).toBe(50);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/4]⎯
+
+ FAIL  tests/integration/analytics.test.ts > counters match the real tickets > the organizer dashboard totals equal the sum of the organizer's real tickets
+AssertionError: expected { totalEvents: 2, …(4) } to deeply equal { totalEvents: 2, …(4) }
+
+- Expected
++ Received
+
+  Object {
+-   "attendancePct": 85.7,
+-   "checkedIn": 24,
++   "attendancePct": 82.1,
++   "checkedIn": 23,
+    "remaining": 4,
+    "ticketsSold": 28,
+    "totalEvents": 2,
+  }
+
+ ❯ tests/integration/analytics.test.ts:228:27
+    226|     const dbBig = await ticketsInDb(out, big);
+    227|     const dbSmall = await ticketsInDb(out, small);
+    228|     expect(d.body.totals).toEqual({
+       |                           ^
+    229|       totalEvents: 2,
+    230|       ticketsSold: dbBig.total + dbSmall.total, // 28
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/4]⎯
+
+ Test Files  1 failed (1)
+      Tests  4 failed | 9 passed (13)
+   Start at  13:28:41
+   Duration  241.65s (transform 89ms, setup 0ms, collect 425ms, tests 241.00s, environment 0ms, prepare 69ms)
+

@@ -1,0 +1,5 @@
+﻿== history (action delivery to SNS)
+2026-10-05T19:32:21.708000+05:30	Successfully executed action arn:aws:sns:us-east-1:380897727215:ticketing-platform-AlarmTopic-3Lzw72WBYoWV
+== state after ~80s
+OK	Threshold Crossed: 1 datapoint [0.0 (05/10/26 14:01:00)] was not greater than the threshold (0.0).
+

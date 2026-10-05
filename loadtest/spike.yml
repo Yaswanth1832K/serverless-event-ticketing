@@ -1,0 +1,51 @@
+# Spike test: a sudden jump to about 3x the steady load, same traffic mix as steady.yml.
+#
+# Result on the deployed stack: it did NOT reach the API Gateway limit, because that limit (50 requests/second,
+# burst 100) applies per method and this mix spreads over six methods. It is still a useful spike test (latency
+# and errors under a sudden jump). To actually go over the limit use throttle.yml.
+#
+#   npm run loadtest:spike
+config:
+  target: "{{ $processEnvironment.API_URL }}"
+  processor: ./processor.cjs
+  http:
+    timeout: 20
+  phases:
+    - { name: warm-up, duration: 10, arrivalRate: 5 }
+    - { name: spike, duration: 20, arrivalRate: 45 }
+    - { name: recovery, duration: 20, arrivalRate: 8 }
+  plugins:
+    metrics-by-endpoint:
+      useOnlyRequestNames: true
+
+scenarios:
+  - name: browse events (public, no sign-in)
+    weight: 6
+    beforeScenario: pickEvent
+    flow:
+      - get: { url: /events, name: "GET /events" }
+      - get: { url: "/events/{{ eventId }}", name: "GET /events/{id}" }
+
+  - name: attendee checks their tickets
+    weight: 3
+    beforeScenario: pickAttendee
+    flow:
+      - get: { url: /my/tickets, name: "GET /my/tickets", headers: { Authorization: "{{ token }}" } }
+
+  - name: attendee books one ticket
+    weight: 2
+    beforeScenario: pickAttendee
+    flow:
+      - post:
+          url: "/events/{{ eventId }}/book"
+          name: "POST /events/{id}/book"
+          headers: { Authorization: "{{ token }}" }
+          json: { quantity: 1 }
+      - get: { url: /my/tickets, name: "GET /my/tickets", headers: { Authorization: "{{ token }}" } }
+
+  - name: organizer opens the dashboard
+    weight: 1
+    beforeScenario: pickOrganizer
+    flow:
+      - get: { url: /dashboard, name: "GET /dashboard", headers: { Authorization: "{{ token }}" } }
+      - get: { url: "/events/{{ eventId }}/analytics", name: "GET /events/{id}/analytics", headers: { Authorization: "{{ token }}" } }

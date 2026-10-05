@@ -1,0 +1,4 @@
+ticketing-platform-api-5xx	OK
+ticketing-platform-dynamodb-throttles	OK
+ticketing-platform-lambda-errors	OK
+ticketing-platform-stream-dlq-not-empty	OK

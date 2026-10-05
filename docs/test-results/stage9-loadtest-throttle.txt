@@ -1,0 +1,46 @@
+Load test "throttle" against stack ticketing-platform   (2026-10-05T13:56:44.633Z)
+API: https://no859w0om8.execute-api.us-east-1.amazonaws.com/prod
+
+Setup: creating test users and events through the real API…
+
+Running Artillery (loadtest/throttle.yml)…
+
+=== Client-side results (Artillery) ===
+Duration:            40 s   (2026-10-05T13:57:04.591Z to 2026-10-05T13:57:50.819Z)
+Requests sent:       2500
+Requests per second: 62.4 average over the whole run, peak 50 (Artillery's own rate figure)
+Virtual users:       2500 created, 2500 completed, 0 failed
+Latency (all requests): min 224 ms   p50 262.5 ms   p95 671.9 ms   p99 1130.2 ms   max 1633 ms
+Response codes:      200: 1338, 429: 1162
+Throttled by API Gateway (429): 1162 of 2500 (46.48%)
+Server errors (5xx): 0 (0.00%)
+Other 4xx (not 429): 0
+Network errors (timeouts, resets): 0
+Error rate, counting 429 + 5xx + network errors as errors: 46.48%
+
+Latency per endpoint (ms):
+  endpoint                          count    p50    p95    p99    max
+  GET /events                        2500  262.5  671.9 1130.2   1633
+
+Response codes per endpoint:
+  GET /events.codes.200: 1338
+  GET /events.codes.429: 1162
+
+Waiting 150 s for CloudWatch to catch up…
+
+=== Server-side evidence (CloudWatch, same time window) ===
+API Gateway:   2507 requests counted, 4xx 1162 (includes the 429 throttles), 5xx 0
+Lambda:        1362 invocations, 0 errors, 0 throttles, peak concurrent executions 38
+DynamoDB:      read throttle events 0, write throttle events 0, transaction conflicts 0
+Bookings:      0 succeeded, 0 conflict retries, 0 sold-out rejections
+
+=== Data check ===
+Tickets sold across the 5 test events (from the database): 0
+Successful booking responses seen by the load generator (HTTP 201): 0
+MATCH: no ticket was lost or double-counted under load.
+
+=== Honest notes ===
+- 1162 request(s) were throttled by API Gateway (HTTP 429). That is the stage limit (50 requests/second, burst 100) doing its job.
+- Nothing behind the API was throttled: Lambda throttles 0, DynamoDB read and write throttle events 0.
+- The load generator ran on one laptop on a home/campus network, so the latencies include that network. The CloudWatch Latency metric (server-side) is lower.
+- Bookings were spread over 5 events. One single hot event is slower; see the concurrency test (stage 5) for that case.

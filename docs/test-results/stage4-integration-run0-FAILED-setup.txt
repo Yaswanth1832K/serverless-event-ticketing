@@ -1,0 +1,72 @@
+﻿
+ RUN  v2.1.9 <project>
+
+npx : (node:33332) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+At line:1 char:411
++ ... _COLOR='0'; npx vitest run tests/integration --testTimeout=60000 --ho ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:33332) Wa...JavaScript (v3):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ↓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > rejects Staff and Admin at signup
+ ↓ tests/integration/events.test.ts > signup role mapping (against real Cognito) > puts Organizer and default signups in the right groups
+ ↓ tests/integration/events.test.ts > authentication > public browsing works without a token
+ ↓ tests/integration/events.test.ts > authentication > write routes reject missing or bad tokens with 401
+ ↓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > create -> 403
+ ↓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > edit -> 403 and event is unchanged
+ ↓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > delete -> 403 and event still exists
+ ↓ tests/integration/events.test.ts > attendee token gets 403 on organizer actions > image-url and my/events -> 403
+ ↓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > edit -> 403
+ ↓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > delete -> 403
+ ↓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > image upload url -> 403
+ ↓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > A event is unchanged after all attempts
+ ↓ tests/integration/events.test.ts > organizer B cannot touch organizer A event > B's my/events does not list A's event, A's does
+ ↓ tests/integration/events.test.ts > input validation > create with missing fields -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with zero capacity -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with negative price -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with past date -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with huge name -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with string capacity -> 400
+ ↓ tests/integration/events.test.ts > input validation > create with not json -> 400
+ ↓ tests/integration/events.test.ts > input validation > forged organizerId and sold are ignored on create
+ ↓ tests/integration/events.test.ts > input validation > malformed event id -> 404
+ ↓ tests/integration/events.test.ts > owner can update; public view hides organizerId > updates fields and keeps sold untouched
+ ↓ tests/integration/events.test.ts > owner can update; public view hides organizerId > public GET has no organizerId
+ ↓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > rejects disallowed content types and oversized declarations
+ ↓ tests/integration/events.test.ts > image upload (pre-signed POST, private bucket, CloudFront) > issues a short-lived signed policy and S3 enforces it
+ ↓ tests/integration/events.test.ts > delete > owner deletes an unsold event, then it is gone
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/integration/events.test.ts [ tests/integration/events.test.ts ]
+AssertionError: expected 403 to be 201 // Object.is equality
+
+- Expected
++ Received
+
+- 201
++ 403
+
+ ❯ tests/integration/events.test.ts:36:22
+     34|   ]);
+     35|   const res = await api(out, 'POST', '/events', orgA.token, eventBody(…
+     36|   expect(res.status).toBe(201);
+       |                      ^
+     37|   eventId = res.body.eventId;
+     38|   createdEvents.push(eventId);
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+ Test Files  1 failed (1)
+      Tests  27 skipped (27)
+   Start at  12:12:27
+   Duration  8.29s (transform 76ms, setup 0ms, collect 165ms, tests 7.89s, environment 0ms, prepare 73ms)
+

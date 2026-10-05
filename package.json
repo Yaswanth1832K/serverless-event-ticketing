@@ -1,0 +1,50 @@
+{
+  "name": "event-ticketing-platform",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless Event Ticketing & QR Check-in Platform on AWS",
+  "scripts": {
+    "lint": "biome lint backend tests scripts frontend/src frontend/e2e loadtest",
+    "typecheck": "tsc --noEmit",
+    "loadtest": "node scripts/run-loadtest.mjs steady",
+    "loadtest:spike": "node scripts/run-loadtest.mjs spike",
+    "loadtest:throttle": "node scripts/run-loadtest.mjs throttle",
+    "test": "vitest run tests/unit",
+    "build": "sam build",
+    "deploy": "sam deploy",
+    "test:integration": "vitest run tests/integration --testTimeout=60000 --hookTimeout=90000 --no-file-parallelism",
+    "test:concurrency": "vitest run tests/concurrency --testTimeout=120000 --hookTimeout=120000 --no-file-parallelism --reporter=verbose",
+    "test:concurrency:x3": "node scripts/run-repeated.mjs 3 docs/test-results/stage5-concurrency.txt npm run test:concurrency",
+    "test:checkin": "vitest run tests/integration/checkin.test.ts --testTimeout=90000 --hookTimeout=180000 --no-file-parallelism --reporter=verbose",
+    "test:checkin:x3": "node scripts/run-repeated.mjs 3 docs/test-results/stage6-checkin.txt npm run test:checkin",
+    "test:analytics": "vitest run tests/integration/analytics.test.ts --testTimeout=180000 --hookTimeout=240000 --no-file-parallelism --reporter=verbose",
+    "test:fresh-trigger:series": "node scripts/run-fresh-trigger-series.mjs docs/test-results/stage7b-fresh-trigger.txt",
+    "frontend:config": "node scripts/frontend-config.mjs",
+    "frontend:test": "npm --prefix frontend test",
+    "deploy:frontend": "node scripts/deploy-frontend.mjs",
+    "seed:demo": "node scripts/seed-demo.mjs",
+    "seed:demo:clean": "node scripts/seed-demo.mjs --clean",
+    "demo:reset": "node scripts/seed-demo.mjs --reset",
+    "e2e": "node scripts/run-e2e.mjs",
+    "e2e:cleanup": "node scripts/cleanup-e2e.mjs"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "@types/aws-lambda": "^8.10.164",
+    "@types/node": "^26.6.4",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^2.1.9"
+  },
+  "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.1146.0",
+    "@aws-sdk/client-dynamodb": "^3.1146.0",
+    "@aws-sdk/client-lambda": "^3.1146.0",
+    "@aws-sdk/client-s3": "^3.1146.0",
+    "@aws-sdk/client-sqs": "^3.1146.0",
+    "@aws-sdk/client-ssm": "^3.1146.0",
+    "@aws-sdk/lib-dynamodb": "^3.1146.0",
+    "@aws-sdk/s3-presigned-post": "^3.1146.0",
+    "@aws-sdk/util-dynamodb": "^3.996.9"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "name": "ticketing-loadtest",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Artillery load tests. Kept in its own package so the large Artillery install is not part of the main project install or the CI unit-test job.",
+  "dependencies": {
+    "artillery": "^2.0.0"
+  }
+}

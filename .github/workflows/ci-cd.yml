@@ -1,0 +1,237 @@
+# CI/CD for the ticketing platform.
+#
+#   every pull request and push to main:  lint, typecheck, unit tests, frontend tests + build, sam validate
+#   push to main, after those pass:       deploy to DEV automatically
+#   after DEV succeeds:                   deploy to PROD, but only once a reviewer approves the "prod" environment
+#
+# AWS access uses OIDC role assumption: GitHub hands the job a short-lived token and AWS exchanges it for
+# temporary credentials. There are NO long-lived AWS access keys in this repository or in GitHub secrets.
+# What has to exist in AWS and GitHub is listed in docs/ci-cd-setup.md.
+name: ci-cd
+
+# TEMPORARY: manual runs only, until the first run has been seen to work. The intended triggers are
+#   pull_request:
+#   push:
+#     branches: [main]
+# and they are restored in a second commit (see docs/ci-cd-setup.md).
+on:
+  workflow_dispatch:
+
+# One deployment pipeline at a time per branch, and never cancel a deploy half way through.
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+env:
+  AWS_REGION: us-east-1
+  NODE_VERSION: '22'
+
+jobs:
+  verify:
+    name: Lint, typecheck, test, validate
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Install frontend dependencies
+        run: npm ci --prefix frontend
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck (backend and tests)
+        run: npm run typecheck
+
+      - name: Typecheck (frontend)
+        run: npm --prefix frontend run typecheck
+
+      - name: Unit tests (backend)
+        run: npm test
+
+      - name: Unit tests (frontend)
+        run: npm run frontend:test
+
+      - name: Build the frontend
+        run: npm --prefix frontend run build
+
+      # --lint runs cfn-lint on top of the schema check. The validate step only needs SOME credentials to
+      # exist for the SDK, never uses them against AWS, and the values below are deliberate dummies.
+      - name: sam validate
+        run: sam validate --lint --region ${{ env.AWS_REGION }}
+        env:
+          AWS_DEFAULT_REGION: ${{ env.AWS_REGION }}
+          AWS_ACCESS_KEY_ID: not-used-for-validate
+          AWS_SECRET_ACCESS_KEY: not-used-for-validate
+
+      - name: sam build (proves the Lambda bundles compile)
+        run: npm run build
+
+  deploy-dev:
+    name: Deploy to dev
+    needs: verify
+    # main only (a push to main, or a manual run started on main)
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: dev
+    permissions:
+      id-token: write   # needed to request the OIDC token
+      contents: read
+    env:
+      STACK_NAME: ${{ vars.STACK_NAME }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-session-name: gha-dev-${{ github.run_id }}
+
+      - run: npm ci
+      - run: npm ci --prefix frontend
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy the stack
+        run: >
+          sam deploy
+          --stack-name "$STACK_NAME"
+          --region "$AWS_REGION"
+          --capabilities CAPABILITY_IAM
+          --resolve-s3
+          --no-confirm-changeset
+          --no-fail-on-empty-changeset
+          --parameter-overrides
+          "QrSecretParamName=${{ vars.QR_SECRET_PARAM_NAME }}"
+          "AlarmEmail=${{ vars.ALARM_EMAIL }}"
+
+      - name: Publish the frontend (same script as local use)
+        run: npm run deploy:frontend
+
+      - name: Smoke test
+        run: |
+          URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
+          WEB=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='WebUrl'].OutputValue" --output text)
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/health" || true)
+            [ "$code" = "200" ] && break
+            echo "health returned $code, retrying ($i/10)"; sleep 6
+          done
+          [ "$code" = "200" ] || { echo "API health check failed ($code)"; exit 1; }
+          web=$(curl -s -o /dev/null -w '%{http_code}' "$WEB/")
+          [ "$web" = "200" ] || { echo "website check failed ($web)"; exit 1; }
+          echo "API /health and the website both answer 200"
+
+  deploy-prod:
+    name: Deploy to prod (needs approval)
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    # The "prod" environment has required reviewers (configured in GitHub), so this job waits for a person to approve.
+    environment: prod
+    permissions:
+      id-token: write
+      contents: read
+    env:
+      STACK_NAME: ${{ vars.STACK_NAME }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - uses: aws-actions/setup-sam@v2
+        with:
+          use-installer: true
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ vars.AWS_ROLE_ARN }}
+          aws-region: ${{ env.AWS_REGION }}
+          role-session-name: gha-prod-${{ github.run_id }}
+
+      - run: npm ci
+      - run: npm ci --prefix frontend
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy the stack
+        run: >
+          sam deploy
+          --stack-name "$STACK_NAME"
+          --region "$AWS_REGION"
+          --capabilities CAPABILITY_IAM
+          --resolve-s3
+          --no-confirm-changeset
+          --no-fail-on-empty-changeset
+          --parameter-overrides
+          "QrSecretParamName=${{ vars.QR_SECRET_PARAM_NAME }}"
+          "AlarmEmail=${{ vars.ALARM_EMAIL }}"
+
+      - name: Publish the frontend (same script as local use)
+        run: npm run deploy:frontend
+
+      - name: Smoke test
+        run: |
+          URL=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='ApiUrl'].OutputValue" --output text)
+          WEB=$(aws cloudformation describe-stacks --stack-name "$STACK_NAME" --query "Stacks[0].Outputs[?OutputKey=='WebUrl'].OutputValue" --output text)
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            code=$(curl -s -o /dev/null -w '%{http_code}' "$URL/health" || true)
+            [ "$code" = "200" ] && break
+            echo "health returned $code, retrying ($i/10)"; sleep 6
+          done
+          [ "$code" = "200" ] || { echo "API health check failed ($code)"; exit 1; }
+          web=$(curl -s -o /dev/null -w '%{http_code}' "$WEB/")
+          [ "$web" = "200" ] || { echo "website check failed ($web)"; exit 1; }
+          echo "API /health and the website both answer 200"

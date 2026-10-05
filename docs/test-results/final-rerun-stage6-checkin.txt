@@ -1,0 +1,145 @@
+# npm run test:checkin
+# started 2026-10-05T14:46:23.188Z
+
+============================== RUN 1 of 3 (2026-10-05T14:46:23.189Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:checkin
+> vitest run tests/integration/checkin.test.ts --testTimeout=90000 --hookTimeout=180000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/integration/checkin.test.ts > QR endpoint > owner gets a signed token that carries no personal data 683ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > a user who does not own the ticket cannot fetch its QR (404, no token) 2291ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > rejects anonymous callers, wrong event ids and malformed ids 2342ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects every forged or edited token with 400 INVALID_TOKEN 3946ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects an expired token (signed with the real key) with 400 TOKEN_EXPIRED 675ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a token from another event with 409 WRONG_EVENT 674ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a validly signed token for a ticket that does not exist (404) 459ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > none of those rejected scans changed any ticket 2553ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Attendee token gets 403 1331ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > anonymous gets 401 648ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Organizer who does not own the event gets 403
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > bad input gets 400 2021ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > the ticket is still BOOKED after all of that 674ms
+ ✓ tests/integration/checkin.test.ts > admission > first valid scan by Staff is admitted 1424ms
+ ✓ tests/integration/checkin.test.ts > admission > a duplicate scan is rejected (by Staff and by the owning Organizer) 1539ms
+ ✓ tests/integration/checkin.test.ts > admission > the owning Organizer can admit a different ticket
+stdout | tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors
+[parallel scan] 20 simultaneous scans of one ticket, status counts {"200":1,"409":19}, latency p50=1558ms max=2089ms, wall=2092ms
+
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors 2786ms
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > simultaneous scans of different tickets all succeed (no false rejections) 842ms
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  20:16:23
+   Duration  45.46s (transform 120ms, setup 0ms, collect 334ms, tests 44.85s, environment 0ms, prepare 77ms)
+
+(node:73816) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 1 exit code: 0
+
+============================== RUN 2 of 3 (2026-10-05T14:47:09.463Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:checkin
+> vitest run tests/integration/checkin.test.ts --testTimeout=90000 --hookTimeout=180000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/integration/checkin.test.ts > QR endpoint > owner gets a signed token that carries no personal data 680ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > a user who does not own the ticket cannot fetch its QR (404, no token) 2391ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > rejects anonymous callers, wrong event ids and malformed ids 2662ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects every forged or edited token with 400 INVALID_TOKEN 5077ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects an expired token (signed with the real key) with 400 TOKEN_EXPIRED 684ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a token from another event with 409 WRONG_EVENT 664ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a validly signed token for a ticket that does not exist (404) 711ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > none of those rejected scans changed any ticket 3155ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Attendee token gets 403 979ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > anonymous gets 401 674ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Organizer who does not own the event gets 403 676ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > bad input gets 400 2086ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > the ticket is still BOOKED after all of that 672ms
+ ✓ tests/integration/checkin.test.ts > admission > first valid scan by Staff is admitted 998ms
+ ✓ tests/integration/checkin.test.ts > admission > a duplicate scan is rejected (by Staff and by the owning Organizer) 1436ms
+ ✓ tests/integration/checkin.test.ts > admission > the owning Organizer can admit a different ticket 703ms
+stdout | tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors
+[parallel scan] 20 simultaneous scans of one ticket, status counts {"200":1,"409":19}, latency p50=1041ms max=1635ms, wall=1637ms
+
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors 2349ms
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > simultaneous scans of different tickets all succeed (no false rejections) 737ms
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  20:17:10
+   Duration  47.39s (transform 129ms, setup 0ms, collect 365ms, tests 46.75s, environment 0ms, prepare 99ms)
+
+(node:25892) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 2 exit code: 0
+
+============================== RUN 3 of 3 (2026-10-05T14:47:57.735Z) ==============================
+
+> event-ticketing-platform@1.0.0 test:checkin
+> vitest run tests/integration/checkin.test.ts --testTimeout=90000 --hookTimeout=180000 --no-file-parallelism --reporter=verbose
+
+
+ RUN  v2.1.9 <project>
+
+ ✓ tests/integration/checkin.test.ts > QR endpoint > owner gets a signed token that carries no personal data 723ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > a user who does not own the ticket cannot fetch its QR (404, no token) 2821ms
+ ✓ tests/integration/checkin.test.ts > QR endpoint > rejects anonymous callers, wrong event ids and malformed ids 2290ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects every forged or edited token with 400 INVALID_TOKEN 5405ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects an expired token (signed with the real key) with 400 TOKEN_EXPIRED 659ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a token from another event with 409 WRONG_EVENT 684ms
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > rejects a validly signed token for a ticket that does not exist (404)
+ ✓ tests/integration/checkin.test.ts > forged, edited, expired and wrong-event tokens are rejected > none of those rejected scans changed any ticket 3604ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Attendee token gets 403 1408ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > anonymous gets 401 726ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > an Organizer who does not own the event gets 403 382ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > bad input gets 400 2046ms
+ ✓ tests/integration/checkin.test.ts > role and ownership checks on the scan endpoint > the ticket is still BOOKED after all of that 699ms
+ ✓ tests/integration/checkin.test.ts > admission > first valid scan by Staff is admitted 1460ms
+ ✓ tests/integration/checkin.test.ts > admission > a duplicate scan is rejected (by Staff and by the owning Organizer) 1057ms
+ ✓ tests/integration/checkin.test.ts > admission > the owning Organizer can admit a different ticket 702ms
+stdout | tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors
+[parallel scan] 20 simultaneous scans of one ticket, status counts {"200":1,"409":19}, latency p50=844ms max=1052ms, wall=1063ms
+
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > exactly 1 succeeds, 19 get 409 ALREADY_USED, no errors 1354ms
+ ✓ tests/integration/checkin.test.ts > 20 simultaneous scans of one ticket > simultaneous scans of different tickets all succeed (no false rejections)
+
+ Test Files  1 passed (1)
+      Tests  18 passed (18)
+   Start at  20:17:58
+   Duration  48.45s (transform 126ms, setup 0ms, collect 357ms, tests 47.83s, environment 0ms, prepare 89ms)
+
+(node:70248) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+--- run 3 exit code: 0
+
+# SUMMARY: 3/3 runs passed

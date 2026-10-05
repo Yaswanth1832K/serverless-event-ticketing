@@ -1,0 +1,55 @@
+Load test "spike" against stack ticketing-platform   (2026-10-05T13:50:36.919Z)
+API: https://no859w0om8.execute-api.us-east-1.amazonaws.com/prod
+
+Setup: creating test users and events through the real API…
+
+Running Artillery (loadtest/spike.yml)…
+
+=== Client-side results (Artillery) ===
+Duration:            50 s   (2026-10-05T13:50:57.043Z to 2026-10-05T13:51:55.848Z)
+Requests sent:       1935
+Requests per second: 38.5 average over the whole run, peak 32 (Artillery's own rate figure)
+Virtual users:       1110 created, 1110 completed, 0 failed
+Latency (all requests): min 237 ms   p50 262.5 ms   p95 632.8 ms   p99 685.5 ms   max 1118 ms
+Response codes:      200: 1750, 201: 185
+Throttled by API Gateway (429): 0 of 1935 (0.00%)
+Server errors (5xx): 0 (0.00%)
+Other 4xx (not 429): 0
+Network errors (timeouts, resets): 0
+Error rate, counting 429 + 5xx + network errors as errors: 0.00%
+
+Latency per endpoint (ms):
+  endpoint                          count    p50    p95    p99    max
+  GET /dashboard                       84  262.5  497.8  685.5   1039
+  GET /events                         556  262.5  620.3  685.5   1021
+  GET /events/{id}                    556  262.5  645.6  685.5    778
+  GET /events/{id}/analytics           84  273.2  620.3  671.9    691
+  GET /my/tickets                     470  262.5  658.6  685.5   1118
+  POST /events/{id}/book              185  284.3  572.6  699.4    772
+
+Response codes per endpoint:
+  GET /dashboard.codes.200: 84
+  GET /events.codes.200: 556
+  GET /events/{id}.codes.200: 556
+  GET /events/{id}/analytics.codes.200: 84
+  GET /my/tickets.codes.200: 470
+  POST /events/{id}/book.codes.201: 185
+
+Waiting 150 s for CloudWatch to catch up…
+
+=== Server-side evidence (CloudWatch, same time window) ===
+API Gateway:   1942 requests counted, 4xx 0 (includes the 429 throttles), 5xx 0
+Lambda:        1960 invocations, 0 errors, 0 throttles, peak concurrent executions 6
+DynamoDB:      read throttle events 0, write throttle events 0, transaction conflicts 0
+Bookings:      185 succeeded, 0 conflict retries, 0 sold-out rejections
+
+=== Data check ===
+Tickets sold across the 5 test events (from the database): 185
+Successful booking responses seen by the load generator (HTTP 201): 185
+MATCH: no ticket was lost or double-counted under load.
+
+=== Honest notes ===
+- No request was throttled by API Gateway (no HTTP 429).
+- Nothing behind the API was throttled: Lambda throttles 0, DynamoDB read and write throttle events 0.
+- The load generator ran on one laptop on a home/campus network, so the latencies include that network. The CloudWatch Latency metric (server-side) is lower.
+- Bookings were spread over 5 events. One single hot event is slower; see the concurrency test (stage 5) for that case.

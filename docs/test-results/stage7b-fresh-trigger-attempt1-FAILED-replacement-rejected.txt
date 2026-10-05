@@ -1,0 +1,47 @@
+# fresh-trigger series: TRIM_HORIZON
+# started 2026-10-05T09:00:17.882Z
+
+============================== RUN 1 of 1: StreamStartingPosition=TRIM_HORIZON (2026-10-05T09:00:17.884Z) ==============================
+
+ RUN  v2.1.9 <project>
+
+stdout | tests/fresh-trigger/fresh-trigger.test.ts > a ticket scanned right after a NEW stream trigger appears > is counted (TRIM_HORIZON) / is observed (LATEST control)
+[fresh-trigger TRIM_HORIZON] 09:00:50.158 old trigger(s) disabled: 07938ac8 (LATEST)
+[fresh-trigger TRIM_HORIZON] 09:00:50.180 sam deploy started with StreamStartingPosition=TRIM_HORIZON
+
+ × tests/fresh-trigger/fresh-trigger.test.ts > a ticket scanned right after a NEW stream trigger appears > is counted (TRIM_HORIZON) / is observed (LATEST control) 484374ms
+   → new trigger never appeared
+
+ Test Files  1 failed (1)
+      Tests  1 failed (1)
+   Start at  14:30:19
+   Duration  515.80s (transform 109ms, setup 0ms, collect 325ms, tests 515.20s, environment 0ms, prepare 94ms)
+
+(node:71068) Warning: NodeVersionSupportWarning: The AWS SDK for JavaScript (v3)
+versions published after the first week of January 2027
+will require node >=22. You are running node v20.14.0.
+
+To continue receiving updates to AWS services, bug fixes,
+and security updates please upgrade to node >=22.
+
+More information can be found at: https://a.co/c895JFp
+(Use `node --trace-warnings ...` to show where the warning was created)
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/fresh-trigger/fresh-trigger.test.ts > a ticket scanned right after a NEW stream trigger appears > is counted (TRIM_HORIZON) / is observed (LATEST control)
+Error: new trigger never appeared
+ ❯ tests/fresh-trigger/fresh-trigger.test.ts:129:46
+    127|       newTrigger = (await mappings()).find((m) => !oldIds.has(m.UUID!)…
+    128|       if (newTrigger) break;
+    129|       if (Date.now() > appearDeadline) throw new Error('new trigger ne…
+       |                                              ^
+    130|       await sleep(300);
+    131|     }
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+--- run 1 exit code: 1
+
+# SUMMARY
+# run 1 TRIM_HORIZON: exit 1; no RESULT line

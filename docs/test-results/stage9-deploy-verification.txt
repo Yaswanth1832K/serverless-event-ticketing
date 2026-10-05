@@ -1,0 +1,13 @@
+﻿== alarms (2026-10-05T18:52:50.8313223+05:30)
+ticketing-platform-api-5xx	INSUFFICIENT_DATA	Unchecked: Initial alarm creation
+ticketing-platform-dynamodb-throttles	INSUFFICIENT_DATA	Unchecked: Initial alarm creation
+ticketing-platform-lambda-errors	INSUFFICIENT_DATA	Unchecked: Initial alarm creation
+ticketing-platform-stream-dlq-not-empty	INSUFFICIENT_DATA	Unchecked: Initial alarm creation
+== dashboard
+ticketing-platform-overview
+widgets: 13
+== topic subscriptions
+<alarm-email>	PendingConfirmation
+== stream trigger
+Enabled	LATEST
+
