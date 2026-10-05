@@ -4,7 +4,7 @@
 
 **Progress (2026-10-05):** steps 1 to 3 were done with the AWS CLI for repository `Yaswanth1832K/serverless-event-ticketing`: the OIDC provider, the roles `ticketing-ci-dev` and `ticketing-ci-prod` (inline policy `deploy`) and the SSM parameter `/ticketing-dev/qr-signing-secret`. Steps 5 to 7 were done with `git` and `gh`. The roles were assumed by GitHub Actions in runs 2 and 4. Logs: `docs/test-results/ci-run1-FAILED-deploy-dev.txt`, `ci-run2-deploy-dev-success.txt`, `ci-run4-*.txt`.
 
-**Trigger (temporary):** the first commit has `workflow_dispatch` only, so nothing runs on push. Start it by hand (Actions tab, "ci-cd", Run workflow on `main`, or `gh workflow run ci-cd.yml --ref main`). A manual run on `main` runs `verify`, then `deploy-dev` automatically, then waits for approval before `deploy-prod`. Once a run has been seen to work, a second commit restores `pull_request` and `push` to `main`.
+**Triggers:** `pull_request`, `push` to `main`, and `workflow_dispatch` (start by hand: Actions tab, "ci-cd", Run workflow on `main`, or `gh workflow run ci-cd.yml --ref main`). `verify` runs on all of them. `deploy-dev` and `deploy-prod` run only on `main`: `deploy-dev` automatically, then `deploy-prod` after a reviewer approves the `prod` environment. The first two runs were manual (the `push` and `pull_request` triggers were switched off until the pipeline had worked once); the push trigger itself has not yet been seen to fire (limitation L40).
 
 ## What the pipeline does
 

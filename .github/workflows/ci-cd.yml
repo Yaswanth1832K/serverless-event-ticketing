@@ -9,12 +9,10 @@
 # What has to exist in AWS and GitHub is listed in docs/ci-cd-setup.md.
 name: ci-cd
 
-# TEMPORARY: manual runs only, until the first run has been seen to work. The intended triggers are
-#   pull_request:
-#   push:
-#     branches: [main]
-# and they are restored in a second commit (see docs/ci-cd-setup.md).
 on:
+  pull_request:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 # One deployment pipeline at a time per branch, and never cancel a deploy half way through.
