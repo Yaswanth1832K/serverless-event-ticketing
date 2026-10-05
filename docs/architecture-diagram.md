@@ -124,7 +124,7 @@ erDiagram
 ```mermaid
 flowchart LR
     DEV["Developer laptop"] -->|"npm run build<br/>sam deploy<br/>npm run deploy:frontend"| CFN["CloudFormation stack<br/>ticketing-platform"]
-    DEV -.->|"manual run on main<br/>run green once"| GH["GitHub Actions<br/>verify: lint, typecheck, tests, sam validate"]
+    DEV -.->|"push or manual run on main<br/>run green twice"| GH["GitHub Actions<br/>verify: lint, typecheck, tests, sam validate"]
     GH -.-> DEVJOB["deploy-dev<br/>automatic<br/>OIDC role ticketing-ci-dev"]
     DEVJOB -.-> APPROVE{"Required reviewer<br/>environment prod"}
     APPROVE -.-> PRODJOB["deploy-prod<br/>OIDC role ticketing-ci-prod"]
@@ -132,4 +132,4 @@ flowchart LR
     PRODJOB -.-> CFN
 ```
 
-The dashed pipeline path has run green once, started by hand (the push trigger is not enabled yet). The solid path (laptop to stack) is what every deploy in Stages 3 to 9 used. See [ci-cd-setup.md](ci-cd-setup.md).
+The dashed pipeline path has run green twice: once started by hand, once by a push to `main`. The solid path (laptop to stack) is what every deploy in Stages 3 to 9 used. See [ci-cd-setup.md](ci-cd-setup.md).

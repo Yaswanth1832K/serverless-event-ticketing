@@ -11,7 +11,7 @@ Serverless Event Ticketing and QR Check-in Platform on AWS with Overselling Prot
 
 ## 1. Abstract (draft, about 170 words)
 
-> Small event organizers often sell tickets through forms and spreadsheets, which allows overselling, copied tickets and no live view of attendance. This project builds a serverless ticketing platform on AWS (API Gateway, Lambda, DynamoDB, Cognito, S3, CloudFront) defined entirely in AWS SAM. Overselling is prevented inside the database with a single conditional transaction; in tests against the deployed system, 50 simultaneous buyers competing for 5 tickets produced exactly 5 bookings and 45 sold-out answers, in three repeated runs. Each ticket carries a signed QR token with no personal data and can be admitted exactly once: 20 simultaneous scans of one ticket produced 1 admission and 19 rejections in every run. Organizers see attendance on a dashboard fed by DynamoDB Streams with idempotent counters; a replayed stream batch did not change a counter, and 20 check-ins counted exactly 20. A React web app, a CloudWatch dashboard with four alarms, and Artillery load tests (about 2,900 requests with no errors at 30 requests per second) complete the system. Limitations, including one open stream-trigger issue and a CI pipeline proven only by one manual run, are documented.
+> Small event organizers often sell tickets through forms and spreadsheets, which allows overselling, copied tickets and no live view of attendance. This project builds a serverless ticketing platform on AWS (API Gateway, Lambda, DynamoDB, Cognito, S3, CloudFront) defined entirely in AWS SAM. Overselling is prevented inside the database with a single conditional transaction; in tests against the deployed system, 50 simultaneous buyers competing for 5 tickets produced exactly 5 bookings and 45 sold-out answers, in three repeated runs. Each ticket carries a signed QR token with no personal data and can be admitted exactly once: 20 simultaneous scans of one ticket produced 1 admission and 19 rejections in every run. Organizers see attendance on a dashboard fed by DynamoDB Streams with idempotent counters; a replayed stream batch did not change a counter, and 20 check-ins counted exactly 20. A React web app, a CloudWatch dashboard with four alarms, and Artillery load tests (about 2,900 requests with no errors at 30 requests per second) complete the system. Limitations, including one open stream-trigger issue and a CI pipeline that ran green twice (limits documented), are documented.
 
 (Every number above is from [stage5-concurrency.txt], [stage6-checkin.txt], [stage7-analytics.txt], [stage9-loadtest-steady.txt].)
 
@@ -27,7 +27,7 @@ Problem statement: [01-requirements.md](01-requirements.md) section 1. Objective
 | O4 | Near-real-time attendance | **Met, tested** | scan to counter 316 ms (one measurement); the page polls every 5 s [stage7-analytics.txt] |
 | O5 | Role-based access with ownership checks | **Met, tested** | attendee 403 on write routes, organizer B 403 on A's event, non-owners 404 on QR, attendee 403 on analytics [stage4, 6, 7] |
 | O6 | Serverless, free-tier | **Serverless: met. Free-tier: not measured** | no always-on resource; no billing data was looked at. Say "designed for" not "stayed within" |
-| O7 | Reproducible deploy and observability | **Partly** | `sam deploy` and the dashboard and alarms were deployed and verified; **the GitHub Actions pipeline ran green once by manual trigger** (push trigger not enabled, failure paths untried) |
+| O7 | Reproducible deploy and observability | **Partly** | `sam deploy` and the dashboard and alarms were deployed and verified; **the GitHub Actions pipeline ran green twice (one manual run, one started by a push)**; pull-request trigger and failure paths untried |
 
 ## 3. Existing approaches versus the proposed system
 
@@ -128,19 +128,19 @@ Server side in all three: 0 Lambda errors, 0 Lambda throttles, 0 DynamoDB thrott
 
 ## 9. Monitoring and DevOps
 
-CloudWatch dashboard `ticketing-platform-overview` (13 widgets), four alarms to an SNS topic, custom metrics, 7-day log retention. Verified in AWS: dashboard and alarms exist, all four read OK after the load tests; the alarm-to-SNS action was exercised by forcing one alarm [stage9-alarm-wiring-test.txt]. **Not verified:** e-mail delivery (subscription was unconfirmed) and any alarm firing for a real failure. SAM deploy flow documented in the [README](../README.md). CI/CD: **run green once by manual trigger** ([ci-cd-setup.md](ci-cd-setup.md)).
+CloudWatch dashboard `ticketing-platform-overview` (13 widgets), four alarms to an SNS topic, custom metrics, 7-day log retention. Verified in AWS: dashboard and alarms exist, all four read OK after the load tests; the alarm-to-SNS action was exercised by forcing one alarm [stage9-alarm-wiring-test.txt]. **Not verified:** e-mail delivery (subscription was unconfirmed) and any alarm firing for a real failure. SAM deploy flow documented in the [README](../README.md). CI/CD: **run green twice (one manual, one push-triggered)** ([ci-cd-setup.md](ci-cd-setup.md)).
 
 ## 10. Limitations and future work
 
 Top items from [limitations.md](limitations.md) to put in the report:
 - **L25 (open):** the stream trigger starts at `LATEST`; one check-in was lost right after the first deploy; cause not proven; a fix attempt failed and nothing was changed.
-- L16 no idempotency key on booking; L17 hot event under extreme bursts; L19 Staff not tied to an event; L20 a copied QR works for the first scanner; L36 per-method throttle; L38 small load tests; L40 CI proven only by one manual run; L13 no payment.
+- L16 no idempotency key on booking; L17 hot event under extreme bursts; L19 Staff not tied to an event; L20 a copied QR works for the first scanner; L36 per-method throttle; L38 small load tests; L40 CI ran green twice, pull-request trigger and failure paths untried; L13 no payment.
 
 Future work: idempotency keys for booking, staff assignments, rotating QR codes, key rotation, sharded counters or a queue per event for very hot events, a reconciliation job, WebSockets for sub-second updates, a WAF and a custom domain, per-user purchase caps, a two-step trigger fix for L25 (awaiting your decision), real-device camera testing.
 
 ## 11. Conclusion (draft)
 
-> The platform meets its three core correctness goals in tests against the deployed system: no overselling, one admission per ticket, and counters that are not counted twice. It is serverless end to end, observable through a dashboard and alarms, and documented with its failures and limitations. Open items are one stream-trigger issue (L25), a CI/CD pipeline proven only by one manual run, an unmeasured cost, and an untested camera on a real phone.
+> The platform meets its three core correctness goals in tests against the deployed system: no overselling, one admission per ticket, and counters that are not counted twice. It is serverless end to end, observable through a dashboard and alarms, and documented with its failures and limitations. Open items are one stream-trigger issue (L25), a CI/CD pipeline that ran green twice but whose pull-request trigger and failure paths are untried, an unmeasured cost, and an untested camera on a real phone.
 
 ## Appendix A: figures and screenshots to include
 
@@ -155,7 +155,7 @@ Future work: idempotency keys for booking, staff assignments, rotating QR codes,
 | Implementation | 4 | sections 6 and 8; the three concurrency, check-in and replay tests |
 | Security | 2 | [06-security.md](06-security.md) and its tests |
 | Database | 2 | [03-data-model.md](03-data-model.md), transaction design, idempotent counters |
-| Deployment and DevOps | 2 | `template.yaml`, README, `sam deploy` history; CI/CD as "run once, manually" |
+| Deployment and DevOps | 2 | `template.yaml`, README, `sam deploy` history; CI/CD as "run green twice (manual and push)" |
 | Monitoring | 1 | dashboard, alarms, load test results |
 | Documentation and presentation | 2 | this folder, [08-presentation.md](08-presentation.md), [demo-guide.md](demo-guide.md) |
 | Innovation | 1 | idempotent stream counters with a replay test; signed anonymous QR; live analytics without WebSockets |

@@ -1,0 +1,901 @@
+Lint, typecheck, test, validate	Set up job	﻿2026-10-05T16:55:58.4702617Z Current runner version: '2.337.0'
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4739008Z ##[group]Runner Image Provisioner
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4740854Z Hosted Compute Agent
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4742025Z Version: 20260901.588
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4743919Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4745357Z Build Date: 2026-09-01T19:56:44Z
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4746600Z Worker ID: {83210099-bb3f-4ea5-8e14-c02f99103d09}
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4747988Z Azure Region: centralus
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4748987Z ##[endgroup]
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4751891Z ##[group]Operating System
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4753064Z Ubuntu
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4754042Z 24.04.5
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4754995Z LTS
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4755920Z ##[endgroup]
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4756897Z ##[group]Runner Image
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4757998Z Image: ubuntu-24.04
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4758931Z Version: 20260927.320.1
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4761176Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4764145Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4765993Z ##[endgroup]
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4768015Z ##[group]GITHUB_TOKEN Permissions
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4771713Z Contents: read
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4772800Z Metadata: read
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4773865Z ##[endgroup]
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4776831Z Secret source: Actions
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4778690Z Cache mode: write
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.4780248Z Prepare workflow directory
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.5231816Z Prepare all required actions
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.5306082Z Getting action download info
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.8437328Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:58.9348276Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:59.0266864Z Download action repository 'actions/setup-python@v5' (SHA:a26af69be951a213d495a4c3e4e4022e16d87065)
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:59.1072935Z Download action repository 'aws-actions/setup-sam@v2' (SHA:f84ec7d548307efafe33230528756de3c5841a17)
+Lint, typecheck, test, validate	Set up job	2026-10-05T16:55:59.5861377Z Complete job name: Lint, typecheck, test, validate
+Lint, typecheck, test, validate	Run actions/checkout@v4	﻿2026-10-05T16:55:59.6738614Z ##[group]Run actions/checkout@v4
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6739649Z with:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6740462Z   repository: Yaswanth1832K/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6744853Z   token: ***
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6745328Z   ssh-strict: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6745800Z   ssh-user: git
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6746283Z   persist-credentials: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6746803Z   clean: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6747281Z   sparse-checkout-cone-mode: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6747850Z   fetch-depth: 1
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6748327Z   fetch-tags: false
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6748811Z   show-progress: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6749296Z   lfs: false
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6749964Z   submodules: false
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6750502Z   set-safe-directory: true
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6751057Z   allow-unsafe-pr-checkout: false
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6751920Z env:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6752397Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6752906Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.6753366Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7842359Z Syncing repository: Yaswanth1832K/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7845692Z ##[group]Getting Git version info
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7847358Z Working directory is '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7850001Z [command]/usr/bin/git version
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7897954Z git version 2.55.0
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7924496Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7954683Z Temporarily overriding HOME='/home/runner/work/_temp/f3ed3773-5a68-4663-8ec7-0564305803e6' before making global git config changes
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7957599Z Adding repository directory to the temporary git global config as a safe directory
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.7960465Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8022483Z Deleting the contents of '/home/runner/work/serverless-event-ticketing/serverless-event-ticketing'
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8027018Z ##[group]Initializing the repository
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8034665Z [command]/usr/bin/git init /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8157173Z hint: Using 'master' as the name for the initial branch. This default branch name
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8159594Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8162083Z hint: to use in all of your new repositories, which will suppress this warning,
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8164033Z hint: call:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8165166Z hint:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8166489Z hint: 	git config --global init.defaultBranch <name>
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8167934Z hint:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8169315Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8171681Z hint: 'development'. The just-created branch can be renamed via this command:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8173364Z hint:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8174325Z hint: 	git branch -m <name>
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8175423Z hint:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8176818Z hint: Disable this message with "git config set advice.defaultBranchName false"
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8179630Z Initialized empty Git repository in /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/.git/
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8184645Z [command]/usr/bin/git remote add origin https://github.com/Yaswanth1832K/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8229433Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8231314Z ##[group]Disabling automatic garbage collection
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8234919Z [command]/usr/bin/git config --local gc.auto 0
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8273969Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8276055Z ##[group]Setting up auth
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8283868Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8325124Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8722574Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8760891Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.8998622Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.9038883Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.9274478Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.9317402Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.9318544Z ##[group]Fetching the repository
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:55:59.9330107Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +ddd69438d45d8043a35d4d506bd34baa2e69acd7:refs/remotes/origin/main
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5609130Z From https://github.com/Yaswanth1832K/serverless-event-ticketing
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5611544Z  * [new ref]         ddd69438d45d8043a35d4d506bd34baa2e69acd7 -> origin/main
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5615640Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5617209Z ##[group]Determining the checkout info
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5618908Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5625717Z [command]/usr/bin/git sparse-checkout disable
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5682517Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5716415Z ##[group]Checking out the ref
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5722822Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5967495Z Switched to a new branch 'main'
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5972399Z branch 'main' set up to track 'origin/main'.
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.5980560Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.6026233Z [command]/usr/bin/git log -1 --format=%H
+Lint, typecheck, test, validate	Run actions/checkout@v4	2026-10-05T16:56:00.6055091Z ddd69438d45d8043a35d4d506bd34baa2e69acd7
+Lint, typecheck, test, validate	Run actions/setup-node@v4	﻿2026-10-05T16:56:00.6450899Z ##[group]Run actions/setup-node@v4
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6452143Z with:
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6452989Z   node-version: 22
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6453898Z   cache: npm
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6455244Z   cache-dependency-path: package-lock.json
+Lint, typecheck, test, validate	Run actions/setup-node@v4	frontend/package-lock.json
+Lint, typecheck, test, validate	Run actions/setup-node@v4	
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6456961Z   always-auth: false
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6457913Z   check-latest: false
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6468809Z   token: ***
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6469790Z env:
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6470619Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6471591Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.6472484Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.7996736Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.8000255Z (node:2282) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.8003746Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:00.8006176Z ##[group]Environment details
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.1952263Z node: v22.23.3
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.1954304Z npm: 10.9.9
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.1955868Z yarn: 1.22.22
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.1958484Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.1983399Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.3204738Z /home/runner/.npm
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.4804072Z Cache hit for: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:01.4974593Z (node:2282) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.6285119Z Received 93627626 of 102016234 (91.8%), 89.3 MBs/sec
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.6884448Z Received 102016234 of 102016234 (100.0%), 91.3 MBs/sec
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.6885648Z Cache Size: ~97 MB (102016234 B)
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.6923202Z [command]/usr/bin/tar -xf /home/runner/work/_temp/9ae5f290-201b-4e38-81d4-cff94bd31b61/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.9189539Z Cache restored successfully
+Lint, typecheck, test, validate	Run actions/setup-node@v4	2026-10-05T16:56:02.9243244Z Cache restored from key: node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1
+Lint, typecheck, test, validate	Run actions/setup-python@v5	﻿2026-10-05T16:56:02.9453340Z ##[group]Run actions/setup-python@v5
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9453704Z with:
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9453923Z   python-version: 3.12
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9454176Z   check-latest: false
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9456939Z   token: ***
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9457175Z   update-environment: true
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9457468Z   allow-prereleases: false
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9457708Z   freethreaded: false
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9457930Z env:
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9458140Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9458391Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:02.9458605Z ##[endgroup]
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:03.0836158Z ##[group]Installed versions
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:03.0924974Z (node:2330) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:03.0926234Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:03.0926936Z Successfully set up CPython (3.12.14)
+Lint, typecheck, test, validate	Run actions/setup-python@v5	2026-10-05T16:56:03.0927544Z ##[endgroup]
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	﻿2026-10-05T16:56:03.1117869Z ##[group]Run aws-actions/setup-sam@v2
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1118221Z with:
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1118435Z   use-installer: true
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1118657Z env:
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1118855Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1119078Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1119388Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1120292Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1120760Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1121358Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1121764Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1122177Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.1122523Z ##[endgroup]
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:03.5826799Z Cache hit for: sam-cli-linux-ubuntu24-x86_64-1.166.2
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:04.7478593Z Received 54525952 of 88703055 (61.5%), 52.0 MBs/sec
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:04.9651731Z Received 88703055 of 88703055 (100.0%), 69.5 MBs/sec
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:04.9660943Z Cache Size: ~85 MB (88703055 B)
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:04.9701858Z [command]/usr/bin/tar -xf /home/runner/work/_temp/74c5a611-60d4-47fe-a1b5-02017be783da/cache.tzst -P -C /home/runner/work/serverless-event-ticketing/serverless-event-ticketing --use-compress-program unzstd
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:05.5233791Z Cache restored successfully
+Lint, typecheck, test, validate	Run aws-actions/setup-sam@v2	2026-10-05T16:56:05.5278356Z Using cached AWS SAM CLI 1.166.2 from GitHub Actions cache
+Lint, typecheck, test, validate	Install backend dependencies	﻿2026-10-05T16:56:05.5431526Z ##[group]Run npm ci
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5431868Z [36;1mnpm ci[0m
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5713902Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5714298Z env:
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5714574Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5714880Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5715255Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5715860Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5716440Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5716963Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5717484Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5718019Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:05.5718470Z ##[endgroup]
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6500039Z 
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6500907Z added 95 packages, and audited 96 packages in 4s
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6501462Z 
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6501927Z 13 packages are looking for funding
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6502873Z   run `npm fund` for details
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6739841Z 
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6740912Z 5 vulnerabilities (3 moderate, 1 high, 1 critical)
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6741491Z 
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6741892Z To address all issues (including breaking changes), run:
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6742380Z   npm audit fix --force
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6742591Z 
+Lint, typecheck, test, validate	Install backend dependencies	2026-10-05T16:56:09.6742771Z Run `npm audit` for details.
+Lint, typecheck, test, validate	Install frontend dependencies	﻿2026-10-05T16:56:09.7414121Z ##[group]Run npm ci --prefix frontend
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7414517Z [36;1mnpm ci --prefix frontend[0m
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7480049Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7480335Z env:
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7480553Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7480812Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7481116Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7481600Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7482086Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7482501Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7482925Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7483349Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:09.7483708Z ##[endgroup]
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:11.4189988Z npm warn deprecated whatwg-encoding@3.1.1: Use @exodus/bytes instead for a more spec-conformant and faster implementation
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0619506Z 
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0620694Z added 248 packages, and audited 249 packages in 3s
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0621304Z 
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0621742Z 36 packages are looking for funding
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0622392Z   run `npm fund` for details
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0968912Z 
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0970082Z 7 vulnerabilities (5 moderate, 1 high, 1 critical)
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0970610Z 
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0970967Z To address all issues (including breaking changes), run:
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0972004Z   npm audit fix --force
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0972213Z 
+Lint, typecheck, test, validate	Install frontend dependencies	2026-10-05T16:56:13.0972386Z Run `npm audit` for details.
+Lint, typecheck, test, validate	Lint	﻿2026-10-05T16:56:13.2279217Z ##[group]Run npm run lint
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2279644Z [36;1mnpm run lint[0m
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2343850Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2344156Z env:
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2344378Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2344637Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2344962Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2345469Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2345976Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2346430Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2346939Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2347407Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.2347807Z ##[endgroup]
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.4357003Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.4357866Z > event-ticketing-platform@1.0.0 lint
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.4359070Z > biome lint backend tests scripts frontend/src frontend/e2e loadtest
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.4360102Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5897052Z frontend/e2e/smoke.spec.ts:27:31 lint/complexity/useLiteralKeys  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5898079Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5898763Z   i The computed expression can be simplified without the use of a string literal.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5899966Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5901102Z     25 │     const insecure = await request.get(baseURL!.replace('https://', 'http://'), { maxRedirects: 0 });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5902405Z     26 │     expect([301, 302, 307, 308]).toContain(insecure.status());
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5903396Z   > 27 │     expect(insecure.headers()['location']).toMatch(/^https:/);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5904325Z        │                               ^^^^^^^^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5904881Z     28 │   });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5905319Z     29 │ 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5905645Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5906068Z   i Unsafe fix: Use a literal key instead.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5906558Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5907623Z      25  25 │       const insecure = await request.get(baseURL!.replace('https://', 'http://'), { maxRedirects: 0 });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5908951Z      26  26 │       expect([301, 302, 307, 308]).toContain(insecure.status());
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5910441Z      27     │ - ····expect(insecure.headers()['location']).toMatch(/^https:/);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5911549Z          27 │ + ····expect(insecure.headers().location).toMatch(/^https:/);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5912269Z      28  28 │     });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5912717Z      29  29 │   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5913059Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5913256Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5914198Z frontend/src/pages/Login.tsx:21:16 lint/complexity/useOptionalChain  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5914941Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5915164Z   ! Change to an optional chain.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5915636Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5916116Z     19 │     if (status === 'signedIn') {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5917001Z     20 │       const from = (location.state as { from?: string } | null)?.from;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5918230Z   > 21 │       navigate(from && from.startsWith('/') ? from : homeFor(user), { replace: true });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5919204Z        │                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5919979Z     22 │     }
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5920610Z     23 │   }, [status, user, navigate, location.state]);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5921158Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5921588Z   i Unsafe fix: Change to an optional chain.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5922105Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5922610Z     19 19 │       if (status === 'signedIn') {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5923534Z     20 20 │         const from = (location.state as { from?: string } | null)?.from;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5924830Z     21    │ - ······navigate(from·&&·from.startsWith('/')·?·from·:·homeFor(user),·{·replace:·true·});
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5926248Z        21 │ + ······navigate(from?.startsWith('/')·?·from·:·homeFor(user),·{·replace:·true·});
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5927475Z     22 22 │       }
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5928110Z     23 23 │     }, [status, user, navigate, location.state]);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5929047Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5929239Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5930438Z tests/integration/events.test.ts:114:35 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5931186Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5931467Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5931982Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5932744Z     112 │   it("B's my/events does not list A's event, A's does", async () => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5933782Z     113 │     const b = await api(out, 'GET', '/my/events', orgB.token);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5934876Z   > 114 │     expect(b.body.events.some((e: any) => e.eventId === eventId)).toBe(false);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5935785Z         │                                   ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5936419Z     115 │     const a = await eventually(
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5937207Z     116 │       () => api(out, 'GET', '/my/events', orgA.token),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5937769Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5938351Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5939005Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5939184Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5940312Z tests/integration/events.test.ts:117:37 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5941047Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5941323Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5941834Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5942310Z     115 │     const a = await eventually(
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5943051Z     116 │       () => api(out, 'GET', '/my/events', orgA.token),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5943972Z   > 117 │       (r) => r.body.events.some((e: any) => e.eventId === eventId),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5944770Z         │                                     ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5945296Z     118 │     );
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5946113Z     119 │     expect(a.body.events.some((e: any) => e.eventId === eventId)).toBe(true);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5946857Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5947434Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5948086Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5948258Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5949183Z tests/integration/events.test.ts:119:35 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5950142Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5950424Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5950935Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5951738Z     117 │       (r) => r.body.events.some((e: any) => e.eventId === eventId),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5952471Z     118 │     );
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5953304Z   > 119 │     expect(a.body.events.some((e: any) => e.eventId === eventId)).toBe(true);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5954195Z         │                                   ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5954724Z     120 │   });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5955108Z     121 │ });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5955449Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5956020Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5956675Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5956854Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5957780Z tests/integration/events.test.ts:145:37 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5958523Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5958781Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5959293Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5959987Z     143 │     const mine = await eventually(
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5960782Z     144 │       () => api(out, 'GET', '/my/events', orgA.token),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5961770Z   > 145 │       (x) => x.body.events.some((e: any) => e.eventId === r.body.eventId),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5962646Z         │                                     ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5963182Z     146 │     );
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5964100Z     147 │     expect(mine.body.events.some((e: any) => e.eventId === r.body.eventId)).toBe(true);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5964882Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5965456Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5966320Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5966499Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5967441Z tests/integration/helpers.ts:126:36 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5968354Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5968631Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5969136Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5969533Z     124 │   token?: string,
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5970267Z     125 │   body?: unknown,
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5971028Z   > 126 │ ): Promise<{ status: number; body: any; raw: string }> {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5971819Z         │                                    ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5972629Z     127 │   const res = await fetch(`${outputs.apiUrl}${path}`, {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5973303Z     128 │     method,
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5973677Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5974255Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5974896Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5975073Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5976001Z tests/integration/helpers.ts:136:15 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5976753Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5977016Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5977542Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5977958Z     134 │   });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5978470Z     135 │   const raw = await res.text();
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5979098Z   > 136 │   let parsed: any = null;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5979626Z         │               ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5980305Z     137 │   try {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5980822Z     138 │     parsed = JSON.parse(raw);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5981295Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5981875Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5982517Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5982691Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5983619Z tests/integration/helpers.ts:154:52 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5984344Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5984605Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5985138Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5986108Z     152 │ // `error` code). A route that has not propagated yet is answered by API Gateway itself with a bare
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5987614Z     153 │ // 403 `{"message": ...}` that has no `error` field. Seen after stack updates in Stage 4 and Stage 6.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5989114Z   > 154 │ const lambdaAnswered = (r: { status: number; body: any }, status: number, error: string) =>
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5990385Z         │                                                    ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5991175Z     155 │   r.status === status && r.body?.error === error;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5991791Z     156 │ 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5992117Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5992668Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5993270Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5993446Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5994350Z tests/integration/helpers.ts:158:71 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5995053Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5995332Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5995834Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5996942Z     157 │ export async function waitForRoutes(outputs: Outputs, attendeeToken: string, timeoutMs = 120_000): Promise<void> {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5998499Z   > 158 │   const checks: [string, string, unknown, (r: { status: number; body: any }) => boolean][] = [
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.5999569Z         │                                                                       ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6000702Z     159 │     ['GET', '/events', undefined, (r) => r.status === 200],
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6001731Z     160 │     ['GET', '/my/events', undefined, (r) => lambdaAnswered(r, 403, 'FORBIDDEN')],
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6002411Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6002957Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6003545Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6003709Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6004592Z tests/integration/helpers.ts:233:124 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6005524Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6005785Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6006254Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6007158Z     231 │ // Calls the deployed stream-processor directly with a hand-built stream event. This is how a
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6008596Z     232 │ // replayed or redelivered batch is simulated. Needs lambda:InvokeFunction.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6010457Z   > 233 │ export async function invokeStreamProcessor(outputs: Outputs, payload: unknown): Promise<{ functionError?: string; result: any }> {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6012044Z         │                                                                                                                            ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6012862Z     234 │   const res = await lambda.send(
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6014099Z     235 │     new InvokeCommand({ FunctionName: outputs.streamFunction, Payload: Buffer.from(JSON.stringify(payload)) }),
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6015035Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6015573Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6016192Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6016359Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6017221Z tests/unit/booking.test.ts:89:68 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6017908Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6018163Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6018637Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6019245Z     87 │     const res = await handler(req(attendee, { quantity: 3 }));
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6020220Z     88 │     expect(res.statusCode).toBe(201);
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6021119Z   > 89 │     const tx = send.mock.calls[1]![0] as { input: { TransactItems: any[] } };
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6022055Z        │                                                                    ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6022853Z     90 │     const update = tx.input.TransactItems[0].Update;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6023782Z     91 │     expect(update.ConditionExpression).toContain('#sold <= :max');
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6024407Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6024982Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6025592Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6025763Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6026621Z tests/unit/qr.test.ts:2:8 lint/style/useImportType  FIXABLE  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6027271Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6027691Z   ! Some named imports are only used as types.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6028187Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6028706Z     1 │ import { describe, it, expect } from 'vitest';
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6029806Z   > 2 │ import { signToken, verifyToken, QrError } from '../../backend/shared/qr';
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6030770Z       │        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6031334Z     3 │ 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6032184Z     4 │ // Throw-away keys generated for the test only. Nothing here is the real deployed secret.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6032963Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6033407Z   i This import is only used as a type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6034065Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6034593Z     1 │ import { describe, it, expect } from 'vitest';
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6035508Z   > 2 │ import { signToken, verifyToken, QrError } from '../../backend/shared/qr';
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6036585Z       │                                  ^^^^^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6037078Z     3 │ 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6037912Z     4 │ // Throw-away keys generated for the test only. Nothing here is the real deployed secret.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6038647Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6039580Z   i Importing the types with import type ensures that they are removed by the compilers and avoids loading unnecessary modules.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6040758Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6041147Z   i Safe fix: Add inline type keywords.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6041601Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6042419Z     2 │ import·{·signToken,·verifyToken,·type·QrError·}·from·'../../backend/shared/qr';
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6043463Z       │                                  +++++                                         
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6043904Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6044802Z tests/unit/stream-processor.test.ts:5:28 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6045524Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6045807Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6046280Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6047159Z     3 │ // A tiny in-memory DynamoDB that implements exactly what the processor uses, so a replayed
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6048470Z     4 │ // record really does hit an existing marker instead of a hand-scripted mock answer.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6049386Z   > 5 │ type Item = Record<string, any>;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6050189Z       │                            ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6050850Z     6 │ const store = new Map<string, Item>();
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6051709Z     7 │ const keyOf = (k: { PK: string; SK: string }) => `${k.PK}|${k.SK}`;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6052339Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6052909Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6053530Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6053729Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6054643Z tests/unit/stream-processor.test.ts:16:32 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6055117Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6055302Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6055607Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6055845Z     14 │   });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6056072Z     15 │ 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6056387Z   > 16 │ const send = vi.fn(async (cmd: any) => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6056767Z        │                                ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6057116Z     17 │   if (failNextWith) {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6057441Z     18 │     const e = failNextWith;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6057699Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6058027Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6058382Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6058485Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6058980Z tests/unit/stream-processor.test.ts:22:44 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6059377Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6059534Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6060384Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6060826Z     20 │     throw e;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6061242Z     21 │   }
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6061848Z   > 22 │   const items = cmd.input.TransactItems as any[];
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6062568Z        │                                            ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6063569Z     23 │   // validate every condition first (all or nothing), exactly like a DynamoDB transaction
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6064497Z     24 │   const reasons = items.map((it) => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6064987Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6065539Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6066160Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6066320Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6067205Z tests/unit/stream-processor.test.ts:140:13 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6067904Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6068162Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6068658Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6069833Z     138 │   it('skips (and does not retry forever) a malformed record', async () => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6070686Z     139 │     const bad = record();
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6071686Z   > 140 │     (bad as any).dynamodb.NewImage.eventId = s('not-a-uuid');
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6072361Z         │             ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6073032Z     141 │     expect(await processRecord(bad)).toBe('skipped');
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6073804Z     142 │     expect(send).not.toHaveBeenCalled();
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6074301Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6074839Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6075464Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6075641Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6076526Z tests/unit/stream-processor.test.ts:162:43 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6077314Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6077595Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6078115Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6078965Z     160 │     const batch = { Records: [record({}, TID, '100'), record({}, TID2, '101')] } as never;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6080281Z     161 │     // first record succeeds, second hits an unexpected error
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6081495Z   > 162 │     send.mockImplementationOnce(async (c: any) => send.getMockImplementation()!(c));
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6082511Z         │                                           ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6083096Z     163 │     let calls = 0;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6083748Z     164 │     send.mockImplementation(async (c: any) => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6084207Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6084551Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6085066Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6085205Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6085730Z tests/unit/stream-processor.test.ts:164:39 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6086125Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6086283Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6086577Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6087060Z     162 │     send.mockImplementationOnce(async (c: any) => send.getMockImplementation()!(c));
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6087564Z     163 │     let calls = 0;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6087946Z   > 164 │     send.mockImplementation(async (c: any) => {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6088363Z         │                                       ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6088740Z     165 │       calls++;
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6089141Z     166 │       if (calls === 2) throw new Error('boom');
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6089474Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6090169Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6090611Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6090717Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6091289Z tests/unit/stream-processor.test.ts:168:46 lint/suspicious/noExplicitAny ━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6091728Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6091886Z   ! Unexpected any. Specify a different type.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6092199Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6092564Z     166 │       if (calls === 2) throw new Error('boom');
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6093158Z     167 │       // fall back to the in-memory implementation by re-running the real logic
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6093802Z   > 168 │       const items = c.input.TransactItems as any[];
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6094295Z         │                                              ^^^
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6094709Z     169 │       for (const it of items) {
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6095217Z     170 │         if (it.Put) store.set(keyOf(it.Put.Item), { ...it.Put.Item });
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6095605Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6095943Z   i any disables many type checking rules. Its use should be avoided.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6096319Z   
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6096424Z 
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6096822Z The number of diagnostics exceeds the limit allowed. Use --max-diagnostics to increase it.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6098113Z Diagnostics not shown: 14.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6098482Z Checked 80 files in 109ms. No fixes applied.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6098802Z Found 33 warnings.
+Lint, typecheck, test, validate	Lint	2026-10-05T16:56:13.6099025Z Found 1 info.
+Lint, typecheck, test, validate	Typecheck (backend and tests)	﻿2026-10-05T16:56:13.6212910Z ##[group]Run npm run typecheck
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6213400Z [36;1mnpm run typecheck[0m
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6276547Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6276835Z env:
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6277050Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6277296Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6277647Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6278120Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6278591Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6279012Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6279425Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6280130Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.6280525Z ##[endgroup]
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.7324113Z 
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.7324881Z > event-ticketing-platform@1.0.0 typecheck
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.7325515Z > tsc --noEmit
+Lint, typecheck, test, validate	Typecheck (backend and tests)	2026-10-05T16:56:13.7325777Z 
+Lint, typecheck, test, validate	Typecheck (frontend)	﻿2026-10-05T16:56:14.2287389Z ##[group]Run npm --prefix frontend run typecheck
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2288107Z [36;1mnpm --prefix frontend run typecheck[0m
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2355673Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2355959Z env:
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2356165Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2356408Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2356709Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2357183Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2357747Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2358265Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2358768Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2359434Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.2360202Z ##[endgroup]
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.3401057Z 
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.3401772Z > ticketing-frontend@1.0.0 typecheck
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.3402324Z > tsc --noEmit
+Lint, typecheck, test, validate	Typecheck (frontend)	2026-10-05T16:56:14.3402503Z 
+Lint, typecheck, test, validate	Unit tests (backend)	﻿2026-10-05T16:56:17.5865984Z ##[group]Run npm test
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5866488Z [36;1mnpm test[0m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5949860Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5950321Z env:
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5950661Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5951066Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5951551Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5952336Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5953123Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5953814Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5954512Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5955213Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.5955804Z ##[endgroup]
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.7176058Z 
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.7176921Z > event-ticketing-platform@1.0.0 test
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.7177654Z > vitest run tests/unit
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:17.7178033Z 
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.0164798Z 
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.0181204Z [1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/home/runner/work/serverless-event-ticketing/serverless-event-ticketing[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.0210029Z 
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8516825Z {"_aws":{"Timestamp":1791219378850,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8552910Z {"_aws":{"Timestamp":1791219378853,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8572243Z {"_aws":{"Timestamp":1791219378854,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8602284Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.854Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8623038Z {"_aws":{"Timestamp":1791219378854,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8626259Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.854Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8629431Z {"_aws":{"Timestamp":1791219378855,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8657632Z {"_aws":{"Timestamp":1791219378855,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8664698Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.855Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8711894Z {"_aws":{"Timestamp":1791219378856,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8714700Z {"level":"info","message":"stream batch processed","time":"2026-10-05T16:56:18.856Z","records":3,"counted":2,"duplicate":1,"skipped":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8717307Z {"_aws":{"Timestamp":1791219378857,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8720436Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.857Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8724270Z {"_aws":{"Timestamp":1791219378857,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8727185Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.858Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8730255Z {"_aws":{"Timestamp":1791219378858,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8733148Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.858Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"33333333-3333-4333-8333-333333333333"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8735448Z {"level":"info","message":"stream batch processed","time":"2026-10-05T16:56:18.858Z","records":3,"counted":0,"duplicate":3,"skipped":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8737993Z {"_aws":{"Timestamp":1791219378858,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8741051Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.858Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8744016Z {"_aws":{"Timestamp":1791219378858,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8747474Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.858Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8750926Z {"_aws":{"Timestamp":1791219378858,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8753869Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.858Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"33333333-3333-4333-8333-333333333333"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8756376Z {"level":"info","message":"stream batch processed","time":"2026-10-05T16:56:18.858Z","records":3,"counted":0,"duplicate":3,"skipped":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8758887Z {"_aws":{"Timestamp":1791219378859,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8762176Z {"_aws":{"Timestamp":1791219378859,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"StreamDuplicateSkipped","Unit":"Count"}]}]},"StreamDuplicateSkipped":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8765273Z {"level":"info","message":"duplicate stream record ignored","time":"2026-10-05T16:56:18.859Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8768087Z {"_aws":{"Timestamp":1791219378860,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8771185Z {"_aws":{"Timestamp":1791219378860,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8774008Z {"_aws":{"Timestamp":1791219378861,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8777000Z {"_aws":{"Timestamp":1791219378860,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingRejectedSoldOut","Unit":"Count"}]}]},"BookingRejectedSoldOut":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8780380Z {"level":"info","message":"booking rejected: sold out","time":"2026-10-05T16:56:18.863Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":1,"remaining":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8783188Z {"_aws":{"Timestamp":1791219378864,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingRejectedSoldOut","Unit":"Count"}]}]},"BookingRejectedSoldOut":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8785939Z {"level":"info","message":"booking rejected: sold out","time":"2026-10-05T16:56:18.864Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":2,"remaining":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8788010Z {"level":"error","message":"stream record has unexpected shape, skipped","time":"2026-10-05T16:56:18.864Z","eventSeq":"100"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8790691Z {"level":"warn","message":"event no longer exists, record skipped","time":"2026-10-05T16:56:18.865Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8793470Z {"_aws":{"Timestamp":1791219378866,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8796157Z {"_aws":{"Timestamp":1791219378867,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInCounted","Unit":"Count"}]}]},"CheckInCounted":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8798762Z {"level":"error","message":"stream record failed, batch will be retried from here","time":"2026-10-05T16:56:18.867Z","error":"Error: boom","counted":1,"duplicate":0,"skipped":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8801599Z {"_aws":{"Timestamp":1791219378872,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingSuccess","Unit":"Count"}]}]},"BookingSuccess":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8804211Z {"level":"info","message":"booking succeeded","time":"2026-10-05T16:56:18.872Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":3,"attempts":1,"buyerId":"att-1"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8807638Z  [32m✓[39m tests/unit/stream-processor.test.ts [2m([22m[2m15 tests[22m[2m)[22m[90m 22[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8810432Z {"_aws":{"Timestamp":1791219378878,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingRejectedSoldOut","Unit":"Count"}]}]},"BookingRejectedSoldOut":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8813242Z {"level":"info","message":"booking rejected: sold out","time":"2026-10-05T16:56:18.878Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":1,"remaining":0}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8816136Z {"_aws":{"Timestamp":1791219378878,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.8967867Z {"_aws":{"Timestamp":1791219378890,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingSuccess","Unit":"Count"}]}]},"BookingSuccess":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9001765Z {"level":"info","message":"booking succeeded","time":"2026-10-05T16:56:18.891Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":1,"attempts":2,"buyerId":"att-1"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9031781Z {"_aws":{"Timestamp":1791219378891,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9034719Z {"_aws":{"Timestamp":1791219378897,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9041906Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.898Z","reason":"not-event-owner"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9044285Z {"_aws":{"Timestamp":1791219378900,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9048255Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.900Z","reason":"bad-token"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9051203Z {"_aws":{"Timestamp":1791219378902,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9053216Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.902Z","reason":"expired"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9055468Z {"_aws":{"Timestamp":1791219378903,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9058223Z {"_aws":{"Timestamp":1791219378903,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9060431Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.903Z","reason":"wrong-event"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9101564Z {"_aws":{"Timestamp":1791219378904,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInSuccess","Unit":"Count"}]}]},"CheckInSuccess":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9108596Z {"level":"info","message":"check-in succeeded","time":"2026-10-05T16:56:18.904Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111","scannerId":"staff-1"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9111696Z {"_aws":{"Timestamp":1791219378905,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInSuccess","Unit":"Count"}]}]},"CheckInSuccess":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9114615Z {"level":"info","message":"check-in succeeded","time":"2026-10-05T16:56:18.905Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111","scannerId":"org-A"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9117331Z {"_aws":{"Timestamp":1791219378907,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9120048Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.907Z","reason":"already-used"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9122281Z {"_aws":{"Timestamp":1791219378908,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"CheckInRejected","Unit":"Count"}]}]},"CheckInRejected":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9124441Z {"level":"warn","message":"check-in rejected","time":"2026-10-05T16:56:18.908Z","reason":"ticket-not-found"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9126078Z {"level":"error","message":"unhandled error","time":"2026-10-05T16:56:18.908Z","error":"Error: boom"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9128135Z {"level":"info","message":"qr issued","time":"2026-10-05T16:56:18.909Z","eventId":"22222222-2222-4222-8222-222222222222","ticketId":"11111111-1111-4111-8111-111111111111"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9138354Z  [32m✓[39m tests/unit/checkin.test.ts [2m([22m[2m17 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9229936Z {"_aws":{"Timestamp":1791219378922,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:18.9494078Z {"_aws":{"Timestamp":1791219378946,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.0529159Z {"_aws":{"Timestamp":1791219379051,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.2662361Z {"_aws":{"Timestamp":1791219379261,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.2882539Z {"_aws":{"Timestamp":1791219379286,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.3871513Z  [32m✓[39m tests/unit/analytics.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 26[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.4382477Z {"_aws":{"Timestamp":1791219379436,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.5212696Z {"level":"info","message":"event created","time":"2026-10-05T16:56:19.520Z","eventId":"374b52be-8b4e-4f80-bd0f-2ed0fb481ce6","organizerId":"org-A"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.5255730Z  [32m✓[39m tests/unit/events-authz.test.ts [2m([22m[2m19 tests[22m[2m)[22m[90m 21[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.5532401Z {"_aws":{"Timestamp":1791219379552,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.6490930Z {"_aws":{"Timestamp":1791219379646,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.6742130Z  [32m✓[39m tests/unit/qr.test.ts [2m([22m[2m20 tests[22m[2m)[22m[90m 17[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.8324936Z  [32m✓[39m tests/unit/validation.test.ts [2m([22m[2m24 tests[22m[2m)[22m[90m 18[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:19.8562928Z {"_aws":{"Timestamp":1791219379851,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1195062Z {"level":"warn","message":"signup rejected: unauthorized role requested","time":"2026-10-05T16:56:20.118Z","requested":"Staff"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1204944Z {"level":"warn","message":"signup rejected: unauthorized role requested","time":"2026-10-05T16:56:20.120Z","requested":"Admin"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1217030Z {"level":"warn","message":"signup rejected: unauthorized role requested","time":"2026-10-05T16:56:20.120Z","requested":"organizer"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1219393Z {"level":"warn","message":"signup rejected: unauthorized role requested","time":"2026-10-05T16:56:20.121Z","requested":"Organizer,Staff"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1221971Z {"level":"warn","message":"signup rejected: unauthorized role requested","time":"2026-10-05T16:56:20.121Z","requested":" Organizer"}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1282289Z  [32m✓[39m tests/unit/auth.test.ts [2m([22m[2m11 tests[22m[2m)[22m[90m 16[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.1847528Z {"_aws":{"Timestamp":1791219380184,"CloudWatchMetrics":[{"Namespace":"TicketingPlatform","Dimensions":[[]],"Metrics":[{"Name":"BookingConflictRetry","Unit":"Count"}]}]},"BookingConflictRetry":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2751870Z {"level":"warn","message":"booking gave up after repeated conflicts","time":"2026-10-05T16:56:20.274Z","eventId":"11111111-1111-4111-8111-111111111111","quantity":1}
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2791428Z  [32m✓[39m tests/unit/booking.test.ts [2m([22m[2m18 tests[22m[2m)[22m[33m 1427[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2802608Z    [33m[2m✓[22m[39m booking: overselling protection logic[2m > [22mgives up with 503 (not a false sold-out) if conflicts never clear [33m1385[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2920330Z 
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2943891Z [2m Test Files [22m [1m[32m8 passed[39m[22m[90m (8)[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2951530Z [2m      Tests [22m [1m[32m133 passed[39m[22m[90m (133)[39m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2952660Z [2m   Start at [22m 16:56:18
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2954331Z [2m   Duration [22m 2.27s[2m (transform 816ms, setup 0ms, collect 2.13s, tests 1.57s, environment 2ms, prepare 818ms)[22m
+Lint, typecheck, test, validate	Unit tests (backend)	2026-10-05T16:56:20.2955759Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	﻿2026-10-05T16:56:20.3281357Z ##[group]Run npm run frontend:test
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3281740Z [36;1mnpm run frontend:test[0m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3347270Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3347565Z env:
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3347773Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3348016Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3348318Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3348778Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3349240Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3349957Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3350453Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3350872Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.3351222Z ##[endgroup]
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.4520527Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.4535854Z > event-ticketing-platform@1.0.0 frontend:test
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.4536639Z > npm --prefix frontend test
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.4537048Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.5596857Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.5597545Z > ticketing-frontend@1.0.0 test
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.5598111Z > vitest run
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.5598338Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.8781190Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.8785465Z [1m[7m[36m RUN [39m[27m[22m [36mv2.1.9 [39m[90m/home/runner/work/serverless-event-ticketing/serverless-event-ticketing/frontend[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:20.8810352Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:22.5383014Z  [32m✓[39m src/lib/lib.test.ts [2m([22m[2m9 tests[22m[2m)[22m[90m 74[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:22.5784495Z  [32m✓[39m src/api/client.test.ts [2m([22m[2m7 tests[22m[2m)[22m[90m 27[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.0962314Z [90mstderr[2m | src/pages/pages.test.tsx[2m > [22m[2mevent list[2m > [22m[2mshows a loading message, then the events
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.0983629Z [22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.0988958Z ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.0991411Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.8207915Z [90mstderr[2m | src/components/Charts.test.tsx[2m > [22m[2m<SalesBars>[2m > [22m[2mshows sold of capacity in words for each event
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.8210319Z [22m[39m⚠️ React Router Future Flag Warning: React Router will begin wrapping state updates in `React.startTransition` in v7. You can use the `v7_startTransition` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_starttransition.
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.8213299Z ⚠️ React Router Future Flag Warning: Relative route resolution within Splat routes is changing in v7. You can use the `v7_relativeSplatPath` future flag to opt-in early. For more information, see https://reactrouter.com/v6/upgrading/future#v7_relativesplatpath.
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.8214345Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:23.8214889Z  [32m✓[39m src/components/Charts.test.tsx [2m([22m[2m6 tests[22m[2m)[22m[90m 154[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0141523Z  [32m✓[39m src/pages/pages.test.tsx [2m([22m[2m46 tests[22m[2m)[22m[33m 2087[2mms[22m[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0359870Z 
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0369594Z [2m Test Files [22m [1m[32m4 passed[39m[22m[90m (4)[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0371041Z [2m      Tests [22m [1m[32m68 passed[39m[22m[90m (68)[39m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0371822Z [2m   Start at [22m 16:56:20
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0374577Z [2m   Duration [22m 4.16s[2m (transform 714ms, setup 1.04s, collect 1.32s, tests 2.34s, environment 2.61s, prepare 472ms)[22m
+Lint, typecheck, test, validate	Unit tests (frontend)	2026-10-05T16:56:25.0375421Z 
+Lint, typecheck, test, validate	Build the frontend	﻿2026-10-05T16:56:25.0757453Z ##[group]Run npm --prefix frontend run build
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0757876Z [36;1mnpm --prefix frontend run build[0m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0822839Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0823167Z env:
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0823397Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0823651Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0823966Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0824448Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0824929Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0825352Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0825773Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0826214Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.0826572Z ##[endgroup]
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.1891460Z 
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.1892145Z > ticketing-frontend@1.0.0 build
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.1892712Z > tsc --noEmit && vite build
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:25.1893136Z 
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:28.5137683Z [36mvite v6.4.3 [32mbuilding for production...[36m[39m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:28.5940877Z transforming...
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.3781799Z [32m✓[39m 167 modules transformed.
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.5085674Z rendering chunks...
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.5986339Z computing gzip size...
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6101281Z [2mdist/[22m[32mindex.html                                [39m[1m[2m  0.90 kB[22m[1m[22m[2m │ gzip:   0.54 kB[22m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6103030Z [2mdist/[22m[2massets/[22m[35mindex-DgRdH4z4.css                 [39m[1m[2m 10.79 kB[22m[1m[22m[2m │ gzip:   3.13 kB[22m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6104867Z [2mdist/[22m[2massets/[22m[36mqr-scanner.min-B_PV4o73.js         [39m[1m[2m 15.77 kB[22m[1m[22m[2m │ gzip:   5.61 kB[22m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6106148Z [2mdist/[22m[2massets/[22m[36mqr-scanner-worker.min-D85Z9gVD.js  [39m[1m[2m 43.95 kB[22m[1m[22m[2m │ gzip:  10.46 kB[22m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6107798Z [2mdist/[22m[2massets/[22m[36mindex-IcKGVXkz.js                  [39m[1m[2m339.11 kB[22m[1m[22m[2m │ gzip: 109.41 kB[22m
+Lint, typecheck, test, validate	Build the frontend	2026-10-05T16:56:37.6108535Z [32m✓ built in 9.06s[39m
+Lint, typecheck, test, validate	sam validate	﻿2026-10-05T16:56:37.6759219Z ##[group]Run sam validate --lint --region us-east-1
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6759996Z [36;1msam validate --lint --region us-east-1[0m
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6823443Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6823718Z env:
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6823928Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6824164Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6824453Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6824915Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6825367Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6825776Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6826178Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6826588Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6826947Z   AWS_DEFAULT_REGION: us-east-1
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6827227Z   AWS_ACCESS_KEY_ID: not-used-for-validate
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6827596Z   AWS_SECRET_ACCESS_KEY: not-used-for-validate
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:37.6827898Z ##[endgroup]
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3010414Z 
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3011674Z 	SAM CLI now collects telemetry to better understand customer needs.
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3012479Z 
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3012856Z 	You can OPT OUT and disable telemetry collection by setting the
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3013643Z 	environment variable SAM_CLI_TELEMETRY=0 in your shell.
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3014417Z 	Thanks for your help!
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3014734Z 
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3015403Z 	Learn More: https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-telemetry.html
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:38.3016095Z 
+Lint, typecheck, test, validate	sam validate	2026-10-05T16:56:40.9286852Z /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/template.yaml is a valid SAM Template
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	﻿2026-10-05T16:56:41.5803785Z ##[group]Run npm run build
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5804210Z [36;1mnpm run build[0m
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5879848Z shell: /usr/bin/bash -e {0}
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5880184Z env:
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5880400Z   AWS_REGION: us-east-1
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5880650Z   NODE_VERSION: 22
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5880966Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5881439Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5881914Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5882339Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5882761Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5883186Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.5883537Z ##[endgroup]
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.6939974Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.6941224Z > event-ticketing-platform@1.0.0 build
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.6941904Z > sam build
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:41.6942208Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.6492624Z Starting Build use cache
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9019058Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/auth-triggers runtime: nodejs22.x architecture: arm64 functions: AuthTriggersFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9041486Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/booking runtime: nodejs22.x architecture: arm64 functions: BookingFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9058978Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/health runtime: nodejs22.x architecture: arm64 functions: HealthFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9064152Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/analytics runtime: nodejs22.x architecture: arm64 functions: AnalyticsFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9073101Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/events runtime: nodejs22.x architecture: arm64 functions: EventsFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9088595Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/checkin runtime: nodejs22.x architecture: arm64 functions: CheckinFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9101120Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/stream-processor runtime: nodejs22.x architecture: arm64 functions: StreamProcessorFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:42.9104327Z Building codeuri: /home/runner/work/serverless-event-ticketing/serverless-event-ticketing/backend/functions/tickets runtime: nodejs22.x architecture: arm64 functions: TicketsFunction
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.1652515Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.1680869Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.2551269Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.2653841Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.2742531Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.2826276Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.2941362Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3071046Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3136015Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3190766Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3431417Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3491452Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3714413Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.3766364Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.4021848Z package.json file not found. Bundling source without installing dependencies.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.4106413Z  Running NodejsNpmEsbuildBuilder:EsbuildBundle
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9450455Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9452050Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AuthTriggersFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9453054Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9454024Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function HealthFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9454946Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9455902Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function EventsFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9456834Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9457795Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function BookingFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9458692Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9459630Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function TicketsFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9461218Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9462180Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function CheckinFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9463074Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9464312Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function StreamProcessorFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9465315Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9466298Z Sourcemap set without --enable-source-maps, adding --enable-source-maps to function AnalyticsFunction NODE_OPTIONS
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9467225Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9468603Z You are using source maps, note that this comes with a performance hit! Set Sourcemap to false and remove NODE_OPTIONS: --enable-source-maps to disable source maps.
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:43.9470028Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0007440Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0008100Z Build Succeeded
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0008423Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0008743Z Built Artifacts  : .aws-sam/build
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0009430Z Built Template   : .aws-sam/build/template.yaml
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0010073Z 
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0010282Z Commands you can use next
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0011092Z =========================
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0011628Z [*] Validate SAM template: sam validate
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0012252Z [*] Invoke Function: sam local invoke
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0013114Z [*] Test Function in the Cloud: sam sync --stack-name {{stack-name}} --watch
+Lint, typecheck, test, validate	sam build (proves the Lambda bundles compile)	2026-10-05T16:56:44.0013910Z [*] Deploy: sam deploy --guided
+Lint, typecheck, test, validate	Post Run actions/setup-python@v5	﻿2026-10-05T16:56:44.4177899Z Post job cleanup.
+Lint, typecheck, test, validate	Post Run actions/setup-python@v5	2026-10-05T16:56:44.5500431Z (node:3220) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Lint, typecheck, test, validate	Post Run actions/setup-python@v5	2026-10-05T16:56:44.5501974Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Lint, typecheck, test, validate	Post Run actions/setup-node@v4	﻿2026-10-05T16:56:44.5754120Z Post job cleanup.
+Lint, typecheck, test, validate	Post Run actions/setup-node@v4	2026-10-05T16:56:44.7195832Z (node:3228) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+Lint, typecheck, test, validate	Post Run actions/setup-node@v4	2026-10-05T16:56:44.7196737Z (Use `node --trace-deprecation ...` to show where the warning was created)
+Lint, typecheck, test, validate	Post Run actions/setup-node@v4	2026-10-05T16:56:44.7200126Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-1a5881021097f48e768783fd18e0b9d3ed149dede8e16af1b1df430e624124b1, not saving cache.
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	﻿2026-10-05T16:56:44.7329607Z Post job cleanup.
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8203647Z [command]/usr/bin/git version
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8252874Z git version 2.55.0
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8301393Z Temporarily overriding HOME='/home/runner/work/_temp/0c12fd1d-a437-43e8-b6ea-a79832b1529e' before making global git config changes
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8303017Z Adding repository directory to the temporary git global config as a safe directory
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8321348Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/serverless-event-ticketing/serverless-event-ticketing
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8352501Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8388671Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8644691Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8686450Z http.https://github.com/.extraheader
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8700918Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.8738653Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.9000519Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+Lint, typecheck, test, validate	Post Run actions/checkout@v4	2026-10-05T16:56:44.9043898Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+Lint, typecheck, test, validate	Complete job	﻿2026-10-05T16:56:44.9464513Z Cleaning up orphan processes
+Lint, typecheck, test, validate	Complete job	2026-10-05T16:56:44.9914475Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4, actions/setup-python@v5, aws-actions/setup-sam@v2. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

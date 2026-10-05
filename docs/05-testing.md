@@ -229,11 +229,12 @@ All traffic goes through the real API with a dedicated organizer, 8 dedicated at
 | #1 | verify passed; deploy-dev **failed** at the AWS login: the role trust policy used `repo:<owner>/<repo>:...` but this repository sends the immutable subject `repo:<owner>@<id>/<repo>@<id>:environment:dev`. Cause confirmed in CloudTrail. Trust policies fixed on both roles. | `ci-run1-FAILED-deploy-dev.txt` |
 | #2 | verify and deploy-dev passed (dev stack created from the template: `CREATE_COMPLETE`, about 8 minutes). The prod job then stayed `queued` with no approval request (empty `pending_deployments`, a deployment record with no status) for about 14 minutes, and the run was cancelled. **Cause not identified**; GitHub status showed no incident. | `ci-run2-deploy-dev-success.txt` |
 | #4 | **green**: verify, deploy-dev ("No changes to deploy", publish, smoke test), prod paused at the reviewer gate, then deployed after approval and passed its smoke test. | `ci-run4-verify-success.txt`, `ci-run4-deploy-dev-success.txt`, `ci-run4-deploy-prod-success.txt` |
+| #5 | **green, started by a push to `main`** (commit `ddd6943`): verify, deploy-dev and the approved prod deploy passed in about 4 minutes, and both deploys reported "No changes to deploy". It is the first run triggered by `push`. Prod reached the reviewer gate in under two minutes, with no stall. | `ci-run5-verify-success.txt`, `ci-run5-deploy-dev-success.txt`, `ci-run5-deploy-prod-success.txt` |
 
 The prod deployment of run 4 updated 8 Lambda functions (code), the API body and the user pool's Lambda configuration, all in place, no replacement. The local preview had said "no changes" because the pipeline builds on Linux, so the bundles differ. Afterwards (read-only checks): stack `UPDATE_COMPLETE`, `/health` 200, site 200, 4 alarms OK, one Enabled stream mapping at `LATEST`, DLQ empty, 6 users and 3 groups intact, demo event 6 of 10 sold.
 
 ### Not verified
-- **CI/CD, what the runs did not prove** (L40): the `push` and `pull_request` triggers (manual-only for now), failure and rollback paths, and the cause of the run-2 prod stall. The deploy role is broad (L41). Setup: `docs/ci-cd-setup.md`. The committed logs have the alarm e-mail address redacted.
+- **CI/CD, what the runs did not prove** (L40): the `pull_request` trigger (never exercised; the push trigger fired in run 5), failure and rollback paths, and the cause of the run-2 prod stall. The deploy role is broad (L41). Setup: `docs/ci-cd-setup.md`. The committed logs have the alarm e-mail address redacted.
 - E-mail delivery of alarms (L37).
 
 ## Final re-run on the final deployment (2026-10-05, after the Stage 9 redeploys)

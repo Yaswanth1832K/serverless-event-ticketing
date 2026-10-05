@@ -8,7 +8,7 @@ Numbers are from `docs/test-results/` (see [07-final-report-outline.md](07-final
 |---|---|---|---|
 | 1 | Title | Name, team, one-line description | "A ticketing system that cannot oversell and admits each ticket once." |
 | 2 | Problem | Forms and spreadsheets: overselling, copied tickets, no live view | "The last five seats are where the bugs are." |
-| 3 | Objectives | O1 to O7 with a status mark each (see report outline section 2) | "Six are tested. One, the pipeline, has run green once by manual trigger; the push trigger is not enabled." |
+| 3 | Objectives | O1 to O7 with a status mark each (see report outline section 2) | "Six are tested. One, the pipeline, has run green twice (manual and push-triggered); the pull-request trigger is untried." |
 | 4 | Architecture | Diagram 1 from [architecture-diagram.md](architecture-diagram.md) | Follow one request: browser, API Gateway, Lambda, DynamoDB. |
 | 5 | Data model | Diagram 2: one table, event and ticket in one partition | "One table, so one transaction can cover the event counter and its tickets." |
 | 6 | Overselling protection | The condition `sold <= capacity - n`, one transaction | "The database decides, not the page." Result: 50 buyers, 5 seats: 5 booked, 45 sold out, 3 runs. |
@@ -85,7 +85,7 @@ Artillery from one laptop: 2881 requests over 136 s at about 21 requests/s on av
 Not for a real failure. We forced one alarm and CloudWatch ran its notification action. E-mail delivery was not verified because the subscription needed a confirmation click. A 429 does not trigger the 5xx alarm; a 503 would.
 
 **Q18. Is the CI/CD working?**
-Yes, once, started by hand: lint, typecheck, tests and `sam validate` on GitHub, then an automatic deploy to dev, then a deploy to prod that waited for a reviewer's approval, with OIDC and no stored keys. The first run failed because our trust policy had the wrong GitHub subject format, which we fixed. What we have **not** shown: that it triggers on push (that trigger is off for now), a failing deploy, or why one run's prod job stalled for 14 minutes before we cancelled it.
+Yes, twice (first started by hand, then by a push to main): lint, typecheck, tests and `sam validate` on GitHub, then an automatic deploy to dev, then a deploy to prod that waited for a reviewer's approval, with OIDC and no stored keys. The first run failed because our trust policy had the wrong GitHub subject format, which we fixed. What we have **not** shown: the pull-request trigger, a failing deploy, or why one run's prod job stalled for 14 minutes before we cancelled it.
 
 **Q19. What did you get wrong along the way?**
 Several things, all documented: a doc formula that was not valid DynamoDB, metrics that did not appear because of the log format, tests that started before routes were live, a wrong plan for changing the stream trigger, UI bugs we only saw in screenshots, and an API rename that left the alarm watching an empty metric. The failed runs are kept in `docs/test-results/`.
