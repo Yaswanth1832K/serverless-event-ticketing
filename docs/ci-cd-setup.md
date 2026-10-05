@@ -38,9 +38,14 @@ If the CLI asks for a thumbprint, add `--thumbprint-list 6938fd4d98bab03faadb97b
 
 **2. Create the dev and prod roles** (the trust policy and permission policy are in `ci/`; this fills in the placeholders into a temporary folder, not into the repo)
 ```powershell
+# The token's subject claim is NOT always "repo:<owner>/<repo>". Repositories created recently use the
+# immutable form "repo:<owner>@<owner id>/<repo>@<repo id>", so ask GitHub for the exact prefix.
+# This needs the repository to EXIST already (create it first, step 5, empty is fine).
+$SubPrefix = gh api "repos/$Owner/$Repo/actions/oidc/customization/sub" --jq .sub_claim_prefix
+$SubPrefix        # check it: it must start with "repo:" and name your repository
 $tmp = New-Item -ItemType Directory -Force "$env:TEMP\ticketing-ci"
 foreach ($e in @(@{env='dev'; stack='ticketing-dev'}, @{env='prod'; stack='ticketing-platform'})) {
-  $fill = { param($f) (Get-Content $f -Raw).Replace('<ACCOUNT_ID>',$Account).Replace('<GITHUB_OWNER>',$Owner).Replace('<GITHUB_REPO>',$Repo).Replace('<ENVIRONMENT>',$e.env).Replace('<STACK_NAME>',$e.stack) }
+  $fill = { param($f) (Get-Content $f -Raw).Replace('<ACCOUNT_ID>',$Account).Replace('<SUB_CLAIM_PREFIX>',$SubPrefix).Replace('<ENVIRONMENT>',$e.env).Replace('<STACK_NAME>',$e.stack) }
   & $fill 'ci\trust-policy.template.json'       | Set-Content "$tmp\trust-$($e.env).json" -Encoding ascii
   & $fill 'ci\deploy-permissions.template.json' | Set-Content "$tmp\perm-$($e.env).json"  -Encoding ascii
   aws iam create-role --role-name "ticketing-ci-$($e.env)" --assume-role-policy-document "file://$tmp/trust-$($e.env).json" --query Role.Arn --output text
@@ -105,7 +110,7 @@ gh run watch
 
 ## If the first run fails
 
-- **`Not authorized to perform sts:AssumeRoleWithWebIdentity`**: the trust policy's `sub` does not match. It must be exactly `repo:<owner>/<repo>:environment:dev` (or `prod`); check the owner and repo spelling and that the job has `environment:` set.
+- **`Not authorized to perform sts:AssumeRoleWithWebIdentity`**: the trust policy's `sub` does not match the token's. **This happened in run 1** ([test-results/ci-run1-FAILED-deploy-dev.txt](test-results/ci-run1-FAILED-deploy-dev.txt)): the trust policy said `repo:Yaswanth1832K/serverless-event-ticketing:environment:dev`, but this repository uses GitHub's immutable subject format, so the token's subject was `repo:Yaswanth1832K@244766370/serverless-event-ticketing@1405917808:environment:dev`. Find the real value in CloudTrail (event `AssumeRoleWithWebIdentity`, field `userIdentity.userName`) or with `gh api repos/<owner>/<repo>/actions/oidc/customization/sub --jq .sub_claim_prefix`, then update the role: `aws iam update-assume-role-policy --role-name ticketing-ci-dev --policy-document file://trust-dev.json`. Also check the job has `environment:` set and the owner and repo spelling.
 - **`AccessDenied` on a CloudFormation, IAM, Lambda or other action**: the permission policy in `ci/deploy-permissions.template.json` is missing that action. The error names it; add it, then update the role with `aws iam put-role-policy` again. This is the most likely first-run failure, because the policy was written from the template's resource list and has not been exercised.
 - **`sam deploy` says the stack is in `ROLLBACK_COMPLETE`**: delete the failed stack (`aws cloudformation delete-stack --stack-name ticketing-dev`) and rerun.
 - **Dev health check fails right after deploy**: API Gateway routes can take a minute to go live (seen in earlier stages); the smoke test retries for about a minute.

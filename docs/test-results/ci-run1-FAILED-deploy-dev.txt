@@ -1,0 +1,32 @@
+﻿Deploy to dev	Run aws-actions/configure-aws-credentials@v4	﻿2026-10-05T15:15:59.1896399Z ##[group]Run aws-actions/configure-aws-credentials@v4
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1896789Z with:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1897089Z   role-to-assume: arn:aws:iam::380897727215:role/ticketing-ci-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1897468Z   aws-region: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1897730Z   role-session-name: gha-dev-37330968792
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1898035Z   audience: sts.amazonaws.com
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1898329Z   output-env-credentials: true
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1898594Z env:
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1898802Z   AWS_REGION: us-east-1
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1899059Z   NODE_VERSION: 22
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1899285Z   STACK_NAME: ticketing-dev
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1899602Z   pythonLocation: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1900047Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib/pkgconfig
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1900512Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1900903Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1901304Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.12.14/x64
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1901736Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.12.14/x64/lib
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.1902076Z ##[endgroup]
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.4087710Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.5189077Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.6352272Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:15:59.7417195Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:00.1513402Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:00.5239783Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:01.3334436Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:03.3015141Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:03.6333451Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:11.3331621Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:15.8389314Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:16:47.0737000Z Assuming role with OIDC
+Deploy to dev	Run aws-actions/configure-aws-credentials@v4	2026-10-05T15:18:24.6999967Z ##[error]Could not assume role with OIDC: Not authorized to perform sts:AssumeRoleWithWebIdentity
+
