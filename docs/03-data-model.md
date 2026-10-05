@@ -60,7 +60,19 @@ Stored in the same partition as its event so that the ticket belongs to the even
 | `PK` | `EVENT#<eventId>` |
 | `SK` | `CHECKIN#<yyyy-MM-ddTHH:mm>` (one item per minute) |
 | `count` | integer, atomic `ADD` |
-| `ttl` | optional, expire old buckets |
+| `entity` | `CHECKIN_BUCKET` |
+| `ttl` | always set: scan time + 30 days, so old buckets expire |
+
+### Idempotency marker
+| Attribute | Example / notes |
+|---|---|
+| `PK` | `EVENT#<eventId>` |
+| `SK` | `APPLIED#checkin#<ticketId>` |
+| `entity` | `MARKER` |
+| `appliedAt` | ISO-8601, when the stream processor applied the record |
+| `ttl` | always set: now + 3 days (stream records live 24 hours, so a marker outlives any redelivery) |
+
+Written only by the stream processor, in the same transaction as the counters (see section 7). It has no GSI keys.
 
 ## 4. Access patterns
 
