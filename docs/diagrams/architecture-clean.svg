@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="1920" height="1080" font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif">
+<title>Event ticketing platform: architecture</title>
+<defs>
+<marker id="m-navy" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0F1B2D"/></marker>
+<marker id="m-teal" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#0E7C6E"/></marker>
+<marker id="m-slate" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#5A6B82"/></marker>
+</defs>
+<rect width="1920" height="1080" fill="#F6F3EC"/>
+<text x="60" y="44" font-size="28" font-weight="700" letter-spacing="3" fill="#0F1B2D">CLIENT</text>
+<rect x="60" y="58" width="220" height="6" rx="3" fill="#F5A33B"/>
+<text x="340" y="44" font-size="28" font-weight="700" letter-spacing="3" fill="#0F1B2D">EDGE</text>
+<rect x="340" y="58" width="300" height="6" rx="3" fill="#F5A33B"/>
+<text x="700" y="44" font-size="28" font-weight="700" letter-spacing="3" fill="#0F1B2D">API</text>
+<rect x="700" y="58" width="290" height="6" rx="3" fill="#F5A33B"/>
+<text x="1050" y="44" font-size="28" font-weight="700" letter-spacing="3" fill="#0F1B2D">COMPUTE</text>
+<rect x="1050" y="58" width="320" height="6" rx="3" fill="#F5A33B"/>
+<text x="1430" y="44" font-size="28" font-weight="700" letter-spacing="3" fill="#0F1B2D">DATA</text>
+<rect x="1430" y="58" width="400" height="6" rx="3" fill="#F5A33B"/>
+<rect x="660" y="85" width="330" height="130" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="825" y="114" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">Cognito user pool</text>
+<text x="825" y="150" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">groups: Organizer,</text>
+<text x="825" y="186" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">Attendee, Staff</text>
+<rect x="1050" y="85" width="320" height="130" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="1210" y="114" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">auth-triggers</text>
+<text x="1210" y="150" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">PreSignUp +</text>
+<text x="1210" y="186" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">PostConfirmation</text>
+<rect x="1430" y="90" width="400" height="120" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="1630" y="114" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">SSM Parameter Store</text>
+<text x="1630" y="150" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">QR signing key</text>
+<text x="1630" y="186" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">created with the CLI</text>
+<path d="M990 150 L1050 150" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<rect x="60" y="250" width="220" height="500" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="4"/>
+<text x="170" y="446" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">Browser</text>
+<text x="170" y="482" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">React SPA</text>
+<text x="170" y="518" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">ID token only</text>
+<text x="170" y="554" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">no AWS keys</text>
+<rect x="340" y="250" width="300" height="80" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="490" y="272" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">CloudFront</text>
+<text x="490" y="308" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">website + headers</text>
+<rect x="340" y="370" width="300" height="80" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="490" y="392" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">S3 bucket</text>
+<text x="490" y="428" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">website, private</text>
+<rect x="340" y="550" width="300" height="80" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="490" y="572" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">CloudFront</text>
+<text x="490" y="608" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">event images</text>
+<rect x="340" y="670" width="300" height="80" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="3"/>
+<text x="490" y="692" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">S3 bucket</text>
+<text x="490" y="728" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">images, private</text>
+<path d="M280 290 L340 290" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M490 330 L490 370" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M280 590 L340 590" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M490 630 L490 670" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M170 250 L170 150 L660 150" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<text x="310" y="124" text-anchor="start" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">sign in</text>
+<rect x="700" y="420" width="290" height="140" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="4"/>
+<text x="845" y="454" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">API Gateway</text>
+<text x="845" y="490" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">REST, prod stage</text>
+<text x="845" y="526" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">Cognito authorizer</text>
+<path d="M280 490 L700 490" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<text x="490" y="524" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">HTTPS + token</text>
+<path d="M845 215 L845 420" fill="none" stroke="#5A6B82" stroke-width="4" stroke-linejoin="round" stroke-dasharray="10 8" marker-end="url(#m-slate)"/>
+<text x="862" y="300" text-anchor="start" dominant-baseline="central" font-size="28" font-weight="400" fill="#5A6B82" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">authorizer</text>
+<rect x="1050" y="330" width="320" height="320" rx="16" fill="#FFFDF8" stroke="#F5A33B" stroke-width="6"/>
+<text x="1210" y="368" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">API Lambdas</text>
+<circle cx="1090" cy="418" r="9" fill="#F5A33B" stroke="#0F1B2D" stroke-width="2"/>
+<text x="1120" y="418" dominant-baseline="central" font-size="28" fill="#0F1B2D">tickets</text>
+<circle cx="1090" cy="456" r="9" fill="#F5A33B" stroke="#0F1B2D" stroke-width="2"/>
+<text x="1120" y="456" dominant-baseline="central" font-size="28" fill="#0F1B2D">checkin</text>
+<text x="1120" y="494" dominant-baseline="central" font-size="28" fill="#0F1B2D">health</text>
+<text x="1120" y="532" dominant-baseline="central" font-size="28" fill="#0F1B2D">events</text>
+<text x="1120" y="570" dominant-baseline="central" font-size="28" fill="#0F1B2D">booking</text>
+<text x="1120" y="608" dominant-baseline="central" font-size="28" fill="#0F1B2D">analytics</text>
+<path d="M990 490 L1050 490" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M1370 490 L1430 490" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<path d="M1370 420 L1400 420 L1400 150 L1430 150" fill="none" stroke="#0F1B2D" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-navy)"/>
+<circle cx="1424" cy="300" r="9" fill="#F5A33B" stroke="#0F1B2D" stroke-width="2"/>
+<text x="1442" y="300" text-anchor="start" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">read QR key</text>
+<rect x="1430" y="420" width="400" height="140" rx="14" fill="#FFFDF8" stroke="#0F1B2D" stroke-width="4"/>
+<text x="1630" y="454" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">DynamoDB table</text>
+<text x="1630" y="490" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">GSI1 + GSI2</text>
+<text x="1630" y="526" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">Streams, TTL</text>
+<rect x="1430" y="670" width="400" height="100" rx="14" fill="#FFFDF8" stroke="#0E7C6E" stroke-width="5"/>
+<text x="1630" y="702" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">stream-processor</text>
+<text x="1630" y="738" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">Lambda, idempotent</text>
+<rect x="1110" y="680" width="260" height="80" rx="14" fill="#FFFDF8" stroke="#0E7C6E" stroke-width="5"/>
+<text x="1240" y="702" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">SQS dead-letter</text>
+<text x="1240" y="738" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">queue</text>
+<path d="M1560 560 L1560 670" fill="none" stroke="#0E7C6E" stroke-width="5" stroke-linejoin="round" marker-end="url(#m-teal)"/>
+<text x="1548" y="615" text-anchor="end" dominant-baseline="central" font-size="28" font-weight="700" fill="#0E7C6E" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">Streams</text>
+<path d="M1690 670 L1690 560" fill="none" stroke="#0E7C6E" stroke-width="5" stroke-linejoin="round" marker-end="url(#m-teal)"/>
+<text x="1704" y="615" text-anchor="start" dominant-baseline="central" font-size="28" font-weight="700" fill="#0E7C6E" stroke="#F6F3EC" stroke-width="9" paint-order="stroke" stroke-linejoin="round">counters</text>
+<path d="M1430 720 L1370 720" fill="none" stroke="#0E7C6E" stroke-width="5" stroke-linejoin="round" stroke-dasharray="10 8" marker-end="url(#m-teal)"/>
+<rect x="30" y="812" width="1860" height="150" rx="18" fill="#0F1B2D" fill-opacity="0.06"/>
+<text x="60" y="887" dominant-baseline="central" font-size="28" font-weight="700" letter-spacing="2" fill="#5A6B82">MONITORING</text>
+<rect x="700" y="830" width="290" height="118" rx="14" fill="#FFFDF8" stroke="#5A6B82" stroke-width="3"/>
+<text x="845" y="853" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">CloudWatch</text>
+<text x="845" y="889" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">logs, metrics</text>
+<text x="845" y="925" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">dashboard</text>
+<rect x="1050" y="830" width="320" height="118" rx="14" fill="#FFFDF8" stroke="#5A6B82" stroke-width="3"/>
+<text x="1210" y="853" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">4 alarms</text>
+<text x="1210" y="889" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">errors, 5xx</text>
+<text x="1210" y="925" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">DLQ, throttles</text>
+<rect x="1430" y="830" width="400" height="118" rx="14" fill="#FFFDF8" stroke="#5A6B82" stroke-width="3"/>
+<text x="1630" y="871" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#0F1B2D">SNS topic</text>
+<text x="1630" y="907" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#0F1B2D">e-mail subscription</text>
+<path d="M990 889 L1050 889" fill="none" stroke="#5A6B82" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-slate)"/>
+<path d="M1370 889 L1430 889" fill="none" stroke="#5A6B82" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-slate)"/>
+<path d="M1074 650 L1074 790 L845 790 L845 830" fill="none" stroke="#5A6B82" stroke-width="4" stroke-linejoin="round" marker-end="url(#m-slate)"/>
+<rect x="30" y="976" width="1860" height="100" rx="18" fill="#0F1B2D" fill-opacity="0.03"/>
+<text x="60" y="1026" dominant-baseline="central" font-size="28" font-weight="700" letter-spacing="2" fill="#5A6B82">DELIVERY</text>
+<rect x="340" y="986" width="360" height="80" rx="14" fill="#FFFDF8" stroke="#5A6B82" stroke-width="3" stroke-dasharray="12 8"/>
+<text x="520" y="1008" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#5A6B82">GitHub Actions</text>
+<text x="520" y="1044" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#5A6B82">OIDC, no stored keys</text>
+<rect x="780" y="986" width="400" height="80" rx="14" fill="#FFFDF8" stroke="#5A6B82" stroke-width="3" stroke-dasharray="12 8"/>
+<text x="980" y="1008" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="700" fill="#5A6B82">CloudFormation (SAM)</text>
+<text x="980" y="1044" text-anchor="middle" dominant-baseline="central" font-size="28" font-weight="400" fill="#5A6B82">stacks: platform, dev</text>
+<path d="M700 1026 L780 1026" fill="none" stroke="#5A6B82" stroke-width="4" stroke-linejoin="round" stroke-dasharray="10 8" marker-end="url(#m-slate)"/>
+<line x1="1260" y1="1012" x2="1330" y2="1012" stroke="#0F1B2D" stroke-width="4" marker-end="url(#m-navy)"/>
+<text x="1350" y="1012" dominant-baseline="central" font-size="28" fill="#0F1B2D">request path</text>
+<line x1="1260" y1="1052" x2="1330" y2="1052" stroke="#0E7C6E" stroke-width="5" marker-end="url(#m-teal)"/>
+<text x="1350" y="1052" dominant-baseline="central" font-size="28" fill="#0E7C6E" font-weight="700">analytics stream</text>
+</svg>
